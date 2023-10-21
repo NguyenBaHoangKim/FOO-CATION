@@ -5,5 +5,5 @@
     <color name="green">#36564B</color>
     <color name="lightGreen">#5E927C</color>
     <color name="LighterGreen">#79AC78</color>
-    <array name="background">#DADADA</array>
+    <color name="background">#DADADA</color>
 </resources>
