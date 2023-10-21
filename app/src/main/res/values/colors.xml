@@ -2,5 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="xanh_1">#36564B</color>
+    <color name="green">#36564B</color>
+    <color name="lightGreen">#5E927C</color>
+    <color name="LighterGreen">#79AC78</color>
+    <array name="background">#DADADA</array>
 </resources>
