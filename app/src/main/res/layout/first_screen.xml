@@ -24,7 +24,7 @@
                 android:gravity="center"
                 android:text="Đăng nhập"
                 android:textAlignment="center"
-                android:textColor="@color/xanh_1"
+                android:textColor="@color/green"
                 android:textSize="46dp" />
         </FrameLayout>
 
