@@ -11,6 +11,6 @@
     <style name="Theme.MyApplication" parent="Base.Theme.MyApplication" />
     
     <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
-        <item name="android:color">@color/white</item>
+        <item name="android:color">@color/green</item>
     </style>
 </resources>
