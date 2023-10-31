@@ -28,8 +28,9 @@ class MainActivity : AppCompatActivity() {
                     replaceFragment(LocationFragment())
                     true
                 }
+                //đổi lại thành SearchFragment()
                 R.id.bottom_search -> {
-                    replaceFragment(SearchFragment())
+                    replaceFragment(LocationDetail())
                     true
                 }
                 R.id.bottom_archive -> {

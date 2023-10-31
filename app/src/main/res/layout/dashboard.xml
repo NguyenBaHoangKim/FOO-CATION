@@ -40,13 +40,14 @@
 
             <FrameLayout
                 android:id="@+id/notification"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
                     android:id="@+id/icon_notification"
-                    android:layout_width="match_parent"
+                    android:layout_width="50dp"
                     android:layout_height="match_parent"
+                    android:layout_gravity="right"
                     android:paddingTop="5dp"
                     android:paddingRight="30dp"
                     android:paddingBottom="5dp"
@@ -89,12 +90,12 @@
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="180dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="right"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/addrest_main"
 
-                />
+                app:srcCompat="@drawable/addrest_main" />
 
         </LinearLayout>
 
