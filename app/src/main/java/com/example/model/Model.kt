@@ -1,4 +1,4 @@
-package com.example.modal
+package com.example.model
 
 import android.media.Image
 
@@ -96,5 +96,37 @@ data class Staff (
     val passWord: String,
     val locationId: Location,
     val role: String,
+)
+
+// This code is just for test
+
+data class TestUser(
+    val address: Address,
+    val company: Company,
+    val email: String,
+    val id: Int,
+    val name: String,
+    val phone: String,
+    val username: String,
+    val website: String
+)
+
+data class Address(
+    val city: String,
+    val geo: Geo,
+    val street: String,
+    val suite: String,
+    val zipcode: String
+)
+
+data class Geo(
+    val lat: String,
+    val lng: String
+)
+
+data class Company(
+    val bs: String,
+    val catchPhrase: String,
+    val name: String
 )
 
