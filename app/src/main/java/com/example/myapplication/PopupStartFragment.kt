@@ -14,7 +14,13 @@ class PopupStartFragment : Fragment(){
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.location_detail, container, false)
+        val view = inflater.inflate(R.layout.fragment_popup_start, container, false)
+        val btnStart : Button = view.findViewById(R.id.btnStart)
+        btnStart.setOnClickListener {
+            showdialog_popup_start()
+        }
         return view
+    }
+    private fun showdialog_popup_start() {
     }
 }
