@@ -1,26 +1,13 @@
-package com.example.myapplication
+package com.example.popup
 
-import android.app.Dialog
-import android.content.Context
-import android.graphics.Color
-import android.graphics.ImageDecoder
-import android.graphics.drawable.Animatable
-import android.graphics.drawable.AnimatedImageDrawable
-import android.graphics.drawable.ColorDrawable
-import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.util.AttributeSet
-import android.view.ActionMode
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.Window
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.DialogFragment
-import androidx.fragment.app.Fragment
+import com.example.myapplication.R
 
 class DailogPopup : DialogFragment(){
     override fun onCreateView(
