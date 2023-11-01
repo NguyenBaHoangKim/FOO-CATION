@@ -33,8 +33,9 @@ class MainActivity : AppCompatActivity() {
                     replaceFragment(LocationDetail())
                     true
                 }
+                //đổi lại thanfh ArchiveFragment()
                 R.id.bottom_archive -> {
-                    replaceFragment(ArchiveFragment())
+                    replaceFragment(PopupStartFragment())
                     true
                 }
                 R.id.bottom_more -> {
@@ -53,5 +54,6 @@ class MainActivity : AppCompatActivity() {
     private fun replaceFragment(fragment: Fragment){
         supportFragmentManager.beginTransaction().replace(R.id.frame_container, fragment).commit()
     }
+
     // bla bla
 }

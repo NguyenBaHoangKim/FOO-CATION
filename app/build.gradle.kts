@@ -58,4 +58,5 @@ dependencies {
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation ("com.squareup.okhttp3:okhttp:3.8.1")
+    implementation ("pl.droidsonroids.gif:android-gif-drawable:1.2.23")
 }
