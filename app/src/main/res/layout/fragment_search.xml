@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center_horizontal|left"
-    android:background="@drawable/background_search_fragment"
+    android:orientation="vertical"
+    android:paddingBottom="20dp"
     tools:context=".SearchFragment">
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="227dp">
+        android:layout_height="227dp"
+        android:background="@drawable/background_search_fragment"
+        >
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
             android:layout_width="362dp"
             android:layout_height="43dp"
             app:cardCornerRadius="40dp"
@@ -33,9 +36,15 @@
         <LinearLayout
             android:layout_width="409dp"
             android:layout_height="138dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="1dp"
+            android:background="@drawable/shape_search_fragment"
             android:orientation="vertical"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="96dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView"
             tools:ignore="MissingConstraints">
 
             <TextView
@@ -106,10 +115,204 @@
                 android:textColor="@color/green"
                 android:textSize="24sp"
                 android:textStyle="bold" />
-
         </LinearLayout>
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</FrameLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_search_fragment_bottom">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="223dp"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="170dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    app:cardCornerRadius="40dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="158dp"
+                        android:src="@drawable/diadiem" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="sans-serif-black"
+                        android:gravity="bottom"
+                        android:paddingBottom="20dp"
+                        android:text="Địa điểm"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        tools:ignore="RtlCompat" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="170dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    app:cardCornerRadius="40dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:paddingBottom="30dp"
+                        android:src="@drawable/lichsu" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="sans-serif-black"
+                        android:gravity="bottom"
+                        android:paddingBottom="20dp"
+                        android:text="Lịch sử"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        tools:ignore="RtlCompat" />
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="223dp"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="170dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    app:cardCornerRadius="40dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="158dp"
+                        android:src="@drawable/vanhoc"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="sans-serif-black"
+                        android:gravity="bottom"
+                        android:paddingBottom="20dp"
+                        android:text="Văn học"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        tools:ignore="RtlCompat" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="170dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    app:cardCornerRadius="40dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:paddingBottom="30dp"
+                        android:src="@drawable/hienvat"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="sans-serif-black"
+                        android:gravity="bottom"
+                        android:paddingBottom="20dp"
+                        android:text="Hiện vật"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        tools:ignore="RtlCompat" />
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="223dp"
+                            android:orientation="horizontal"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="10dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="10dp">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="170dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                app:cardCornerRadius="40dp">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="158dp"
+                                    android:src="@drawable/nghethuat"
+                                     />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:fontFamily="sans-serif-black"
+                                    android:gravity="bottom"
+                                    android:paddingBottom="20dp"
+                                    android:text="Nghệ thuật"
+                                    android:textAlignment="center"
+                                    android:textSize="20sp"
+                                    tools:ignore="RtlCompat" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="170dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                app:cardCornerRadius="40dp">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:paddingBottom="30dp"
+                                    android:src="@drawable/lichsu"
+                                    />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:fontFamily="sans-serif-black"
+                                    android:gravity="bottom"
+                                    android:paddingBottom="20dp"
+                                    android:text="Hiện vật"
+                                    android:textAlignment="center"
+                                    android:textSize="20sp"
+                                    tools:ignore="RtlCompat" />
+                            </androidx.cardview.widget.CardView>
+
+                        </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
