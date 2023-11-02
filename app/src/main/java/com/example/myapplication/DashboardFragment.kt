@@ -66,6 +66,7 @@ class DashboardFragment : Fragment() {
     }
 
     private fun fetchData() {
+        //::onSuccess
         userDataManager.getUsers({ data: List<User> ->
             for (user in data) {
                 textView4.text = user.userName

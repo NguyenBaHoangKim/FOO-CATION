@@ -7,11 +7,18 @@
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/btn_quiz"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="414dp"
+        android:gravity="center"
         android:text="Archive Fragment"
-        android:textSize="30dp"
         android:textColor="@color/black"
-        android:gravity="center"/>
+        android:textSize="30dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="151dp"
+        android:layout_height="82dp"
+        android:text="Button" />
 
 </FrameLayout>

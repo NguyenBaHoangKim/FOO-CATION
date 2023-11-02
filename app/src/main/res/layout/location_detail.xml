@@ -22,6 +22,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="175dp"
         android:layout_height="175dp"
         android:layout_marginLeft="2dp"
@@ -61,7 +62,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.934"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cardView"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.121">
 
@@ -102,5 +103,209 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="492dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/thongtin3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="50dp"
+                android:text="Thông tin"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/infor3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="dưới đây là thông tin dưới đây là thông tin dưới đây là thông tin dưới đây là thông tindưới đây là thông tin dưới đây là thông tin dưới đây là thông tin dưới đây là thông tin dưới đây là thông tin dưới đây là thông tin dưới đây là thông tin dưới đây là thông tin"
+                android:textFontWeight="400"
+                android:textSize="16sp" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="32dp">
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/thongtin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="50dp"
+                android:text="Có thể bạn sẽ thích"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/infor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì "
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/art_1"
+                android:layout_width="match_parent"
+                android:layout_height="111dp"
+                android:paddingTop="20dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="153dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:paddingLeft="2dp"
+                    android:paddingTop="2dp"
+                    android:paddingRight="2dp"
+                    android:paddingBottom="2dp"
+                    app:cardCornerRadius="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.179"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.129">
+
+                    <ImageView
+                        android:id="@+id/image1"
+                        android:layout_width="154dp"
+                        android:layout_height="91dp"
+                        android:layout_gravity="left"
+                        android:background="@drawable/cau_the_huc"
+                        android:paddingLeft="2dp"
+
+                        android:paddingTop="2dp"
+                        android:paddingRight="2dp"
+                        android:paddingBottom="2dp"
+                        android:scaleType="centerCrop" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Cầu Thê Húc"
+                    android:textFontWeight="600"
+                    android:textSize="20sp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/art_2"
+                android:layout_width="match_parent"
+                android:layout_height="111dp"
+                android:paddingTop="20dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="153dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:paddingLeft="2dp"
+                    android:paddingTop="2dp"
+                    android:paddingRight="2dp"
+                    android:paddingBottom="2dp"
+                    app:cardCornerRadius="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.179"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.129">
+
+                    <ImageView
+                        android:id="@+id/image2"
+                        android:layout_width="154dp"
+                        android:layout_height="91dp"
+                        android:layout_gravity="left"
+                        android:background="@drawable/cau_the_huc"
+                        android:paddingLeft="2dp"
+
+                        android:paddingTop="2dp"
+                        android:paddingRight="2dp"
+                        android:paddingBottom="2dp"
+                        android:scaleType="centerCrop" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Cầu Thê Húc"
+                    android:textFontWeight="600"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/art_3"
+                android:layout_width="match_parent"
+                android:layout_height="111dp"
+                android:paddingTop="20dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="153dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:paddingLeft="2dp"
+                    android:paddingTop="2dp"
+                    android:paddingRight="2dp"
+                    android:paddingBottom="2dp"
+                    app:cardCornerRadius="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.179"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.129">
+
+                    <ImageView
+                        android:id="@+id/image3"
+                        android:layout_width="154dp"
+                        android:layout_height="91dp"
+                        android:layout_gravity="left"
+                        android:background="@drawable/cau_the_huc"
+                        android:paddingLeft="2dp"
+
+                        android:paddingTop="2dp"
+                        android:paddingRight="2dp"
+                        android:paddingBottom="2dp"
+                        android:scaleType="centerCrop" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Cầu Thê Húc"
+                    android:textFontWeight="600"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

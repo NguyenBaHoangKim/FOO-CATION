@@ -8,6 +8,7 @@ data class User (
     val displayName: String,
     val email: String,
     val passWord: String,
+    val avatar: Image,
 )
 
 data class Repassword (

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+    <androidx.cardview.widget.CardView
+        android:layout_width="364dp"
+        android:layout_height="496dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.32"
+        app:cardCornerRadius="10dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="364dp"
+            android:layout_height="496dp"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.32">
+
+            <TextView
+                android:id="@+id/correct_text1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/correct_qs"
+                android:gravity="center"
+                android:text="Chính xác!"
+                android:textColor="@color/white"
+                android:textFontWeight="800"
+                android:textSize="34sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/centerview"
+                android:layout_width="match_parent"
+                android:layout_height="344dp"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingTop="15dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="15dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/correct_text1">
+
+
+                <ImageView
+                    android:id="@+id/correct_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/cong_van_mieu"
+                    tools:layout_editor_absoluteX="-16dp"
+                    tools:layout_editor_absoluteY="-16dp" />
+
+                <ScrollView
+                    android:layout_width="304dp"
+                    android:layout_height="162dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.416"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/correct_img"
+                    app:layout_constraintVertical_bias="0.0">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/correct_text2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin  Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin  " />
+                    </LinearLayout>
+                </ScrollView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/centerview">
+
+                <Button
+                    android:id="@+id/correct_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@color/LighterGreen"
+                    android:gravity="center"
+                    android:text="Đã hiểu, tới câu tiếp "
+                    android:textColor="@color/white"
+                    android:textFontWeight="800"
+                    android:textSize="20sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    />
+            </androidx.cardview.widget.CardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
