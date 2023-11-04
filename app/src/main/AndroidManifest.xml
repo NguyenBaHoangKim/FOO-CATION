@@ -22,6 +22,16 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".SearchActivity"
+            android:label="Preferences"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.iphonik.chameleon.SearchActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
         <activity android:name=".DashboardFragment"
             android:exported="true">
             <intent-filter>

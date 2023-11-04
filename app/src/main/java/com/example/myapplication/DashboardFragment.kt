@@ -13,8 +13,8 @@ import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.example.common.api.UserDataManager
-import com.example.model.TestUser
 import com.example.model.User
+import com.example.myapplication.adapter.ImageAdapter
 import kotlin.math.abs
 
 // TODO: Rename parameter arguments, choose names that match
