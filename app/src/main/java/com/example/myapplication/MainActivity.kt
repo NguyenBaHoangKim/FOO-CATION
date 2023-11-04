@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 //đổi lại thành SearchFragment()
                 R.id.bottom_search -> {
-                    replaceFragment(LocationDetail())
+                    replaceFragment(SearchFragment())
                     true
                 }
                 R.id.bottom_archive -> {

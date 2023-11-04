@@ -34,7 +34,7 @@ class ArchiveFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view: View = inflater.inflate(R.layout.fragment_quiz_wrong, container, false)
+        val view: View = inflater.inflate(R.layout.fragment_archive, container, false)
 
 //        val quiz = QuizFragment()
 //        val transaction: FragmentTransaction = fragmentManager.beginTransaction()
