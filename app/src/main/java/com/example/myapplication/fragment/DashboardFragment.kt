@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.fragment
 
 import android.os.Bundle
 import android.os.Handler
@@ -13,14 +13,10 @@ import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.example.common.api.UserDataManager
-import com.example.model.TestUser
 import com.example.model.User
+import com.example.myapplication.ImageAdapter
+import com.example.myapplication.R
 import kotlin.math.abs
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
 class DashboardFragment : Fragment() {
     private lateinit var viewPager2: ViewPager2
