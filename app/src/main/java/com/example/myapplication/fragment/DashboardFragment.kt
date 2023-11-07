@@ -15,8 +15,8 @@ import androidx.viewpager2.widget.ViewPager2
 import com.example.common.api.UserDataManager
 import com.example.model.LoginRequest
 import com.example.model.LoginResp
-import com.example.myapplication.ImageAdapter
 import com.example.myapplication.R
+import com.example.myapplication.adapter.ImageAdapter
 import kotlin.math.abs
 
 class DashboardFragment : Fragment() {
