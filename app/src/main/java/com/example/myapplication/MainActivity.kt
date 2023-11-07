@@ -1,9 +1,9 @@
 package com.example.myapplication
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.example.popup.PopupStartFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -28,13 +28,14 @@ class MainActivity : AppCompatActivity() {
                     replaceFragment(LocationFragment())
                     true
                 }
-                //đổi lại thành SearchFragment()
+                //đổi lại thành SearchFragment()/LocationDetail()
                 R.id.bottom_search -> {
                     replaceFragment(SearchFragment())
                     true
                 }
+                //đổi lại thanfh ArchiveFragment()
                 R.id.bottom_archive -> {
-                    replaceFragment(ArchiveFragment())
+                    replaceFragment(PopupStartFragment())
                     true
                 }
                 R.id.bottom_more -> {
@@ -53,5 +54,6 @@ class MainActivity : AppCompatActivity() {
     private fun replaceFragment(fragment: Fragment){
         supportFragmentManager.beginTransaction().replace(R.id.frame_container, fragment).commit()
     }
+
     // bla bla
 }

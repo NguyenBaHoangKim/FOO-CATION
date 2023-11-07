@@ -22,6 +22,86 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".search.SearchActivity"
+            android:label="Preferences"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.iphonik.chameleon.SearchActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".search.LocationCategory"
+            android:label="Preferences"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.iphonik.chameleon.LocationCategory" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".search.HistoryCategory"
+            android:label="Preferences"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.iphonik.chameleon.HistoryCategory" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".search.LiteratureCategory"
+            android:label="Preferences"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.iphonik.chameleon.LiteratureCategory" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".search.ArtifactCategory"
+            android:label="Preferences"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.iphonik.chameleon.ArtifactCategory" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".search.ArtCategory"
+            android:label="Preferences"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.iphonik.chameleon.ArtCategory" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".search.ParkCategory"
+            android:label="Preferences"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.iphonik.chameleon.ParkCategory" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".search.ArtifactCategory"
+            android:label="Preferences"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.iphonik.chameleon.ArtifactCategory" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
         <activity android:name=".DashboardFragment"
             android:exported="true">
             <intent-filter>

@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
+import com.example.myapplication.R
 
 class ImageAdapter(private val imageList: ArrayList<Int>, private val viewPager2: ViewPager2) :
     RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
@@ -14,12 +15,12 @@ class ImageAdapter(private val imageList: ArrayList<Int>, private val viewPager2
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageAdapter.ImageViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.image_container, parent, false )
         return ImageViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ImageAdapter.ImageViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
         holder.imageView.setImageResource(imageList[position])
         if(position == imageList.size - 1) {
             viewPager2.post(runnable)
