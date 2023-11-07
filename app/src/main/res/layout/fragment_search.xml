@@ -195,6 +195,13 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     app:cardCornerRadius="40dp">
+                    <Button
+                        android:id="@+id/location"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/white">
+
+                    </Button>
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -219,6 +226,14 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     app:cardCornerRadius="40dp">
+
+                    <Button
+                        android:id="@+id/history"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/white">
+
+                    </Button>
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -256,6 +271,12 @@
                     android:layout_marginRight="10dp"
                     app:cardCornerRadius="40dp">
 
+                    <Button
+                        android:id="@+id/literature"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/white"></Button>
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="158dp"
@@ -279,6 +300,12 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     app:cardCornerRadius="40dp">
+
+                    <Button
+                        android:id="@+id/artifact"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/white"></Button>
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -315,6 +342,11 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     app:cardCornerRadius="40dp">
+                    <Button
+                        android:id="@+id/art"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/white"></Button>
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -340,11 +372,17 @@
                     android:layout_marginRight="10dp"
                     app:cardCornerRadius="40dp">
 
+                    <Button
+                        android:id="@+id/park"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/white"></Button>
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:paddingBottom="30dp"
-                        android:src="@drawable/lichsu" />
+                        android:src="@drawable/park" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -352,7 +390,7 @@
                         android:fontFamily="sans-serif-black"
                         android:gravity="bottom"
                         android:paddingBottom="20dp"
-                        android:text="Hiện vật"
+                        android:text="Công viên"
                         android:textAlignment="center"
                         android:textSize="20sp"
                         tools:ignore="RtlCompat" />

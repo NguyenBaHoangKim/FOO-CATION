@@ -1,7 +1,6 @@
-package com.example.myapplication
+package com.example.myapplication.search
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
@@ -10,16 +9,17 @@ import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.SearchView.OnQueryTextListener
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.common.api.LocationData
-import com.example.myapplication.adapter.LocationAdapter
+import com.example.common.api.SearchData
+import com.example.myapplication.R
+import com.example.myapplication.adapter.SearchAdapter
 import java.util.Locale
 
 
 class SearchActivity : AppCompatActivity() {
     private lateinit var recyclerView : RecyclerView
     private lateinit var searchView: SearchView
-    private var mList = ArrayList<LocationData>()
-    private  lateinit var adapter: LocationAdapter
+    private var mList = ArrayList<SearchData>()
+    private  lateinit var adapter: SearchAdapter
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,7 +37,7 @@ class SearchActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         addDataToList()
-        adapter = LocationAdapter(mList)
+        adapter = SearchAdapter(mList)
         recyclerView.adapter = adapter
 
         searchView.setOnQueryTextListener(object : OnQueryTextListener {
@@ -74,7 +74,7 @@ class SearchActivity : AppCompatActivity() {
 
     private fun  filterList(query: String?){
         if(query != null) {
-            val filteredList = ArrayList<LocationData>()
+            val filteredList = ArrayList<SearchData>()
             for(i in mList){
                 if(i.title.lowercase(Locale.ROOT).contains(query)){
                     filteredList.add(i)
@@ -90,10 +90,10 @@ class SearchActivity : AppCompatActivity() {
 
     }
     private fun addDataToList() {
-        mList.add(LocationData("Văn Miếu Quốc Tử Giám", R.drawable.place2))
-        mList.add(LocationData("Hoàng Thành Thăng Long", R.drawable.place3))
-        mList.add(LocationData("Lăng Chủ Tịch Hồ Chí Minh", R.drawable.place4))
-        mList.add(LocationData("Nhà Tù Hoả Lò", R.drawable.place5))
-        mList.add(LocationData("Văn Miếu Quốc Tử Giám", R.drawable.place1))
+        mList.add(SearchData("Văn Miếu Quốc Tử Giám", R.drawable.place2))
+        mList.add(SearchData("Hoàng Thành Thăng Long", R.drawable.place3))
+        mList.add(SearchData("Lăng Chủ Tịch Hồ Chí Minh", R.drawable.place4))
+        mList.add(SearchData("Nhà Tù Hoả Lò", R.drawable.place5))
+        mList.add(SearchData("Văn Miếu Quốc Tử Giám", R.drawable.place1))
     }
 }
