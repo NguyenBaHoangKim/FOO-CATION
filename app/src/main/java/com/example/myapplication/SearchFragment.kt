@@ -8,8 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
-import com.example.myapplication.R.id
-import com.example.myapplication.search.LocationCategory
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -46,7 +44,7 @@ class SearchFragment : Fragment() {
 
         val view:View = inflater.inflate(R.layout.fragment_search, container, false)
 
-        val btn:Button = view.findViewById(R.id.button4)
+        val btn:Button = view.findViewById(R.id.search)
 
         val btnLocationCategory:Button = view.findViewById(R.id.location)
         val btnHistoryCategory : Button = view.findViewById(R.id.history)

@@ -100,7 +100,6 @@
         </LinearLayout>
 
         <FrameLayout
-            android:id="@+id/search"
             android:layout_width="match_parent"
             android:layout_height="57dp"
             android:paddingLeft="30dp"
@@ -111,14 +110,53 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="20dp">
-                <SearchView
-                    android:id="@+id/search_bar"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="#F8F5F5"
-                    android:outlineProvider="none"
-                    android:paddingLeft="0dp"
-                    android:paddingRight="0dp" />
+                    android:layout_height="50dp">
+
+                    <Button
+                        android:id="@+id/search"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/white"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text=""
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </Button>
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="left"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="10dp"
+                        android:src="@drawable/baseline_search_24"
+                        tools:ignore="MissingConstraints" />
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:background="@drawable/search_bkg"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="60dp"
+                        android:text="Nhập từ khoá"
+                        android:textAlignment="textStart"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="RtlCompat" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
             </androidx.cardview.widget.CardView>
 
         </FrameLayout>
