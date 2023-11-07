@@ -13,7 +13,8 @@ import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.example.common.api.UserDataManager
-import com.example.model.User
+import com.example.model.LoginRequest
+import com.example.model.LoginResp
 import com.example.myapplication.ImageAdapter
 import com.example.myapplication.R
 import kotlin.math.abs
@@ -63,11 +64,9 @@ class DashboardFragment : Fragment() {
 
     private fun fetchData() {
         //::onSuccess
-        userDataManager.getUsers({ data: List<User> ->
-            for (user in data) {
-                textView4.text = user.userName
-                println(user.userName)
-            }
+        val loginRequest = LoginRequest("john@example.com", "1")
+        userDataManager.login(loginRequest, { data: LoginResp ->
+            textView4.text = data.user.username
         }, { error ->
             println(error)
         })

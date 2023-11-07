@@ -14,10 +14,6 @@ import com.example.myapplication.R
 class LocationFragment : Fragment() {
 
     private lateinit var showMap: Button
-//
-//    val MainActivity:MainActivity?=null
-//    fun LocationFragment(){}
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,7 +25,6 @@ class LocationFragment : Fragment() {
             val intent = Intent(activity,MapsActivity::class.java)
             startActivity(intent)
         })
-
         return view
     }
 }
