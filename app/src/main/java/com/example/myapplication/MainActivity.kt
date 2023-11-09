@@ -6,8 +6,8 @@ import androidx.fragment.app.Fragment
 import com.example.myapplication.fragment.ArchiveFragment
 import com.example.myapplication.fragment.DashboardFragment
 import com.example.myapplication.fragment.LocationFragment
+import com.example.myapplication.fragment.MoreFragment
 import com.example.myapplication.fragment.SearchFragment
-import com.example.popup.PopupStartFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {

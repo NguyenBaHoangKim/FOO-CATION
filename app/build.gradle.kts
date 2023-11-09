@@ -62,6 +62,7 @@ dependencies {
     implementation ("com.squareup.okhttp3:okhttp:3.8.1")
     implementation("com.google.android.gms:play-services-maps:18.2.0")
     implementation ("pl.droidsonroids.gif:android-gif-drawable:1.2.23")
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
 }
 buildscript {
     dependencies {

@@ -124,9 +124,20 @@
         <activity
             android:name=".search.ArtifactCategory"
             android:label="Preferences"
-            android:exported="true">
+            android:exported="true"
+            tools:ignore="DuplicateActivity">
             <intent-filter>
                 <action android:name="com.iphonik.chameleon.ArtifactCategory" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".RewardsActivity"
+            android:label="Preferences"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.iphonik.chameleon.RewardsActivity" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
