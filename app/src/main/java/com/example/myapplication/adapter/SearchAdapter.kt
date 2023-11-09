@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.common.api.SearchData
 import com.example.myapplication.R
+import com.example.model.SearchData
 
 class SearchAdapter(var mList: List<SearchData>) :
     RecyclerView.Adapter<SearchAdapter.LocationViewHolder>() {

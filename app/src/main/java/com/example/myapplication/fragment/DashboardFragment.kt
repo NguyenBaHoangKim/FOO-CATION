@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
-import com.example.common.api.UserDataManager
+import com.example.common.apiUser.UsersDataManager
 import com.example.model.LoginRequest
 import com.example.model.LoginResp
 import com.example.myapplication.R
@@ -25,7 +25,7 @@ class DashboardFragment : Fragment() {
     private lateinit var imageList: ArrayList<Int>
     private lateinit var adapter: ImageAdapter
     private lateinit var textView4: TextView
-    private var userDataManager = UserDataManager()
+    private var usersDataManager = UsersDataManager()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -65,7 +65,7 @@ class DashboardFragment : Fragment() {
     private fun fetchData() {
         //::onSuccess
         val loginRequest = LoginRequest("john@example.com", "1")
-        userDataManager.login(loginRequest, { data: LoginResp ->
+        usersDataManager.login(loginRequest, { data: LoginResp ->
             textView4.text = data.user.username
         }, { error ->
             println(error)
@@ -108,5 +108,4 @@ class DashboardFragment : Fragment() {
 
         textView4 = view.findViewById(R.id.textView4)
     }
-
 }
