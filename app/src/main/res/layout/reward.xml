@@ -64,7 +64,7 @@
             app:srcCompat="@drawable/my_point" />
 
         <TextView
-            android:id="@+id/score"
+            android:id="@+id/point"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="72dp"
@@ -82,7 +82,7 @@
             android:layout_height="26dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/score"
+            app:layout_constraintStart_toEndOf="@+id/point"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.814"
             app:srcCompat="@drawable/medal" />

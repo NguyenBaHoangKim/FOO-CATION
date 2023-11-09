@@ -37,9 +37,9 @@ class MainActivity : AppCompatActivity() {
                     replaceFragment(SearchFragment())
                     true
                 }
-                //đổi lại thanfh ArchiveFragment()
+                //test PopupStartFragment()
                 R.id.bottom_archive -> {
-                    replaceFragment(PopupStartFragment())
+                    replaceFragment(ArchiveFragment())
                     true
                 }
                 R.id.bottom_more -> {

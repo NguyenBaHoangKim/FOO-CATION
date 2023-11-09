@@ -1,11 +1,14 @@
 package com.example.myapplication.fragment
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
@@ -27,12 +30,14 @@ class DashboardFragment : Fragment() {
     private lateinit var textView4: TextView
     private var userDataManager = UserDataManager()
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.dashboard, container, false)
+        val btnSearch:Button = view.findViewById(R.id.searchbtn)
         init(view)
         fetchData()
         setUpTransformer()
@@ -45,6 +50,12 @@ class DashboardFragment : Fragment() {
 
             }
         })
+
+        btnSearch.setOnClickListener {
+            val intent = Intent("com.iphonik.chameleon.SearchActivity")
+            startActivity(intent)
+        }
+
         return view
     }
 
