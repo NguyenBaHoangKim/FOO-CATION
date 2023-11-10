@@ -10,6 +10,7 @@ import androidx.appcompat.widget.SearchView.OnQueryTextListener
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.common.apiSearchData.Ans_InfManager
+import com.example.common.apiSearchData.SearchDataManager
 import com.example.model.SearchData
 import com.example.myapplication.R
 import com.example.myapplication.adapter.SearchAdapter
@@ -21,16 +22,13 @@ class SearchActivity : AppCompatActivity() {
     private lateinit var searchView: SearchView
     private var mList = ArrayList<SearchData>()
     private  lateinit var adapter: SearchAdapter
-    private var ansInfManager = Ans_InfManager()
+    private var searchDataManager = SearchDataManager()
 
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.search)
-
-        fetchData()
-
 
         val btnBack:Button = findViewById(R.id.back)
 
@@ -43,9 +41,12 @@ class SearchActivity : AppCompatActivity() {
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        addDataToList()
-        adapter = SearchAdapter(mList)
-        recyclerView.adapter = adapter
+        fetchData()
+
+//        addDataToList()
+//
+//        adapter = SearchAdapter(mList)
+//        recyclerView.adapter = adapter
 
         searchView.setOnQueryTextListener(object : OnQueryTextListener {
 
@@ -78,22 +79,24 @@ class SearchActivity : AppCompatActivity() {
     }
 
     private fun fetchData() {
-        ansInfManager.getSearchData({ data: List<SearchData> ->
+        searchDataManager.getSearchData({ data: List<SearchData> ->
             for (searchdata in data) {
-                mList.add(SearchData(searchdata.title,searchdata.logo))
+                mList.add(SearchData(searchdata.title,R.drawable.place2))
                 println(searchdata.title)
-                println(mList[1].title)
+                println(data.size)
             }
+            adapter = SearchAdapter(mList)
+            recyclerView.adapter = adapter
         }, { error ->
             println(error)
         })
     }
 
     private fun addDataToList() {
-        mList.add(SearchData("Văn Miếu Quốc Tử Giám", R.drawable.place2))
-        mList.add(SearchData("Hoàng Thành Thăng Long", R.drawable.place3))
-        mList.add(SearchData("Lăng Chủ Tịch Hồ Chí Minh", R.drawable.place4))
-        mList.add(SearchData("Nhà Tù Hoả Lò", R.drawable.place5))
-        mList.add(SearchData("Văn Miếu Quốc Tử Giám", R.drawable.place1))
+//        mList.add(SearchData("Văn Miếu Quốc Tử Giám", R.drawable.place2))
+//        mList.add(SearchData("Hoàng Thành Thăng Long", R.drawable.place3))
+//        mList.add(SearchData("Lăng Chủ Tịch Hồ Chí Minh", R.drawable.place4))
+//        mList.add(SearchData("Nhà Tù Hoả Lò", R.drawable.place5))
+//        mList.add(SearchData("Văn Miếu Quốc Tử Giám", R.drawable.place1))
     }
 }

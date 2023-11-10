@@ -1,6 +1,7 @@
 package com.example.model
 
 import android.media.Image
+import android.service.quicksettings.Tile
 
 data class User (
     val id: String,
@@ -103,7 +104,13 @@ data class AnswerInformation(
     val info: String
 )
 
+//data class SearchsData(
+//    val locations: List<Location>,
+//    val artifacts: List<Artifact>,
+//)
+
 data class SearchData(
     val title: String,
     val logo: Int
 )
+
