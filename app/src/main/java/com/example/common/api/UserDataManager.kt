@@ -2,6 +2,7 @@ package com.example.common.api
 
 import android.util.Log
 import com.example.common.http.CustomApi
+import com.example.model.Event
 import com.example.model.LoginRequest
 import com.example.model.LoginResp
 import com.example.model.User
@@ -28,4 +29,22 @@ class UserDataManager {
             }
         })
     }
+
+    fun getEvents( onSuccess: (List<Event>) -> Unit, onFailure: (error: String) -> Unit) {
+        userApi.getEvents().enqueue(object : Callback<List<Event>?> {
+            override fun onResponse(call: Call<List<Event>?>, response: Response<List<Event>?>) {
+                print(response.body())
+                val responseBody = response.body() ?: return
+                onSuccess(responseBody)
+            }
+
+
+            override fun onFailure(call: Call<List<Event>?>, t: Throwable) {
+                onFailure(t.message!!)
+                Log.d("MainActivity", "onFailure: " + t.message)
+            }
+        }
+        )
+    }
 }
+
