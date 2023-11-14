@@ -104,19 +104,6 @@ class DashboardFragment : Fragment() {
         viewPager2.currentItem = viewPager2.currentItem + 1
     }
 
-    private fun fetchDataEvent() {
-//        val loginRequest = LoginRequest("john@example.com", "1")
-//        userDataManager.login(loginRequest, { data: LoginResp ->
-//            textView4.text = data.user.username
-//        }, { error ->
-//            println(error)
-//        })
-        userDataManager.getEvents({ data: List<Event> ->
-            println(data.size)
-        }, { error ->
-            println(error)
-        })
-    }
 
     private fun fetchData() {
         //::onSuccess
