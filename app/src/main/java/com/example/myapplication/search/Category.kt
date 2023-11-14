@@ -15,7 +15,7 @@ import com.example.myapplication.adapter.SearchCategoryAdapter
 import java.util.Locale
 
 
-class HistoryCategory : AppCompatActivity() {
+class Category  : AppCompatActivity() {
     private lateinit var recyclerView : RecyclerView
     private lateinit var searchView: SearchView
     private var mList = ArrayList<SearchData>()
@@ -36,7 +36,20 @@ class HistoryCategory : AppCompatActivity() {
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        addDataToList()
+        val extras : Bundle? = intent.extras
+        if (extras != null) {
+            val id : Any? = extras.get("key")
+            println(id)
+            when (id){
+                R.id.location -> addDataLocation()
+                R.id.history -> addDataHistory()
+                R.id.literature -> addDataLiterature()
+                R.id.artifact -> addDataArtifact()
+                R.id.art -> addDataArt()
+                R.id.park -> addDataPark()
+            }
+        }
+//        addDataToList()
         adapter = SearchCategoryAdapter(mList)
         recyclerView.adapter = adapter
 
@@ -72,6 +85,42 @@ class HistoryCategory : AppCompatActivity() {
         })
     }
 
+    private fun addDataPark() {
+        mList.add(SearchData("Công Viên Nước Hồ Tây", R.drawable.park1))
+        mList.add(SearchData("Công Viên Thống Nhất", R.drawable.park2))
+        mList.add(SearchData("Công Viên Yên Sở", R.drawable.park3))
+        mList.add(SearchData("VinWonders Hà Nội", R.drawable.park4))
+        mList.add(SearchData("Công Viên Chí Linh", R.drawable.park5))
+    }
+
+    private fun addDataArt() {
+        mList.add(SearchData("Bảo Tàng Mĩ Thuật", R.drawable.art1))
+        mList.add(SearchData("D&C Art Gallery", R.drawable.art2))
+        mList.add(SearchData("Bảo Tàng Phụ Nữ Việt Nam", R.drawable.art3))
+        mList.add(SearchData("Nguyen Art Gallery", R.drawable.art4))
+        mList.add(SearchData("Phòng Tranh 3D", R.drawable.art5))
+    }
+
+    private fun addDataArtifact() {
+        mList.add(SearchData("Bia Văn Miếu Quốc Tử Giám", R.drawable.artifact1))
+        mList.add(SearchData("Cầu Thê Húc", R.drawable.artifact2))
+        mList.add(SearchData("Tháp Rùa", R.drawable.artifact3))
+        mList.add(SearchData("Con Dấu Triều Nguyễn", R.drawable.artifact4))
+        mList.add(SearchData("Tượng Nghê Đồng (Thế kỉ XVI)", R.drawable.artifact5))
+    }
+
+    private fun addDataLiterature() {
+        mList.add(SearchData("Bảo Tàng Văn Học Việt Nam", R.drawable.literature1))
+    }
+
+    private fun addDataHistory() {
+        mList.add(SearchData("Văn Miếu Quốc Tử Giám", R.drawable.place2))
+        mList.add(SearchData("Hoàng Thành Thăng Long", R.drawable.place3))
+        mList.add(SearchData("Lăng Chủ Tịch Hồ Chí Minh", R.drawable.place4))
+        mList.add(SearchData("Nhà Tù Hoả Lò", R.drawable.place5))
+        mList.add(SearchData("Văn Miếu Quốc Tử Giám", R.drawable.place1))
+    }
+
     private fun  filterList(query: String?){
         if(query != null) {
             val filteredList = ArrayList<SearchData>()
@@ -89,7 +138,7 @@ class HistoryCategory : AppCompatActivity() {
         }
 
     }
-    private fun addDataToList() {
+    private fun addDataLocation() {
         mList.add(SearchData("Văn Miếu Quốc Tử Giám", R.drawable.place2))
         mList.add(SearchData("Hoàng Thành Thăng Long", R.drawable.place3))
         mList.add(SearchData("Lăng Chủ Tịch Hồ Chí Minh", R.drawable.place4))

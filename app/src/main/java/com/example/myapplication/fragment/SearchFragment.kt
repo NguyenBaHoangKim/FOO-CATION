@@ -9,6 +9,7 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.example.myapplication.MainActivity
 import com.example.myapplication.R
+import com.example.myapplication.search.Category
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -54,31 +55,43 @@ class SearchFragment : Fragment() {
         }
 
         btnLocationCategory.setOnClickListener {
-            val intent = Intent("com.iphonik.chameleon.LocationCategory")
+            val id:Int = R.id.location
+            val intent = Intent("com.iphonik.chameleon.Category")
+            intent.putExtra("key", id)
             startActivity(intent)
         }
 
         btnHistoryCategory.setOnClickListener {
-            val intent = Intent("com.iphonik.chameleon.HistoryCategory")
+            val id:Int = R.id.history
+            val intent = Intent("com.iphonik.chameleon.Category")
+            intent.putExtra("key", id)
             startActivity(intent)
         }
 
         btnLiteratureCategory.setOnClickListener {
-            val intent = Intent("com.iphonik.chameleon.LiteratureCategory")
+            val id:Int = R.id.literature
+            val intent = Intent("com.iphonik.chameleon.Category")
+            intent.putExtra("key", id)
             startActivity(intent)
         }
 
         btnArtifactCategory.setOnClickListener{
-            val intent = Intent("com.iphonik.chameleon.ArtifactCategory")
+            val id:Int = R.id.artifact
+            val intent = Intent("com.iphonik.chameleon.Category")
+            intent.putExtra("key", id)
             startActivity(intent)
         }
 
         btnArtCategory.setOnClickListener{
-            val intent = Intent("com.iphonik.chameleon.ArtCategory")
+            val id:Int = R.id.art
+            val intent = Intent("com.iphonik.chameleon.Category")
+            intent.putExtra("key", id)
             startActivity(intent)
         }
         btnParkCategory.setOnClickListener {
-            val intent = Intent("com.iphonik.chameleon.ParkCategory")
+            val id:Int = R.id.park
+            val intent = Intent("com.iphonik.chameleon.Category")
+            intent.putExtra("key", id)
             startActivity(intent)
         }
         return view
