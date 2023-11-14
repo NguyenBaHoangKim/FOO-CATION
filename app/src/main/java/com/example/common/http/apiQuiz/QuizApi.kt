@@ -1,4 +1,4 @@
-package com.example.common.apiQuiz
+package com.example.common.http.apiQuiz
 
 import com.example.model.Quiz
 import retrofit2.Call

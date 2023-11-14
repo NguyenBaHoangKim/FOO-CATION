@@ -117,6 +117,11 @@ data class SearchData(
     val logo: Int
 )
 
-data class Event(val image: Int, val eventName: String, val time: String, val address: String)
+data class Event(
+    val image: Int,
+    val eventName: String,
+    val time: String,
+    val address: String
+)
 
 

@@ -1,4 +1,4 @@
-package com.example.common.apiQuiz
+package com.example.common.http.apiQuiz
 
 import android.util.Log
 import com.example.common.http.CustomApi

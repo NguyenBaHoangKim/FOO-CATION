@@ -1,4 +1,4 @@
-package com.example.common.apiSearchData
+package com.example.common.http.apiSearchData
 
 import com.example.model.SearchData
 import retrofit2.Call

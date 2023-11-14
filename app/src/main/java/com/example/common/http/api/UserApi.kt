@@ -1,4 +1,4 @@
-package com.example.common.api
+package com.example.common.http.api
 
 import com.example.model.Event
 import com.example.model.LoginRequest
@@ -11,7 +11,4 @@ import retrofit2.http.POST
 interface UserApi {
     @POST("user/login")
     fun login(@Body body: LoginRequest): Call<LoginResp>
-
-    @GET("even")
-    fun getEvents(): Call<List<Event>>
 }

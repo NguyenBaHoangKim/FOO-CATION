@@ -1,4 +1,4 @@
-package com.example.common.apiSearchData
+package com.example.common.http.apiSearchData
 
 import android.util.Log
 import com.example.common.http.CustomApi

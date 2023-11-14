@@ -10,7 +10,7 @@ import androidx.appcompat.widget.SearchView.OnQueryTextListener
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.common.apiSearchData.Ans_InfManager
-import com.example.common.apiSearchData.SearchDataManager
+import com.example.common.http.apiSearchData.SearchDataManager
 import com.example.model.SearchData
 import com.example.myapplication.R
 import com.example.myapplication.adapter.SearchAdapter

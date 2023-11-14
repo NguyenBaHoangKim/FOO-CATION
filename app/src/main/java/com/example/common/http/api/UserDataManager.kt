@@ -1,4 +1,4 @@
-package com.example.common.api
+package com.example.common.http.api
 
 import android.util.Log
 import com.example.common.http.CustomApi
@@ -30,21 +30,5 @@ class UserDataManager {
         })
     }
 
-    fun getEvents( onSuccess: (List<Event>) -> Unit, onFailure: (error: String) -> Unit) {
-        userApi.getEvents().enqueue(object : Callback<List<Event>?> {
-            override fun onResponse(call: Call<List<Event>?>, response: Response<List<Event>?>) {
-                print(response.body())
-                val responseBody = response.body() ?: return
-                onSuccess(responseBody)
-            }
-
-
-            override fun onFailure(call: Call<List<Event>?>, t: Throwable) {
-                onFailure(t.message!!)
-                Log.d("MainActivity", "onFailure: " + t.message)
-            }
-        }
-        )
-    }
 }
 

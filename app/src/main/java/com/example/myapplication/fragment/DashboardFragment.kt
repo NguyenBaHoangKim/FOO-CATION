@@ -16,12 +16,9 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
-import com.example.common.api.UserDataManager
 import com.example.model.Event
 import com.example.common.apiUser.UsersDataManager
-import com.example.model.LoginRequest
-import com.example.model.LoginResp
-import com.example.model.SearchData
+import com.example.common.http.apiEven.EventsManager
 import com.example.model.User
 import com.example.myapplication.R
 import com.example.myapplication.adapter.EvenAdapter
@@ -34,7 +31,11 @@ class DashboardFragment : Fragment() {
     private lateinit var imageList: ArrayList<Int>
     private lateinit var adapter: ImageAdapter
     private lateinit var textView4: TextView
-    private var userDataManager = UserDataManager()
+
+    private lateinit var evenName: TextView
+
+    private lateinit var recyclerView:RecyclerView
+    private var eventsManager = EventsManager()
     private var mList = ArrayList<Event>()
     private lateinit var even_adapter:EvenAdapter
     private var usersDataManager = UsersDataManager()
@@ -59,7 +60,9 @@ class DashboardFragment : Fragment() {
 
         init(view)
         fetchData()
+        fetchDataEvent()
         setUpTransformer()
+
 
         viewPager2.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){
             override fun onPageSelected(position: Int) {
@@ -110,6 +113,10 @@ class DashboardFragment : Fragment() {
 //            println(error)
 //        })
 //        userDataManager.getEvents({data: List<Event> ->
+//            for (even in data) {
+//                evenName.text = even.eventName
+//                println(even.address)
+//            }
 //            println(data.size)
 //        }, {error ->
         usersDataManager.getUsers({ data: List<User> ->
@@ -123,8 +130,18 @@ class DashboardFragment : Fragment() {
 
     }
 
-    private fun ferchDataEvent(){
-
+    private fun fetchDataEvent(){
+        eventsManager.getEvents({ data: List<Event> ->
+            for (even in data) {
+                evenName.text = even.eventName
+                println(even.address)
+            }
+            println(data.size)
+            even_adapter = EvenAdapter(mList = mList)
+            recyclerView.adapter = even_adapter
+        }, {error ->
+            println(error)
+        })
     }
 
 //
@@ -134,7 +151,6 @@ class DashboardFragment : Fragment() {
 //            println(user.name)
 //        }
 //    }
-
     private fun setUpTransformer(){
         var transformer = CompositePageTransformer()
         transformer.addTransformer(MarginPageTransformer(40))
