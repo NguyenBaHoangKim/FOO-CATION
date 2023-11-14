@@ -50,6 +50,7 @@ data class Location(
     val nameInMap: String,
     val latitude: String,
     val longtitude: String,
+    val image: Image
 )
 
 data class Quiz(
@@ -70,7 +71,7 @@ data class Artifact(
     val name: String,
     val time: String,
     val locationId: Location,
-    val images: Array<Image>
+    val image: Image
 )
 
 data class Fact(
@@ -107,14 +108,26 @@ data class AnswerInformation(
     val info: String
 )
 
+data class SearchsData(
+    val locations: List<Location>,
+    val artifacts: List<Artifact>
+)
+
 //data class SearchsData(
-//    val locations: List<Location>,
-//    val artifacts: List<Artifact>,
+//    val id: String,
+//    val name: String,
+//    val nameInMap: String,
+//    val latitude: String,
+//    val longtitude: String,
+//    val image: Image,
+//
 //)
 
 data class SearchData(
+    val id: String,
     val title: String,
-    val logo: Int
+    val logo: Int,
+    val type: String
 )
 
 data class Event(

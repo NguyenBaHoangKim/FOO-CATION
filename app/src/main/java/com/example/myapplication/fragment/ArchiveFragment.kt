@@ -54,11 +54,11 @@ class ArchiveFragment : Fragment() {
         return view
     }
     private fun addDataToList() {
-        mList.add(SearchData("Bảo Tàng Mĩ Thuật", R.drawable.art1))
-        mList.add(SearchData("D&C Art Gallery", R.drawable.art2))
-        mList.add(SearchData("Bảo Tàng Phụ Nữ Việt Nam", R.drawable.art3))
-        mList.add(SearchData("Nguyen Art Gallery", R.drawable.art4))
-        mList.add(SearchData("Phòng Tranh 3D", R.drawable.art5))
+//        mList.add(SearchData("Bảo Tàng Mĩ Thuật", R.drawable.art1))
+//        mList.add(SearchData("D&C Art Gallery", R.drawable.art2))
+//        mList.add(SearchData("Bảo Tàng Phụ Nữ Việt Nam", R.drawable.art3))
+//        mList.add(SearchData("Nguyen Art Gallery", R.drawable.art4))
+//        mList.add(SearchData("Phòng Tranh 3D", R.drawable.art5))
     }
 
 
