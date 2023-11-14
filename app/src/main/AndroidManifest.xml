@@ -133,6 +133,17 @@
         </activity>
 
         <activity
+            android:name=".search.Category"
+            android:label="Preferences"
+            android:exported="true"
+            tools:ignore="DuplicateActivity">
+            <intent-filter>
+                <action android:name="com.iphonik.chameleon.Category" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
             android:name=".RewardsActivity"
             android:label="Preferences"
             android:exported="true">

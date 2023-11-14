@@ -20,8 +20,8 @@
 
         <ImageView
             android:id="@+id/logo"
-            android:layout_width="60dp"
-            android:layout_height="match_parent"
+            android:layout_width="91dp"
+            android:layout_height="58dp"
             android:layout_gravity="left"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
