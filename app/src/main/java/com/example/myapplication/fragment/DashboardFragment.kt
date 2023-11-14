@@ -18,6 +18,11 @@ import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.example.common.api.UserDataManager
 import com.example.model.Event
+import com.example.common.apiUser.UsersDataManager
+import com.example.model.LoginRequest
+import com.example.model.LoginResp
+import com.example.model.SearchData
+import com.example.model.User
 import com.example.myapplication.R
 import com.example.myapplication.adapter.EvenAdapter
 import com.example.myapplication.adapter.ImageAdapter
@@ -32,6 +37,7 @@ class DashboardFragment : Fragment() {
     private var userDataManager = UserDataManager()
     private var mList = ArrayList<Event>()
     private lateinit var even_adapter:EvenAdapter
+    private var usersDataManager = UsersDataManager()
 
     @SuppressLint("MissingInflatedId")
     override fun onCreateView(
@@ -103,9 +109,15 @@ class DashboardFragment : Fragment() {
 //        }, { error ->
 //            println(error)
 //        })
-        userDataManager.getEvents({data: List<Event> ->
-            println(data.size)
-        }, {error ->
+//        userDataManager.getEvents({data: List<Event> ->
+//            println(data.size)
+//        }, {error ->
+        usersDataManager.getUsers({ data: List<User> ->
+            for (users in data) {
+                textView4.text = users.username
+                println(users.username)
+            }
+        }, { error ->
             println(error)
         })
 
@@ -151,5 +163,4 @@ class DashboardFragment : Fragment() {
 
         textView4 = view.findViewById(R.id.textView4)
     }
-
 }

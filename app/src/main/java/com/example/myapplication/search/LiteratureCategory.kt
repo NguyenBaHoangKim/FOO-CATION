@@ -9,7 +9,7 @@ import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.SearchView.OnQueryTextListener
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.common.api.SearchData
+import com.example.model.SearchData
 import com.example.myapplication.R
 import com.example.myapplication.adapter.SearchCategoryAdapter
 import java.util.Locale

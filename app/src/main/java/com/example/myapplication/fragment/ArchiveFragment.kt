@@ -11,7 +11,7 @@ import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.common.api.SearchData
+import com.example.model.SearchData
 import com.example.myapplication.R
 import com.example.myapplication.adapter.ArchiveAdapter
 import java.util.Locale

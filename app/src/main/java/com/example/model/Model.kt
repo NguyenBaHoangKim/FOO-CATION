@@ -1,6 +1,7 @@
 package com.example.model
 
 import android.media.Image
+import android.service.quicksettings.Tile
 
 data class User(
     val id: String,
@@ -101,37 +102,19 @@ data class Staff(
     val locationId: Location,
     val role: String,
 )
-
-// This code is just for test
-
-data class TestUser(
-    val address: Address,
-    val company: Company,
-    val email: String,
-    val id: Int,
-    val name: String,
-    val phone: String,
-    val username: String,
-    val website: String
+data class AnswerInformation(
+    val img: Image,
+    val info: String
 )
 
-data class Address(
-    val city: String,
-    val geo: Geo,
-    val street: String,
-    val suite: String,
-    val zipcode: String
-)
+//data class SearchsData(
+//    val locations: List<Location>,
+//    val artifacts: List<Artifact>,
+//)
 
-data class Geo(
-    val lat: String,
-    val lng: String
-)
-
-data class Company(
-    val bs: String,
-    val catchPhrase: String,
-    val name: String
+data class SearchData(
+    val title: String,
+    val logo: Int
 )
 
 data class Event(val image: Int, val eventName: String, val time: String, val address: String)
