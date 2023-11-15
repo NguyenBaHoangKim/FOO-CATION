@@ -38,10 +38,7 @@ class Category  : AppCompatActivity() {
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        val btn:MaterialCardView = recyclerView.findViewById(R.id.btn_infomation)
-        btn.setOnClickListener {
-
-        }
+//        val btn:MaterialCardView = recyclerView.findViewById(R.id.btn_infomation)
 
         val extras : Bundle? = intent.extras
         if (extras != null) {
