@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
+
 }
 
 android {
@@ -58,5 +60,12 @@ dependencies {
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation ("com.squareup.okhttp3:okhttp:3.8.1")
+    implementation("com.google.android.gms:play-services-maps:18.2.0")
     implementation ("pl.droidsonroids.gif:android-gif-drawable:1.2.23")
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
+}
+buildscript {
+    dependencies {
+        classpath("com.google.android.libraries.mapsplatform.secrets-gradle-plugin:secrets-gradle-plugin:2.0.1")
+    }
 }

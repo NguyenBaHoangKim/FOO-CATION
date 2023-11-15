@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.common.api.SearchData
 import com.example.myapplication.R
+import com.example.model.SearchData
 
 class SearchAdapter(var mList: List<SearchData>) :
     RecyclerView.Adapter<SearchAdapter.LocationViewHolder>() {
@@ -24,6 +24,7 @@ class SearchAdapter(var mList: List<SearchData>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LocationViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.data_searching, parent, false)
+
         return LocationViewHolder(view)
     }
     override fun onBindViewHolder(holder: LocationViewHolder, position: Int) {

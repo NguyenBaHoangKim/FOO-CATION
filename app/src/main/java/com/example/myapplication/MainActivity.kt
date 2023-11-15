@@ -3,7 +3,11 @@ package com.example.myapplication
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import com.example.popup.PopupStartFragment
+import com.example.myapplication.fragment.ArchiveFragment
+import com.example.myapplication.fragment.DashboardFragment
+import com.example.myapplication.fragment.LocationFragment
+import com.example.myapplication.fragment.MoreFragment
+import com.example.myapplication.fragment.SearchFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -33,9 +37,9 @@ class MainActivity : AppCompatActivity() {
                     replaceFragment(SearchFragment())
                     true
                 }
-                //đổi lại thanfh ArchiveFragment()
+                //test PopupStartFragment()
                 R.id.bottom_archive -> {
-                    replaceFragment(PopupStartFragment())
+                    replaceFragment(ArchiveFragment())
                     true
                 }
                 R.id.bottom_more -> {

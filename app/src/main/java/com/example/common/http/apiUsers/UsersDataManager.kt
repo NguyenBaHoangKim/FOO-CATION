@@ -1,4 +1,4 @@
-package com.example.common.api
+package com.example.common.apiUser
 
 import android.util.Log
 import com.example.common.http.CustomApi
@@ -8,8 +8,8 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.awaitResponse
 
-class UserDataManager {
-    private val userApi: UserApi = CustomApi.client()
+class UsersDataManager {
+    private val userApi: UsersApi = CustomApi.client()
     fun getUsers(onSuccess: (List<User>) -> Unit, onFailure: (error: String) -> Unit){
         userApi.getUsers().enqueue(object : Callback<List<User>?> {
             override fun onResponse(
@@ -27,4 +27,5 @@ class UserDataManager {
             }
         })
     }
+
 }

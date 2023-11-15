@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".search.SearchActivity"
-    >
+    tools:context=".search.SearchActivity">
 
     <androidx.cardview.widget.CardView
         android:layout_width="408dp"
@@ -63,8 +62,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="409dp"
+        android:layout_height="665dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

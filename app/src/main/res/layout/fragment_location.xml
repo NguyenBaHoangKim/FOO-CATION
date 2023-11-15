@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LocationFragment">
+    tools:context=".fragment.LocationFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
@@ -13,5 +13,11 @@
         android:textSize="30dp"
         android:textColor="@color/black"
         android:gravity="center"/>
+
+    <Button
+        android:id="@+id/showMap"
+        android:layout_width="257dp"
+        android:layout_height="106dp"
+        android:text="Show Map" />
 
 </FrameLayout>

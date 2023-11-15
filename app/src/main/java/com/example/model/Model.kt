@@ -1,21 +1,24 @@
 package com.example.model
 
 import android.media.Image
+import android.service.quicksettings.Tile
 
-data class User (
+data class User(
     val id: String,
-    val userName: String,
+    val username: String,
     val displayName: String,
     val email: String,
     val passWord: String,
+    val avatar: Image,
 )
 
-data class Repassword (
+data class Repassword(
     val id: String,
     val passWord: String,
     val rePassWord: String,
 )
-data class Signup (
+
+data class Signup(
     val userName: String,
     val displayName: String,
     val email: String,
@@ -23,44 +26,46 @@ data class Signup (
     val rePassWord: String,
 )
 
-data class Signin (
+data class Signin(
     val email: String,
     val passWord: String,
 )
 
-data class Slider (
+data class Slider(
     val img: Image,
     val name: String,
     val intro: String,
 )
 
-data class Even (
+data class Even(
     val img: Image,
     val name: String,
     val time: String,
     val location: String,
 )
-data class Location (
+
+data class Location(
     val id: String,
     val name: String,
     val nameInMap: String,
     val latitude: String,
     val longtitude: String,
 )
-data class Quiz (
+
+data class Quiz(
     val id: String,
     val question: String,
     val point: Int,
     val correctAnwer: Boolean,
 )
 
-data class Answer (
+data class Answer(
     val id: String,
     val quizId: String,
     val content: String,
 )
 
-data class Artifact (
+data class Artifact(
     val id: String,
     val name: String,
     val time: String,
@@ -68,26 +73,26 @@ data class Artifact (
     val images: Array<Image>
 )
 
-data class Fact (
+data class Fact(
     val id: String,
     val content: String,
     val quizId: Quiz,
     val row: String,
 )
 
-data class Point (
+data class Point(
     val id: String,
     val userId: String,
     val point: Int,
 )
 
-data class Currency (
+data class Currency(
     val uniqueId: String,
     val name: String,
     val unit: String,
 )
 
-data class Staff (
+data class Staff(
     val id: String,
     val name: String,
     val email: String,
@@ -97,36 +102,32 @@ data class Staff (
     val locationId: Location,
     val role: String,
 )
+data class AnswerInformation(
+    val img: Image,
+    val info: String
+)
 
-// This code is just for test
+//data class SearchsData(
+//    val locations: List<Location>,
+//    val artifacts: List<Artifact>,
+//)
 
-data class TestUser(
-    val address: Address,
-    val company: Company,
-    val email: String,
+data class SearchData(
+    val title: String,
+    val logo: Int
+)
+
+data class ArchiveData(
     val id: Int,
-    val name: String,
-    val phone: String,
-    val username: String,
-    val website: String
+    val  title: String,
+    val  logo: Int
 )
 
-data class Address(
-    val city: String,
-    val geo: Geo,
-    val street: String,
-    val suite: String,
-    val zipcode: String
+data class Event(
+    val image: Int,
+    val eventName: String,
+    val time: String,
+    val address: String
 )
 
-data class Geo(
-    val lat: String,
-    val lng: String
-)
-
-data class Company(
-    val bs: String,
-    val catchPhrase: String,
-    val name: String
-)
 

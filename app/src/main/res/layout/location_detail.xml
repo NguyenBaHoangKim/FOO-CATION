@@ -7,7 +7,8 @@
     android:layout_height="match_parent"
     android:layout_gravity="center"
     android:background="@color/background"
-    android:padding="2dp">
+    android:padding="2dp"
+    android:paddingTop="5dp">
 
     <FrameLayout
         android:id="@+id/frameLayout"
@@ -21,13 +22,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardView"
         android:layout_width="175dp"
         android:layout_height="175dp"
         android:layout_marginLeft="2dp"
         android:layout_marginTop="2dp"
         android:layout_marginRight="2dp"
         android:layout_marginBottom="2dp"
+        android:background="@drawable/oval"
         android:paddingLeft="2dp"
         android:paddingTop="2dp"
         android:paddingRight="2dp"
@@ -38,7 +41,9 @@
         app:layout_constraintHorizontal_bias="0.179"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.129">
+        app:layout_constraintVertical_bias="0.129"
+        app:strokeColor="@color/white"
+        app:strokeWidth="4dp">
 
         <ImageView
             android:id="@+id/image_location"
@@ -52,7 +57,7 @@
             android:paddingRight="2dp"
             android:paddingBottom="2dp"
             android:scaleType="centerCrop" />
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
     <LinearLayout
         android:layout_width="167dp"
@@ -61,7 +66,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.934"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cardView"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.121">
 
@@ -102,5 +107,65 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="492dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/thongtin3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="50dp"
+                android:text="Thông tin"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/infor3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="dưới đây là thông tin dưới đây là thông tin dưới đây là thông tin dưới đây là thông tindưới đây là thông tin dưới đây là thông tin dưới đây là thông tin dưới đây là thông tin dưới đây là thông tin dưới đây là thông tin dưới đây là thông tin dưới đây là thông tin"
+                android:textFontWeight="400"
+                android:textSize="16sp" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="32dp">
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/thongtin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="50dp"
+                android:text="Có thể bạn sẽ thích"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/infor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì "
+                android:textSize="16sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </androidx.recyclerview.widget.RecyclerView>
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

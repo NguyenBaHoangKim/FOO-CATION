@@ -1,6 +1,5 @@
-package com.example.myapplication
+package com.example.myapplication.fragment
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,12 +7,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
+<<<<<<< HEAD:app/src/main/java/com/example/myapplication/SearchFragment.kt
+=======
+import com.example.myapplication.MainActivity
+import com.example.myapplication.R
+import com.example.myapplication.search.Category
+>>>>>>> main:app/src/main/java/com/example/myapplication/fragment/SearchFragment.kt
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
-
 /**
  * A simple [Fragment] subclass.
  * Use the [SearchFragment.newInstance] factory method to
@@ -28,14 +32,9 @@ class SearchFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
 
-    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -59,53 +58,48 @@ class SearchFragment : Fragment() {
         }
 
         btnLocationCategory.setOnClickListener {
-            val intent = Intent("com.iphonik.chameleon.LocationCategory")
+            val id:Int = R.id.location
+            val intent = Intent("com.iphonik.chameleon.Category")
+            intent.putExtra("key", id)
             startActivity(intent)
         }
 
         btnHistoryCategory.setOnClickListener {
-            val intent = Intent("com.iphonik.chameleon.HistoryCategory")
+            val id:Int = R.id.history
+            val intent = Intent("com.iphonik.chameleon.Category")
+            intent.putExtra("key", id)
             startActivity(intent)
         }
 
         btnLiteratureCategory.setOnClickListener {
-            val intent = Intent("com.iphonik.chameleon.LiteratureCategory")
+            val id:Int = R.id.literature
+            val intent = Intent("com.iphonik.chameleon.Category")
+            intent.putExtra("key", id)
             startActivity(intent)
         }
 
         btnArtifactCategory.setOnClickListener{
-            val intent = Intent("com.iphonik.chameleon.ArtifactCategory")
+            val id:Int = R.id.artifact
+            val intent = Intent("com.iphonik.chameleon.Category")
+            intent.putExtra("key", id)
             startActivity(intent)
         }
 
         btnArtCategory.setOnClickListener{
-            val intent = Intent("com.iphonik.chameleon.ArtCategory")
+            val id:Int = R.id.art
+            val intent = Intent("com.iphonik.chameleon.Category")
+            intent.putExtra("key", id)
             startActivity(intent)
         }
         btnParkCategory.setOnClickListener {
-            val intent = Intent("com.iphonik.chameleon.ParkCategory")
+            val id:Int = R.id.park
+            val intent = Intent("com.iphonik.chameleon.Category")
+            intent.putExtra("key", id)
             startActivity(intent)
         }
         return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment SearchFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            SearchFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
+
+
 }

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     app:cardCornerRadius="8dp"
-
+    android:id="@+id/btn_infomation"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardUseCompatPadding="true"
@@ -11,7 +11,8 @@
     android:orientation="vertical"
     android:paddingLeft="20dp"
     android:paddingTop="10dp"
-    android:paddingRight="20dp">
+    android:paddingRight="20dp"
+    android:clickable="false">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -20,8 +21,8 @@
 
         <ImageView
             android:id="@+id/logo"
-            android:layout_width="60dp"
-            android:layout_height="match_parent"
+            android:layout_width="91dp"
+            android:layout_height="58dp"
             android:layout_gravity="left"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
