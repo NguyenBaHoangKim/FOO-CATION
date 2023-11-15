@@ -24,6 +24,7 @@ class SearchAdapter(var mList: List<SearchData>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LocationViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.data_searching, parent, false)
+
         return LocationViewHolder(view)
     }
     override fun onBindViewHolder(holder: LocationViewHolder, position: Int) {

@@ -130,6 +130,12 @@ data class SearchData(
     val type: String
 )
 
+data class ArchiveData(
+    val id: Int,
+    val  title: String,
+    val  logo: Int
+)
+
 data class Event(
     val image: Int,
     val eventName: String,
