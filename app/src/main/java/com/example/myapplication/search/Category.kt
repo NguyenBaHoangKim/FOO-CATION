@@ -1,6 +1,7 @@
 package com.example.myapplication.search
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.model.SearchData
 import com.example.myapplication.R
 import com.example.myapplication.adapter.SearchCategoryAdapter
+import com.google.android.material.card.MaterialCardView
 import java.util.Locale
 
 
@@ -35,6 +37,11 @@ class Category  : AppCompatActivity() {
 
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this)
+
+        val btn:MaterialCardView = recyclerView.findViewById(R.id.btn_infomation)
+        btn.setOnClickListener {
+
+        }
 
         val extras : Bundle? = intent.extras
         if (extras != null) {
@@ -143,6 +150,7 @@ class Category  : AppCompatActivity() {
         mList.add(SearchData("Hoàng Thành Thăng Long", R.drawable.place3))
         mList.add(SearchData("Lăng Chủ Tịch Hồ Chí Minh", R.drawable.place4))
         mList.add(SearchData("Nhà Tù Hoả Lò", R.drawable.place5))
+        mList.add(SearchData("Văn Miếu Quốc Tử Giám", R.drawable.place1))
         mList.add(SearchData("Văn Miếu Quốc Tử Giám", R.drawable.place1))
     }
 }

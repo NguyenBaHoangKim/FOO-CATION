@@ -11,7 +11,9 @@
     android:paddingTop="10dp"
     android:paddingRight="20dp"
     app:cardCornerRadius="20dp"
-    app:cardUseCompatPadding="true">
+    app:cardUseCompatPadding="true"
+    android:clickable="false"
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
