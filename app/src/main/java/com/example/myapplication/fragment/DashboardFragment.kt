@@ -128,7 +128,6 @@ class DashboardFragment : Fragment() {
         }, { error ->
             println(error)
         })
-
     }
 
     private fun fetchDataEvent(){

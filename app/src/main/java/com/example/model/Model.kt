@@ -1,5 +1,6 @@
 package com.example.model
 
+import android.graphics.Bitmap
 import android.media.Image
 import android.service.quicksettings.Tile
 
@@ -48,9 +49,23 @@ data class Location(
     val id: String,
     val name: String,
     val nameInMap: String,
-    val latitude: String,
-    val longtitude: String,
-    val image: Image
+    val latitude: Double,
+    val longtitude: Double,
+    val image: Bitmap
+)
+
+data class LocationResp(
+    val id: String,
+    val name: String,
+    val nameInMap: String,
+    val latitude: Double,
+    val longtitude: Double,
+    val image: ImageBitmap
+)
+
+data class ImageBitmap (
+    val type: String,
+    val data: String,
 )
 
 data class Quiz(
