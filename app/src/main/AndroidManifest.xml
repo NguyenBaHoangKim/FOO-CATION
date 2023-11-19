@@ -74,6 +74,17 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".QuizActivity"
+            android:exported="true"
+            android:label="Preferences"
+            tools:ignore="DuplicateActivity" >
+            <intent-filter>
+                <action android:name="com.iphonik.chameleon.QuizActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".RewardsActivity"

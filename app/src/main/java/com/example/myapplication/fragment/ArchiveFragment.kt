@@ -1,23 +1,18 @@
 package com.example.myapplication.fragment
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.model.ArchiveData
-import com.example.myapplication.LocationDetail
 import com.example.myapplication.R
 import com.example.myapplication.adapter.ArchiveAdapter
-import com.example.myapplication.adapter.ArchiveAdapter.OnClickListener
-import com.example.popup.DailogPopup
-import com.example.popup.QuizzPopup
+import com.example.popup.QuizPopup
 
 /**
  * A simple [Fragment] subclass.
@@ -49,9 +44,9 @@ open class ArchiveFragment : Fragment() {
         addDataToList()
         adapter = ArchiveAdapter(mList)
         adapter.setOnClickListener { position: Int, model: ArchiveData ->
-            val showPopup = QuizzPopup()
+            val showPopup = QuizPopup()
             showPopup.show((activity as AppCompatActivity).supportFragmentManager, "")
-
+            showPopup.setId(model.id)
 //            val intent = Intent("com.iphonik.chameleon.SearchActivity" )
 //            // Passing the data to the
 //            // EmployeeDetails Activity
