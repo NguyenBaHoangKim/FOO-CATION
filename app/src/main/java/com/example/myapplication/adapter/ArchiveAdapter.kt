@@ -9,15 +9,17 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.model.ArchiveData
 import com.example.myapplication.R
+import com.example.myapplication.search.Category
 
 class ArchiveAdapter(var mList: List<ArchiveData>) :
     RecyclerView.Adapter<ArchiveAdapter.LocationViewHolder>() {
-    private var onClickListener: OnClickListener? = null
+    private lateinit var onClickListener: (position: Int, model: ArchiveData) -> Unit
+
     inner class LocationViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
         val logo : ImageView = itemView.findViewById(R.id.logo)
         val title: TextView = itemView.findViewById(R.id.title)
         val btnStart : Button = itemView.findViewById(R.id.start)
-        var id = 0
+        val id: String = ""
     }
 
     fun setFilteredList(mList: List<ArchiveData>){
@@ -27,24 +29,29 @@ class ArchiveAdapter(var mList: List<ArchiveData>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LocationViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.archive_container, parent, false)
-
+        val btn : Button = view.findViewById(R.id.start)
         return LocationViewHolder(view)
     }
     override fun onBindViewHolder(holder: LocationViewHolder, position: Int) {
         val item = mList[position]
         holder.logo.setImageResource(mList[position].logo)
         holder.title.text = mList[position].title
-        holder.id = mList[position].id
-        holder.itemView.setOnClickListener {
-            if (onClickListener != null) {
-                onClickListener!!.onClick(position, item )
-            }
+        holder.btnStart.setOnClickListener {
+            onClickListener(position, mList[position])
         }
+    }
+
+    fun setOnClickListener(onClickListener:  (position: Int, model: ArchiveData) -> Unit ) {
+        this.onClickListener = onClickListener
+    }
+
+    interface OnClickListener{
+        fun onClick(position: Int, model: ArchiveData)
     }
     override fun getItemCount(): Int {
         return mList.size
     }
-    interface OnClickListener {
-        fun onClick(position: Int, model: ArchiveData)
-    }
+
+
 }
+

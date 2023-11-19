@@ -9,5 +9,5 @@
     <color name="background">#DADADA</color>
     <color name="qs">#E5F0EC</color>
     <color name="correct_qs">#12D18E</color>
-    <color name="invisible">#00000000</color>
+    <color name="invisible">#b3000000</color>
 </resources>

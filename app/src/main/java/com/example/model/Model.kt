@@ -131,7 +131,7 @@ data class SearchData(
 )
 
 data class ArchiveData(
-    val id: Int,
+    val id: String,
     val  title: String,
     val  logo: Int
 )
