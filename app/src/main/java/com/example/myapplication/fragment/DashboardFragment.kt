@@ -132,17 +132,17 @@ class DashboardFragment : Fragment() {
     }
 
     private fun fetchDataEvent(){
-        eventsManager.getEvents({ data: List<Event> ->
-            for (even in data) {
-                evenName.text = even.eventName
-                println(even.address)
-            }
-            println(data.size)
-            even_adapter = EvenAdapter(mList = mList)
-            recyclerView.adapter = even_adapter
-        }, {error ->
-            println(error)
-        })
+//        eventsManager.getEvents({ data: List<Event> ->
+//            for (even in data) {
+//                evenName.text = even.eventName
+//                println(even.address)
+//            }
+//            println(data.size)
+//            even_adapter = EvenAdapter(mList = mList)
+//            recyclerView.adapter = even_adapter
+//        }, {error ->
+//            println(error)
+//        })
     }
 
 //
