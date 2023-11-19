@@ -130,6 +130,5 @@ class Category  : AppCompatActivity() {
 //        mList.add(SearchData("Nhà Tù Hoả Lò", R.drawable.place5))
 //        mList.add(SearchData("Văn Miếu Quốc Tử Giám", R.drawable.place1))
 //        mList.add(SearchData("Cổ vật 1", R.drawable.art5))
-
     }
 }

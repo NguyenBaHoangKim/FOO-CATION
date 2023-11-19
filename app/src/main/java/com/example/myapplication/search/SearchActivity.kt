@@ -10,7 +10,7 @@ import androidx.appcompat.widget.SearchView.OnQueryTextListener
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.common.http.apiArtifact.ArtifactManager
-import com.example.common.http.apiLocation.LocationManager
+import com.example.common.http.apiLocationResp.LocationRespManager
 import com.example.common.http.apiSearchData.SearchsDataManager
 import com.example.model.Artifact
 import com.example.model.Location
@@ -26,7 +26,7 @@ class SearchActivity : AppCompatActivity() {
     private var mList = ArrayList<SearchData>()
 
     private var artifactManager = ArtifactManager()
-    private var locationManager = LocationManager()
+    private var locationManager = LocationRespManager()
 
     private var m1List = ArrayList<Location>()
     private var m2List = ArrayList<Artifact>()
