@@ -73,15 +73,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".LocationDetail"
-            android:label="Preferences"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.iphonik.chameleon.LocationDetail" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
+
 
         <activity
             android:name=".RewardsActivity"
