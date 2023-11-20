@@ -13,7 +13,7 @@
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="0dp"
-        android:layout_height="200dp"
+        android:layout_height="150dp"
         android:background="@color/green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,7 +46,7 @@
         app:layout_constraintHorizontal_bias="0.07"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.13999999"
+        app:layout_constraintVertical_bias="0.060000002"
         app:strokeColor="@color/white"
         app:strokeWidth="4dp">
 
@@ -65,15 +65,15 @@
     </com.google.android.material.card.MaterialCardView>
 
     <LinearLayout
-        android:layout_width="240dp"
-        android:layout_height="88dp"
+        android:layout_width="241dp"
+        android:layout_height="97dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.934"
         app:layout_constraintStart_toEndOf="@+id/cardView"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.13999999">
+        app:layout_constraintVertical_bias="0.06999999">
 
         <TextView
             android:id="@+id/location_name"
@@ -115,7 +115,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="492dp"
+        android:layout_height="0dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -167,7 +167,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent">
 
             </androidx.recyclerview.widget.RecyclerView>
         </LinearLayout>
