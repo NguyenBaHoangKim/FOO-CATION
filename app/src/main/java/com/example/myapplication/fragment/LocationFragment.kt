@@ -5,7 +5,6 @@ package com.example.myapplication.fragment
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.location.Location
-import android.media.Image
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,7 +14,6 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.common.http.apiLocationResp.LocationRespManager
 import com.example.common.utils.Extensions.Companion.toBitMap
-import com.example.common.utils.Extensions.Companion.toBitmap
 import com.example.myapplication.LocationDetail
 import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentLocationBinding
@@ -54,24 +52,28 @@ class LocationFragment : Fragment() ,
 //        })
 //        return view
 //    }
-
     private var _binding: FragmentLocationBinding? = null
     private var mapFragment: SupportMapFragment? = null
     private val binding get() = _binding!!
 
     private val callback = OnMapReadyCallback { googleMap ->
         mMap = googleMap
-        println("Call back")
-        println(mList.size)
-        for(i in mList) {
-            val diadiemx = LatLng(i.latitude,i.longtitude)
-            mMap.addMarker(MarkerOptions().position(diadiemx).title(i.nameInMap))
-            println("add dc r")
+        for(location in mList) {
+            val diadiemx = LatLng(location.latitude,location.longtitude)
+            mMap.addMarker(MarkerOptions().position(diadiemx).title(location.nameInMap))
         }
+        mMap.addMarker(MarkerOptions().position(hanoi).title("Ha noi neeeee"))
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(hanoi,12f))
+
         mMap.setOnMarkerClickListener { marker ->
-            val intent = Intent(activity, LocationDetail::class.java)
-            startActivity(intent)
+            for (location in mList) {
+                if (location.latitude == marker.position.latitude && location.longtitude == marker.position.longitude) {
+                    val intent = Intent(activity, LocationDetail::class.java)
+                    intent.putExtra("locationId", location.id)
+                    startActivity(intent)
+                }
+            }
+
             false
         }
     }
@@ -82,21 +84,19 @@ class LocationFragment : Fragment() ,
         savedInstanceState: Bundle?
     ): View? {
         val view: View = inflater.inflate(R.layout.fragment_maps, container, false)
-
         fetchData()
         return view
     }
     private fun fetchData() {
         locationRespManager.getLocationResp({ data: List<com.example.model.LocationResp> ->
+            mList.clear()
             println("okee oke oke")
             for (location in data) {
-                println(location.image.data)
-                mList.add(com.example.model.Location(location.id,location.name,location.nameInMap,location.latitude,location.longtitude,
+                mList.add(com.example.model.Location(location.id,location.name,location.nameInMap,location.latitude,location.longitude,
                     location.image.data.toBitMap()
                 ))
-                callback
             }
-
+            mapFragment?.getMapAsync(callback)
         }, { error ->
             println(error)
         })

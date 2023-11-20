@@ -59,8 +59,7 @@ class DashboardFragment : Fragment() {
 
 
         init(view)
-//        fetchData()
-//        fetchDataEvent()
+        fetchData()
         setUpTransformer()
 
 
@@ -106,20 +105,6 @@ class DashboardFragment : Fragment() {
 
 
     private fun fetchData() {
-        //::onSuccess
-//        val loginRequest = LoginRequest("john@example.com", "1")
-//        userDataManager.login(loginRequest, { data: LoginResp ->
-//            textView4.text = data.user.username
-//        }, { error ->
-//            println(error)
-//        })
-//        userDataManager.getEvents({data: List<Event> ->
-//            for (even in data) {
-//                evenName.text = even.eventName
-//                println(even.address)
-//            }
-//            println(data.size)
-//        }, {error ->
         usersDataManager.getUsers({ data: List<User> ->
             for (users in data) {
                 textView4.text = users.username

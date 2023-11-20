@@ -14,6 +14,7 @@ class CustomApi {
                 .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl(customApi.MockApiURL)
                 .build()
+
             return retrofitBuilder.create(T::class.java)
         }
     }
