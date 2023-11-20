@@ -2,7 +2,6 @@ package com.example.model
 
 import android.graphics.Bitmap
 import android.media.Image
-import android.service.quicksettings.Tile
 
 data class User(
     val id: String,
@@ -59,7 +58,7 @@ data class LocationResp(
     val name: String,
     val nameInMap: String,
     val latitude: Double,
-    val longtitude: Double,
+    val longitude: Double,
     val image: ImageBitmap
 )
 

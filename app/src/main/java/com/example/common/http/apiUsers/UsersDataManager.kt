@@ -16,12 +16,14 @@ class UsersDataManager {
                 call: Call<List<User>?>,
                 response: Response<List<User>?>
             ) {
-                print(response.body())
+                println("get user info success")
+                println(response.body())
                 val responseBody = response.body() ?: return
                 onSuccess(responseBody)
             }
 
             override fun onFailure(call: Call<List<User>?>, t: Throwable) {
+                println("get user info failure")
                 onFailure(t.message!!)
                 Log.d("MainActivity", "onFailure: " + t.message)
             }
