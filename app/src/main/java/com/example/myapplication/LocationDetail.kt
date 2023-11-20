@@ -21,6 +21,11 @@ class LocationDetail : AppCompatActivity() {
         var name: TextView = findViewById(R.id.location_name)
         var addrest: TextView = findViewById(R.id.address)
         var img: ImageView = findViewById(R.id.image_location)
+        val extras : Bundle? = intent.extras
+        if(extras != null) {
+            val id = extras.get("locationId")
+            println(id)
+        }
         fun setLocation(index: Int) {
             name.text = list_name[index]
             addrest.text = list_addresst[index]

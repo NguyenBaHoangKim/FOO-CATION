@@ -67,6 +67,8 @@ class LocationFragment : Fragment() ,
 
         mMap.setOnMarkerClickListener { marker ->
             for (location in mList) {
+//                println( "location latitide" + location.latitude)
+//                println("maker"+marker.position.latitude)
                 if (location.latitude == marker.position.latitude && location.longtitude == marker.position.longitude) {
                     val intent = Intent(activity, LocationDetail::class.java)
                     intent.putExtra("locationId", location.id)

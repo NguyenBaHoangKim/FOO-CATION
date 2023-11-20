@@ -54,8 +54,8 @@ class DashboardFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
         addData()
-        even_adapter = EvenAdapter(mList = mList)
-        recyclerView.adapter = even_adapter
+//        even_adapter = EvenAdapter(mList = mList)
+//        recyclerView.adapter = even_adapter
 
 
         init(view)
@@ -110,6 +110,8 @@ class DashboardFragment : Fragment() {
                 textView4.text = users.username
                 println(users.username)
             }
+            even_adapter = EvenAdapter(mList = mList)
+            recyclerView.adapter = even_adapter
         }, { error ->
             println(error)
         })
