@@ -10,11 +10,11 @@ import retrofit2.awaitResponse
 
 class UsersDataManager {
     private val userApi: UsersApi = CustomApi.client()
-    fun getUsers(onSuccess: (List<User>) -> Unit, onFailure: (error: String) -> Unit){
-        userApi.getUsers().enqueue(object : Callback<List<User>?> {
+    fun getUsers(onSuccess: (User) -> Unit, onFailure: (error: String) -> Unit){
+        userApi.getUsers().enqueue(object : Callback<User?> {
             override fun onResponse(
-                call: Call<List<User>?>,
-                response: Response<List<User>?>
+                call: Call<User?>,
+                response: Response<User?>
             ) {
                 println("get user info success")
                 println(response.body())
@@ -22,7 +22,7 @@ class UsersDataManager {
                 onSuccess(responseBody)
             }
 
-            override fun onFailure(call: Call<List<User>?>, t: Throwable) {
+            override fun onFailure(call: Call<User?>, t: Throwable) {
                 println("get user info failure")
                 onFailure(t.message!!)
                 Log.d("MainActivity", "onFailure: " + t.message)

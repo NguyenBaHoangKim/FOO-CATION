@@ -63,7 +63,7 @@ class LocationFragment : Fragment() ,
             mMap.addMarker(MarkerOptions().position(diadiemx).title(location.name))
         }
         mMap.addMarker(MarkerOptions().position(hanoi).title("Ha noi neeeee"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(hanoi,12f))
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(21.0292381,105.8248274),13f))
 
         mMap.setOnMarkerClickListener { marker ->
             for (location in mList) {

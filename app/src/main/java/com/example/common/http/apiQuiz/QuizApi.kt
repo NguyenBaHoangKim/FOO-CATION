@@ -5,6 +5,6 @@ import retrofit2.Call
 import retrofit2.http.GET
 
 interface QuizApi {
-    @GET("...")
+    @GET("quizzes")
     fun getQuiz(): Call<List<Quiz>>
 }

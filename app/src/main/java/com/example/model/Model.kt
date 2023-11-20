@@ -8,8 +8,8 @@ data class User(
     val username: String,
     val displayName: String,
     val email: String,
-    val passWord: String,
-    val avatar: Image,
+//    val passWord: String,
+//    val avatar: Image,
 )
 
 data class Repassword(
@@ -78,9 +78,12 @@ data class ImageBitmap (
 
 data class Quiz(
     val id: String,
+    val locationId: String,
     val question: String,
     val point: Int,
-    val correctAnwer: Boolean,
+    val correctAnwer: String,
+    val image: ImageBitmap,
+    val answer: Answer
 )
 
 data class Answer(

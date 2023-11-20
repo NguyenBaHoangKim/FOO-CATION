@@ -16,9 +16,6 @@ import kotlin.reflect.typeOf
 
 class LocationDetail : AppCompatActivity() {
     private var locationRespManager = LocationRespManager()
-    private var mList = ArrayList<com.example.model.Location>()
-    var list_name = arrayListOf<String>("Hồ Gươm", "Văn miếu Quốc tử giám","Hoàng thành Thăng Long", "Lăng Chủ tịch Hồ Chí Minh" )
-    var list_addresst = arrayListOf<String>("123 Hoang Hoa Tham, Ba Dinh, Ha Noi", "255 Hoang Hoa Tham, Ba Dinh, Ha Noi")
     private lateinit var name: TextView
     private lateinit var addrest: TextView
     private lateinit var img: ImageView
@@ -38,11 +35,7 @@ class LocationDetail : AppCompatActivity() {
             id = extras.get("locationId").toString()
             println(id)
         }
-//        fun setLocation(index: Int) {
-//            name.text = list_name[index]
-//            addrest.text = list_addresst[index]
-//            img.setImageResource(R.drawable.place1)
-//        }
+
         val btn : Button = findViewById(R.id.button2)
         btn.setOnClickListener {
             finish()

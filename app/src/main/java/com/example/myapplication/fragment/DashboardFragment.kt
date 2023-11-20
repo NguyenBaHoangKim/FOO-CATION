@@ -34,7 +34,7 @@ class DashboardFragment : Fragment() {
 
     private lateinit var evenName: TextView
 
-    private lateinit var recyclerView:RecyclerView
+//    private lateinit var recyclerView:RecyclerView
     private var eventsManager = EventsManager()
     private var mList = ArrayList<Event>()
     private lateinit var even_adapter:EvenAdapter
@@ -105,39 +105,28 @@ class DashboardFragment : Fragment() {
 
 
     private fun fetchData() {
-        usersDataManager.getUsers({ data: List<User> ->
-            for (users in data) {
-                textView4.text = users.username
-                println(users.username)
-            }
-            even_adapter = EvenAdapter(mList = mList)
-            recyclerView.adapter = even_adapter
+        usersDataManager.getUsers({ data: User ->
+            textView4.text = data.username
+            println(data.username)
         }, { error ->
             println(error)
         })
     }
 
     private fun fetchDataEvent(){
-//        eventsManager.getEvents({ data: List<Event> ->
-//            for (even in data) {
-//                evenName.text = even.eventName
-//                println(even.address)
-//            }
-//            println(data.size)
-//            even_adapter = EvenAdapter(mList = mList)
+        eventsManager.getEvents({ data: List<Event> ->
+            for (even in data) {
+                evenName.text = even.eventName
+                println(even.address)
+            }
+            println(data.size)
+            even_adapter = EvenAdapter(mList = mList)
 //            recyclerView.adapter = even_adapter
-//        }, {error ->
-//            println(error)
-//        })
+        }, {error ->
+            println(error)
+        })
     }
 
-//
-//    fun onSuccess(data: List<TestUser>) {
-//        for (user in data) {
-//            textView4.text = user.name
-//            println(user.name)
-//        }
-//    }
     private fun setUpTransformer(){
         var transformer = CompositePageTransformer()
         transformer.addTransformer(MarginPageTransformer(40))
