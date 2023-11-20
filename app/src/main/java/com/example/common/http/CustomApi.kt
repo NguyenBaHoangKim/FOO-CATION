@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class CustomApi {
     val BASE_URL = "https://jsonplaceholder.typicode.com/"
-    val MockApiURL = "http://192.168.1.57:8081/api/v1/"
+    val MockApiURL = "http://192.168.88.60:8081/api/v1/"
 
     companion object {
         inline fun<reified T> client(): T {
