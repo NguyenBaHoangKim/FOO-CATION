@@ -60,7 +60,7 @@ class LocationFragment : Fragment() ,
         mMap = googleMap
         for(location in mList) {
             val diadiemx = LatLng(location.latitude,location.longtitude)
-            mMap.addMarker(MarkerOptions().position(diadiemx).title(location.nameInMap))
+            mMap.addMarker(MarkerOptions().position(diadiemx).title(location.name))
         }
         mMap.addMarker(MarkerOptions().position(hanoi).title("Ha noi neeeee"))
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(hanoi,12f))
@@ -88,9 +88,9 @@ class LocationFragment : Fragment() ,
         return view
     }
     private fun fetchData() {
-        locationRespManager.getLocationResp({ data: List<com.example.model.LocationResp> ->
+        locationRespManager.getLocationList({ data: List<com.example.model.LocationResp> ->
             mList.clear()
-            println("okee oke oke")
+            println("okee data map location")
             for (location in data) {
                 mList.add(com.example.model.Location(location.id,location.name,location.nameInMap,location.latitude,location.longitude,
                     location.image.data.toBitMap()

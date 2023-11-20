@@ -59,9 +59,18 @@ data class LocationResp(
     val nameInMap: String,
     val latitude: Double,
     val longitude: Double,
-    val image: ImageBitmap
+    val image: ImageBitmap,
+    val description: String,
+    val artifacts: List<Artifact>,
 )
-
+data class Artifact(
+    val id: String,
+    val name: String,
+    val time: String,
+    val locationId: String,
+    val image: ImageBitmap,
+    val description: String,
+)
 data class ImageBitmap (
     val type: String,
     val data: String,
@@ -80,13 +89,7 @@ data class Answer(
     val content: String,
 )
 
-data class Artifact(
-    val id: String,
-    val name: String,
-    val time: String,
-    val locationId: Location,
-    val image: Image
-)
+
 
 data class Fact(
     val id: String,
