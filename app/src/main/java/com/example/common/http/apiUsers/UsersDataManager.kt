@@ -24,6 +24,7 @@ class UsersDataManager {
 
             override fun onFailure(call: Call<User?>, t: Throwable) {
                 println("get user info failure")
+
                 onFailure(t.message!!)
                 Log.d("MainActivity", "onFailure: " + t.message)
             }
