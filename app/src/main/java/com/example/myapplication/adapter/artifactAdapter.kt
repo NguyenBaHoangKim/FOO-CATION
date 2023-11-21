@@ -6,11 +6,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.common.utils.Extensions.Companion.toBitMap
 import com.example.model.Artifact
 import com.example.model.SearchData
 import com.example.myapplication.R
 
-class artifactAdapter(val listArtifact : List<SearchData>) :
+class artifactAdapter(val listArtifact : List<Artifact>) :
     RecyclerView.Adapter<artifactAdapter.ArtifactViewHolder>(){
     inner class ArtifactViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
         val logo : ImageView = itemView.findViewById(R.id.logo)
@@ -25,7 +26,8 @@ class artifactAdapter(val listArtifact : List<SearchData>) :
     }
 
     override fun onBindViewHolder(holder: ArtifactViewHolder, position: Int) {
-        holder.logo.setImageBitmap(listArtifact[position].logo)
-        holder.title.text = listArtifact[position].title
+        holder.logo.setImageBitmap(listArtifact[position].image.data.toBitMap())
+        println("in ra anh ne")
+        holder.title.text = listArtifact[position].name
     }
 }
