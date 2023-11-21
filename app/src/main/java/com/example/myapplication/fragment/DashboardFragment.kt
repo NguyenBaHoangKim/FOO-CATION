@@ -16,9 +16,11 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
-import com.example.model.Event
+import com.example.model.EventResp
 import com.example.common.apiUser.UsersDataManager
 import com.example.common.http.apiEven.EventsManager
+import com.example.common.utils.Extensions.Companion.toBitMap
+import com.example.model.Event
 import com.example.model.User
 import com.example.myapplication.R
 import com.example.myapplication.adapter.EvenAdapter
@@ -31,37 +33,34 @@ class DashboardFragment : Fragment() {
     private lateinit var imageList: ArrayList<Int>
     private lateinit var adapter: ImageAdapter
     private lateinit var textView4: TextView
+    private var usersDataManager = UsersDataManager()
 
-    private lateinit var evenName: TextView
-
-//    private lateinit var recyclerView:RecyclerView
+    private lateinit var recyclerView: RecyclerView
     private var eventsManager = EventsManager()
     private var mList = ArrayList<Event>()
     private lateinit var even_adapter:EvenAdapter
-    private var usersDataManager = UsersDataManager()
 
     @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.dashboard, container, false)
         val btnSearch:Button = view.findViewById(R.id.searchbtn)
-        val recyclerView:RecyclerView = view.findViewById(R.id.even)
+//        val recyclerView:RecyclerView = view.findViewById(R.id.even)
+        textView4 = view.findViewById(R.id.textView4)
 
+        recyclerView = view.findViewById(R.id.even)
         recyclerView.setHasFixedSize(true)
+        recyclerView = view.findViewById(R.id.even)
         recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
-        addData()
 //        even_adapter = EvenAdapter(mList = mList)
 //        recyclerView.adapter = even_adapter
-
 
         init(view)
         fetchData()
         setUpTransformer()
-
 
         viewPager2.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){
             override fun onPageSelected(position: Int) {
@@ -78,15 +77,6 @@ class DashboardFragment : Fragment() {
         }
 
         return view
-    }
-
-    private fun addData() {
-        println(R.drawable.even1)
-        mList.add(Event(2131165363,"Triển lãm: &quot;Thuỷ triều cảm xúc &quot;","Thời gian: 04/10/2023 - 30/03/2024", "Địa điểm: Trung tâm nghệ thuật Đương đại Vincom (VCCA)" ))
-        mList.add(Event(R.drawable.even2,"&quot;Phiêu đậm chất tôi&quot;","Thời gian: 15/11/2023 - 16/11/2023", "Địa điểm: Phố đi bộ hồ Gươm" ))
-        mList.add(Event(R.drawable.even3,"Hội chợ: &quot;Xinh fest&quot;","Thời gian: 05/12/2023 - 10/12/2023", "Địa điểm: complex01"))
-        mList.add(Event(R.drawable.even4,"Born Pink","Thời gian: 08/10/2023 - 10/10/2023", "Địa điểm: Sân vận dộng Mỹ Đình"))
-
     }
 
     override fun onPause(){
@@ -111,22 +101,18 @@ class DashboardFragment : Fragment() {
         }, { error ->
             println(error)
         })
-    }
 
-    private fun fetchDataEvent(){
-        eventsManager.getEvents({ data: List<Event> ->
+        eventsManager.getEvents({ data: List<EventResp> ->
             for (even in data) {
-                evenName.text = even.eventName
+                mList.add(Event(even.eventName,even.time,even.address,even.image.data.toBitMap()))
                 println(even.address)
             }
-            println(data.size)
             even_adapter = EvenAdapter(mList = mList)
-//            recyclerView.adapter = even_adapter
+            recyclerView.adapter = even_adapter
         }, {error ->
             println(error)
         })
     }
-
     private fun setUpTransformer(){
         var transformer = CompositePageTransformer()
         transformer.addTransformer(MarginPageTransformer(40))
@@ -152,7 +138,5 @@ class DashboardFragment : Fragment() {
         viewPager2.offscreenPageLimit = 3
         viewPager2.clipToPadding = false
         viewPager2.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
-
-        textView4 = view.findViewById(R.id.textView4)
     }
 }

@@ -18,6 +18,8 @@ import com.example.model.Artifact
 import com.example.model.SearchData
 import com.example.myapplication.adapter.SearchAdapter
 import com.example.myapplication.adapter.artifactAdapter
+import com.example.popup.InstructionPopup
+import com.example.popup.QuizPopup
 import kotlin.reflect.typeOf
 
 
@@ -61,6 +63,9 @@ class LocationDetail : AppCompatActivity() {
 //            addrest.text = list_addresst[index]
 //            img.setImageResource(R.drawable.place1)
 //        }
+        val showPopup = InstructionPopup()
+        showPopup.show((this).supportFragmentManager, "")
+        showPopup.setId(id)
 
         val btn : Button = findViewById(R.id.button2)
         btn.setOnClickListener {
@@ -70,11 +75,11 @@ class LocationDetail : AppCompatActivity() {
     }
 
     private fun addDataArtifact() {
-        listArtifact.add(SearchData("","Bia Văn Miếu Quốc Tử Giám", R.drawable.artifact1, ""))
-        listArtifact.add(SearchData("","Cầu Thê Húc", R.drawable.artifact2, ""))
-        listArtifact.add(SearchData("","Tháp Rùa", R.drawable.artifact3, ""))
-        listArtifact.add(SearchData("","Con Dấu Triều Nguyễn", R.drawable.artifact4,""))
-        listArtifact.add(SearchData("","Tượng Nghê Đồng (Thế kỉ XVI)", R.drawable.artifact5, ""))
+//        listArtifact.add(SearchData("","Bia Văn Miếu Quốc Tử Giám", R.drawable.artifact1, ""))
+//        listArtifact.add(SearchData("","Cầu Thê Húc", R.drawable.artifact2, ""))
+//        listArtifact.add(SearchData("","Tháp Rùa", R.drawable.artifact3, ""))
+//        listArtifact.add(SearchData("","Con Dấu Triều Nguyễn", R.drawable.artifact4,""))
+//        listArtifact.add(SearchData("","Tượng Nghê Đồng (Thế kỉ XVI)", R.drawable.artifact5, ""))
     }
 
     private fun fetchData() {

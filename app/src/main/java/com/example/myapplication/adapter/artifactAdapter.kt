@@ -25,7 +25,7 @@ class artifactAdapter(val listArtifact : List<SearchData>) :
     }
 
     override fun onBindViewHolder(holder: ArtifactViewHolder, position: Int) {
-        holder.logo.setImageResource(listArtifact[position].logo)
+        holder.logo.setImageBitmap(listArtifact[position].logo)
         holder.title.text = listArtifact[position].title
     }
 }

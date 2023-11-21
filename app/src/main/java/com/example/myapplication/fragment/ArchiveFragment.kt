@@ -5,11 +5,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.common.apiUser.UsersDataManager
 import com.example.model.ArchiveData
+import com.example.model.User
 import com.example.myapplication.R
 import com.example.myapplication.adapter.ArchiveAdapter
 import com.example.popup.QuizPopup
@@ -23,6 +26,8 @@ open class ArchiveFragment : Fragment() {
     private lateinit var recyclerView : RecyclerView
     private var mList = ArrayList<ArchiveData>()
     private  lateinit var adapter: ArchiveAdapter
+    private var usersDataManager = UsersDataManager()
+    private lateinit var userName: TextView
 
     //new
 
@@ -38,6 +43,7 @@ open class ArchiveFragment : Fragment() {
 //        transaction.replace(QuizFragment())
 
         recyclerView = view.findViewById(R.id.recyclerView2)
+        userName = view.findViewById(R.id.user_name)
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(activity)
 
@@ -53,9 +59,19 @@ open class ArchiveFragment : Fragment() {
 //            intent.putExtra("locationId", model.id)
 //            startActivity(intent)
         }
+        fetchData()
         recyclerView.adapter = adapter
 
         return view
+    }
+
+    private fun fetchData() {
+        usersDataManager.getUsers({ data: User ->
+            userName.text = data.username
+            println(data.username)
+        }, { error ->
+            println(error)
+        })
     }
     private fun addDataToList() {
         mList.add(ArchiveData("1","Bảo Tàng Mĩ Thuật", R.drawable.art1))

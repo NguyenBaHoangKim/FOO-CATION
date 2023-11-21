@@ -17,7 +17,6 @@ class UsersDataManager {
                 response: Response<User?>
             ) {
                 println("get user info success")
-                println(response.body())
                 val responseBody = response.body() ?: return
                 onSuccess(responseBody)
             }
