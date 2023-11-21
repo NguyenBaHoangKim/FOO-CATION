@@ -28,7 +28,7 @@ class InstructionPopup : DialogFragment(){
         val btnNo = view.findViewById<Button>(R.id.btnNo)
         btnStart.setOnClickListener() {
             Toast.makeText(context, "", Toast.LENGTH_LONG).show()
-            val intent = Intent("com.iphonik.chameleon.QuizActivity")
+            val intent = Intent("com.iphonik.chameleon.DiscoverActivity")
 //             Passing the data to the
 //             EmployeeDetails Activity
             intent.putExtra("locationId", extras)

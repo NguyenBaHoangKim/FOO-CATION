@@ -22,11 +22,6 @@
             android:background="@color/green"
             android:orientation="vertical">
 
-            <!--        <ImageView-->
-            <!--            -->
-            <!--            -->
-            <!--            app:srcCompat="@drawable/run" />-->
-
             <pl.droidsonroids.gif.GifImageView
                 android:id="@+id/imageView6"
                 android:layout_width="match_parent"
