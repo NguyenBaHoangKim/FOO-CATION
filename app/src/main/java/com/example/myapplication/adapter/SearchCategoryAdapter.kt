@@ -27,7 +27,7 @@ class SearchCategoryAdapter(var mList: List<SearchData>) :
         return LocationViewHolder(view)
     }
     override fun onBindViewHolder(holder: LocationViewHolder, position: Int) {
-        holder.logo.setImageResource(mList[position].logo)
+        holder.logo.setImageBitmap(mList[position].logo)
         holder.title.text = mList[position].title
     }
     override fun getItemCount(): Int {

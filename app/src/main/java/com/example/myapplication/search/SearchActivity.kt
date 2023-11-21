@@ -12,8 +12,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.common.http.apiArtifact.ArtifactManager
 import com.example.common.http.apiLocationResp.LocationRespManager
 import com.example.common.http.apiSearchData.SearchsDataManager
+import com.example.common.utils.Extensions.Companion.toBitMap
 import com.example.model.Artifact
 import com.example.model.Location
+import com.example.model.LocationResp
 import com.example.model.SearchData
 import com.example.model.SearchsData
 import com.example.myapplication.R
@@ -52,11 +54,10 @@ class SearchActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         fetchData()
-
-        addDataToList()
-
-        adapter = SearchAdapter(mList)
-        recyclerView.adapter = adapter
+//
+//        addDataToList()
+//        adapter = SearchAdapter(mList)
+//        recyclerView.adapter = adapter
 
         searchView.setOnQueryTextListener(object : OnQueryTextListener {
 
@@ -80,29 +81,31 @@ class SearchActivity : AppCompatActivity() {
 //                }
 //            }
             val filteredList = mList.filter { data -> data.title.lowercase().contains(query) }
-//            val filteredList2 = m2List.filter { data -> data.name.lowercase().contains(query) }
-
             if(filteredList.isEmpty()){
                 Toast.makeText(this, "Hong tìm được rùiiii", Toast.LENGTH_SHORT).show()
             }
-//            else if (filteredList2.isEmpty()){
-//                Toast.makeText(this, "Hong tìm được rùiiii", Toast.LENGTH_SHORT).show()
-//            }
             else{
                 adapter.setFilteredList(filteredList)
-//                adapter.setFilteredList(filteredList2)
             }
         }
     }
 
     private fun fetchData() {
-        searchsDataManager.getSearchsData({ data: SearchsData ->
-            for (dataLocation in data.locations) {
-                mList.add(SearchData(dataLocation.id,dataLocation.name,R.drawable.place2,"location"))
+        locationManager.getLocationList({ data: List<LocationResp> ->
+            for (dataLocation in data) {
+                mList.add(SearchData(dataLocation.id,dataLocation.name,dataLocation.image.data.toBitMap(),"location"))
             }
-            for (dataArtifact in data.artifacts) {
-                mList.add(SearchData(dataArtifact.id,dataArtifact.name,R.drawable.place3,"artifact"))
+            adapter = SearchAdapter(mList)
+            recyclerView.adapter = adapter
+        }, { error ->
+            println(error)
+        })
+
+        artifactManager.getArtifact({ data: List<Artifact> ->
+            for (dataArtifact in data) {
+                mList.add(SearchData(dataArtifact.id,dataArtifact.name,dataArtifact.image.data.toBitMap(),"artifact"))
             }
+            println(data.size)
             adapter = SearchAdapter(mList)
             recyclerView.adapter = adapter
         }, { error ->
@@ -112,11 +115,11 @@ class SearchActivity : AppCompatActivity() {
 
 
     private fun addDataToList() {
-        mList.add(SearchData("1","Văn Miếu Quốc Tử Giám", R.drawable.place2,"location"))
-        mList.add(SearchData("2","Hoàng Thành Thăng Long", R.drawable.place3,"location"))
-        mList.add(SearchData("3","Lăng Chủ Tịch Hồ Chí Minh", R.drawable.place4,"location"))
-        mList.add(SearchData("4","Nhà Tù Hoả Lò", R.drawable.place5,"location"))
-        mList.add(SearchData("5","Văn Miếu Quốc Tử Giám", R.drawable.place1,"location"))
-        mList.add(SearchData("6","cổ vật 1", R.drawable.art5,"artifact"))
+//        mList.add(SearchData("1","Văn Miếu Quốc Tử Giám", R.drawable.place2,"location"))
+//        mList.add(SearchData("2","Hoàng Thành Thăng Long", R.drawable.place3,"location"))
+//        mList.add(SearchData("3","Lăng Chủ Tịch Hồ Chí Minh", R.drawable.place4,"location"))
+//        mList.add(SearchData("4","Nhà Tù Hoả Lò", R.drawable.place5,"location"))
+//        mList.add(SearchData("5","Văn Miếu Quốc Tử Giám", R.drawable.place1,"location"))
+//        mList.add(SearchData("6","cổ vật 1", R.drawable.art5,"artifact"))
     }
 }

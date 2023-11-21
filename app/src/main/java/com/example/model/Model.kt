@@ -146,7 +146,7 @@ data class SearchsData(
 data class SearchData(
     val id: String,
     val title: String,
-    val logo: Int,
+    val logo: Bitmap,
     val type: String
 )
 
@@ -156,11 +156,18 @@ data class ArchiveData(
     val  logo: Int
 )
 
-data class Event(
-    val image: Int,
+data class EventResp(
     val eventName: String,
     val time: String,
-    val address: String
+    val address: String,
+    val image: ImageBitmap,
 )
+data class Event(
+    val eventName: String,
+    val time: String,
+    val address: String,
+    val image: Bitmap,
+)
+
 
 

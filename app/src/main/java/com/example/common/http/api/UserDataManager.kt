@@ -2,10 +2,8 @@ package com.example.common.http.api
 
 import android.util.Log
 import com.example.common.http.CustomApi
-import com.example.model.Event
 import com.example.model.LoginRequest
 import com.example.model.LoginResp
-import com.example.model.User
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

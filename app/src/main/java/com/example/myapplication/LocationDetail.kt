@@ -70,11 +70,11 @@ class LocationDetail : AppCompatActivity() {
     }
 
     private fun addDataArtifact() {
-        listArtifact.add(SearchData("","Bia Văn Miếu Quốc Tử Giám", R.drawable.artifact1, ""))
-        listArtifact.add(SearchData("","Cầu Thê Húc", R.drawable.artifact2, ""))
-        listArtifact.add(SearchData("","Tháp Rùa", R.drawable.artifact3, ""))
-        listArtifact.add(SearchData("","Con Dấu Triều Nguyễn", R.drawable.artifact4,""))
-        listArtifact.add(SearchData("","Tượng Nghê Đồng (Thế kỉ XVI)", R.drawable.artifact5, ""))
+//        listArtifact.add(SearchData("","Bia Văn Miếu Quốc Tử Giám", R.drawable.artifact1, ""))
+//        listArtifact.add(SearchData("","Cầu Thê Húc", R.drawable.artifact2, ""))
+//        listArtifact.add(SearchData("","Tháp Rùa", R.drawable.artifact3, ""))
+//        listArtifact.add(SearchData("","Con Dấu Triều Nguyễn", R.drawable.artifact4,""))
+//        listArtifact.add(SearchData("","Tượng Nghê Đồng (Thế kỉ XVI)", R.drawable.artifact5, ""))
     }
 
     private fun fetchData() {
