@@ -6,7 +6,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.common.utils.Extensions.Companion.toBitMap
 import com.example.model.Event
+import com.example.model.EventResp
 import com.example.myapplication.R
 
 class EvenAdapter (var mList: List<Event>) :
@@ -30,7 +32,7 @@ class EvenAdapter (var mList: List<Event>) :
     }
 
     override fun onBindViewHolder(holder: EvenViewHolder, position: Int) {
-        holder.image.setImageResource(mList[position].image)
+        holder.image.setImageBitmap(mList[position].image)
         holder.name.text = mList[position].eventName
         holder.time.text = mList[position].time
         holder.address.text = mList[position].address

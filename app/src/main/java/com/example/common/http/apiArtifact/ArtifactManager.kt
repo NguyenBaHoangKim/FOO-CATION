@@ -10,7 +10,7 @@ import retrofit2.Response
 
 class ArtifactManager {
     private val artifactApi: ArtifactApi = CustomApi.client()
-    fun getLocation(onSuccess: (List<Artifact>) -> Unit, onFailure: (error: String) -> Unit){
+    fun getArtifact(onSuccess: (List<Artifact>) -> Unit, onFailure: (error: String) -> Unit){
         artifactApi.getArtifact().enqueue(object : Callback<List<Artifact>?> {
             override fun onResponse(
                 call: Call<List<Artifact>?>,
