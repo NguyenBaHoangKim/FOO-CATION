@@ -53,6 +53,7 @@ class SearchFragment : Fragment() {
         btn.setOnClickListener {
               val intent = Intent(activity, SearchActivity::class.java)
             startActivity(intent)
+
         }
 
         btnLocationCategory.setOnClickListener {
