@@ -14,6 +14,8 @@ import com.example.myapplication.search.Category
 class ArchiveAdapter(var mList: List<ArchiveData>) :
     RecyclerView.Adapter<ArchiveAdapter.LocationViewHolder>() {
     private lateinit var onClickListener: (position: Int, model: ArchiveData) -> Unit
+//    private var onClickListener: ((position: Int, model: ArchiveData) -> Unit)? = null
+
 
     inner class LocationViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
         val logo : ImageView = itemView.findViewById(R.id.logo)
@@ -34,8 +36,14 @@ class ArchiveAdapter(var mList: List<ArchiveData>) :
     }
     override fun onBindViewHolder(holder: LocationViewHolder, position: Int) {
         val item = mList[position]
-        holder.logo.setImageResource(mList[position].logo)
+        holder.logo.setImageBitmap(mList[position].logo)
         holder.title.text = mList[position].title
+
+//        val adapter = ArchiveAdapter(mList)
+//        adapter.setOnClickListener { position, model ->
+//            // Xử lý sự kiện khi item được click
+//
+//        }
         holder.btnStart.setOnClickListener {
             onClickListener(position, mList[position])
         }

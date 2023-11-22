@@ -46,6 +46,7 @@ class SearchActivity : AppCompatActivity() {
 
         btnBack.setOnClickListener {
             finish()
+            overridePendingTransition(androidx.transition.R.anim.abc_fade_in, androidx.transition.R.anim.abc_fade_out);
         }
         recyclerView = findViewById(R.id.recyclerView)
         searchView = findViewById(R.id.searchView)

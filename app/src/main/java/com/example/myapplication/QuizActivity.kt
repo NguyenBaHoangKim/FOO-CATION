@@ -2,39 +2,45 @@ package com.example.myapplication
 
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import com.example.common.http.apiQuiz.QuizManager
+import com.example.common.utils.Extensions.Companion.toBitMap
+import com.example.model.Quiz
+import com.example.model.QuizResp
+import com.example.myapplication.databinding.FragmentLocationBinding
+import com.example.myapplication.databinding.QuizActivityBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [SearchFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class QuizActivity : AppCompatActivity() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private var quizManager = QuizManager()
+    private var mList = ArrayList<Quiz>()
 
+    private lateinit var binding: QuizActivityBinding
+    private val question = arrayOf(mList)
+    private val option = arrayOf(mList)
+    private val correctAnswer = arrayOf(mList)
+
+    var id = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_quiz)
+        binding = QuizActivityBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         val extras : Bundle? = intent.extras
         if (extras != null) {
-            val id : Any? = extras.get("key")
+            id = extras.get("key").toString()
             println(id)
 
         }
     }
 
-
+    private fun fetchData() {
+        quizManager.getQuiz(id.toString(),{ data: List<QuizResp> ->
+        for (quiz in data) {
+            mList.add(Quiz(quiz.id,id.toString(),quiz.question,quiz.point,quiz.correctAnwer,quiz.image.data.toBitMap(),quiz.answers))
+             }
+        }, { error ->
+            println(error)
+        })
+    }
 
 
 }
