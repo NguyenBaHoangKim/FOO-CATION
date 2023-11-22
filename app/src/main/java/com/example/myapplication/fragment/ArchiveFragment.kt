@@ -15,6 +15,7 @@ import com.example.model.ArchiveData
 import com.example.model.User
 import com.example.myapplication.R
 import com.example.myapplication.adapter.ArchiveAdapter
+import com.example.popup.InstructionPopup
 import com.example.popup.QuizPopup
 
 /**
@@ -50,7 +51,8 @@ open class ArchiveFragment : Fragment() {
         addDataToList()
         adapter = ArchiveAdapter(mList)
         adapter.setOnClickListener { position: Int, model: ArchiveData ->
-            val showPopup = QuizPopup()
+//            val showPopup = QuizPopup()
+            val showPopup = InstructionPopup()
             showPopup.show((activity as AppCompatActivity).supportFragmentManager, "")
             showPopup.setId(model.id)
 //            val intent = Intent("com.iphonik.chameleon.SearchActivity" )
