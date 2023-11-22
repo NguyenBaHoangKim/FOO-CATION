@@ -76,28 +76,36 @@ data class ImageBitmap (
     val data: String,
 )
 
-data class Quiz(
+data class QuizResp(
     val id: String,
     val locationId: String,
     val question: String,
     val point: Int,
     val correctAnwer: String,
     val image: ImageBitmap,
-    val answer: Answer
+    val answers: Answer
 )
+data class Quiz(
+    val id: String,
+    val locationId: String,
+    val question: String,
+    val point: Int,
+    val correctAnwer: String,
+    val image: Bitmap,
+    val answers: Answer
+)
+
 
 data class Answer(
     val id: String,
     val quizId: String,
-    val content: String,
+    val answer: String,
 )
-
-
 
 data class Fact(
     val id: String,
     val content: String,
-    val quizId: Quiz,
+    val quizId: QuizResp,
     val row: String,
 )
 
@@ -153,7 +161,7 @@ data class SearchData(
 data class ArchiveData(
     val id: String,
     val  title: String,
-    val  logo: Int
+    val  logo: Bitmap
 )
 
 data class EventResp(

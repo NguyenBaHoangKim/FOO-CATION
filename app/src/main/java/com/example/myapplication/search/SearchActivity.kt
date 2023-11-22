@@ -46,6 +46,7 @@ class SearchActivity : AppCompatActivity() {
 
         btnBack.setOnClickListener {
             finish()
+            overridePendingTransition(androidx.transition.R.anim.abc_fade_in, androidx.transition.R.anim.abc_fade_out);
         }
         recyclerView = findViewById(R.id.recyclerView)
         searchView = findViewById(R.id.searchView)
@@ -100,17 +101,17 @@ class SearchActivity : AppCompatActivity() {
         }, { error ->
             println(error)
         })
-
-        artifactManager.getArtifact({ data: List<Artifact> ->
-            for (dataArtifact in data) {
-                mList.add(SearchData(dataArtifact.id,dataArtifact.name,dataArtifact.image.data.toBitMap(),"artifact"))
-            }
-            println(data.size)
-            adapter = SearchAdapter(mList)
-            recyclerView.adapter = adapter
-        }, { error ->
-            println(error)
-        })
+//        dang cho api moi cho search: bao gom ca aritifact va locaiton ma aritifact la list luon k phu thuoc vao id cua location nua
+//        artifactManager.getArtifact({ data: List<Artifact> ->
+//            for (dataArtifact in data) {
+//                mList.add(SearchData(dataArtifact.id,dataArtifact.name,dataArtifact.image.data.toBitMap(),"artifact"))
+//            }
+//            println(data.size)
+//            adapter = SearchAdapter(mList)
+//            recyclerView.adapter = adapter
+//        }, { error ->
+//            println(error)
+//        })
     }
 
 

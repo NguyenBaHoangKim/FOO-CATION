@@ -1,34 +1,30 @@
 package com.example.myapplication
 
 import android.annotation.SuppressLint
-import android.graphics.Bitmap
-import android.graphics.drawable.BitmapDrawable
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.SearchView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.common.http.apiArtifact.ArtifactManager
 import com.example.common.http.apiLocationResp.LocationRespManager
 import com.example.common.utils.Extensions.Companion.toBitMap
 import com.example.model.Artifact
 import com.example.model.SearchData
-import com.example.myapplication.adapter.SearchAdapter
 import com.example.myapplication.adapter.artifactAdapter
 import com.example.popup.InstructionPopup
-import com.example.popup.QuizPopup
-import kotlin.reflect.typeOf
 
 
 class LocationDetail : AppCompatActivity() {
     private var locationRespManager = LocationRespManager()
+    private var artifactManager = ArtifactManager()
+
     private var mList = ArrayList<com.example.model.Location>()
     var list_name = arrayListOf<String>("Hồ Gươm", "Văn miếu Quốc tử giám","Hoàng thành Thăng Long", "Lăng Chủ tịch Hồ Chí Minh" )
     var list_addresst = arrayListOf<String>("123 Hoang Hoa Tham, Ba Dinh, Ha Noi", "255 Hoang Hoa Tham, Ba Dinh, Ha Noi")
-    private var listArtifact = ArrayList<SearchData>()
+    private var listArtifact = ArrayList<Artifact>()
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter : artifactAdapter
     private lateinit var name: TextView
@@ -84,13 +80,22 @@ class LocationDetail : AppCompatActivity() {
 
     private fun fetchData() {
         locationRespManager.getLocationWithId(id,{ data: com.example.model.LocationResp ->
-            println(data.id + data.name)
+            println(data.id + " " + data.name)
             name.text = data.name
             addrest.text = data.nameInMap
             img.setImageBitmap(data.image.data.toBitMap())
             inf.text = data.description
-        }) { error ->
+        }, { error ->
             println(error)
-        }
+        })
+
+        artifactManager.getArtifactWithLocationId(id,{ data: List<Artifact> ->
+            for (artifact in data) {
+                listArtifact.add(Artifact(artifact.id,artifact.name,artifact.time,artifact.locationId,artifact.image,artifact.description))
+            }
+            println("them duoc artifact r")
+        }, { error ->
+            println(error)
+        })
     }
 }
