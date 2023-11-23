@@ -9,7 +9,7 @@ import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.SearchView.OnQueryTextListener
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.common.http.apiArtifact.ArtifactManager
+import com.example.common.http.apiArtifact.ItemsManager
 import com.example.common.http.apiLocationResp.LocationRespManager
 import com.example.common.http.apiSearchData.SearchsDataManager
 import com.example.common.utils.Extensions.Companion.toBitMap
@@ -17,7 +17,6 @@ import com.example.model.Artifact
 import com.example.model.Location
 import com.example.model.LocationResp
 import com.example.model.SearchData
-import com.example.model.SearchsData
 import com.example.myapplication.R
 import com.example.myapplication.adapter.SearchAdapter
 
@@ -27,7 +26,7 @@ class SearchActivity : AppCompatActivity() {
     private lateinit var searchView: SearchView
     private var mList = ArrayList<SearchData>()
 
-    private var artifactManager = ArtifactManager()
+    private var artifactManager = ItemsManager()
     private var locationManager = LocationRespManager()
 
     private var m1List = ArrayList<Location>()

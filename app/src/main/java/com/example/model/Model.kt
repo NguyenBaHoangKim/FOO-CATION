@@ -187,7 +187,7 @@ data class Item(
 data class ItemResp(
     val id: String,
     val locationId: String,
-    val hintItem: ImageBitmap,
+    val hintImage: ImageBitmap,
     val itemImage: ImageBitmap,
 )
 

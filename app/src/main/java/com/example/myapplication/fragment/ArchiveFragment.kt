@@ -63,17 +63,12 @@ open class ArchiveFragment : Fragment() {
             val showPopup = InstructionPopup()
             showPopup.show((activity as AppCompatActivity).supportFragmentManager, "")
             showPopup.setId(model.id)
-//            val intent = Intent("com.iphonik.chameleon.SearchActivity" )
-//            // Passing the data to the
-//            // EmployeeDetails Activity
-//            intent.putExtra("locationId", model.id)
-//            startActivity(intent)
         }
-
-
-
-
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
     }
 
     private fun fetchData() {

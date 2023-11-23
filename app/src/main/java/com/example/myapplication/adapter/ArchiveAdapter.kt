@@ -13,7 +13,7 @@ import com.example.myapplication.search.Category
 
 class ArchiveAdapter(var mList: List<ArchiveData>) :
     RecyclerView.Adapter<ArchiveAdapter.LocationViewHolder>() {
-    private lateinit var onClickListener: (position: Int, model: ArchiveData) -> Unit
+    private lateinit var onClickListener: (position: Int, model: ArchiveData) -> Unit ?
 //    private var onClickListener: ((position: Int, model: ArchiveData) -> Unit)? = null
 
 
