@@ -9,13 +9,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.model.ArchiveData
 import com.example.myapplication.R
-import com.example.myapplication.search.Category
 
 class ArchiveAdapter(var mList: List<ArchiveData>) :
     RecyclerView.Adapter<ArchiveAdapter.LocationViewHolder>() {
     private lateinit var onClickListener: (position: Int, model: ArchiveData) -> Unit ?
 //    private var onClickListener: ((position: Int, model: ArchiveData) -> Unit)? = null
-
 
     inner class LocationViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
         val logo : ImageView = itemView.findViewById(R.id.logo)
@@ -38,7 +36,6 @@ class ArchiveAdapter(var mList: List<ArchiveData>) :
         val item = mList[position]
         holder.logo.setImageBitmap(mList[position].logo)
         holder.title.text = mList[position].title
-
 //        val adapter = ArchiveAdapter(mList)
 //        adapter.setOnClickListener { position, model ->
 //            // Xử lý sự kiện khi item được click
@@ -59,6 +56,7 @@ class ArchiveAdapter(var mList: List<ArchiveData>) :
     override fun getItemCount(): Int {
         return mList.size
     }
+
 
 
 }
