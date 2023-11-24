@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import com.example.model.ArchiveData
+import com.example.myapplication.DiscoverActivity
 import com.example.myapplication.QuizActivity
 import com.example.myapplication.R
 
@@ -26,9 +27,11 @@ class InstructionPopup : DialogFragment(){
         super.onViewCreated(view, savedInstanceState)
         val btnStart = view.findViewById<Button>(R.id.btnStart)
         val btnNo = view.findViewById<Button>(R.id.btnNo)
+
         btnStart.setOnClickListener() {
             Toast.makeText(context, "", Toast.LENGTH_LONG).show()
-            val intent = Intent("com.iphonik.chameleon.QuizActivity")
+//            val intent = Intent("com.iphonik.chameleon.DiscoverActivity")
+            val intent = Intent(activity,DiscoverActivity::class.java)
 //             Passing the data to the
 //             EmployeeDetails Activity
             intent.putExtra("locationId", extras)
@@ -40,13 +43,11 @@ class InstructionPopup : DialogFragment(){
         }
 
     }
-
-    fun setOnClick(id : String) {
-        TODO("Not yet implemented")
-    }
-
     fun setId(id: String) {
         extras = id
     }
 
+//    fun setOnClick(id : String) {
+//
+//    }
 }

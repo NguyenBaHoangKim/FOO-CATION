@@ -177,5 +177,18 @@ data class Event(
     val image: Bitmap,
 )
 
+data class Item(
+    val id: String,
+    val locationId: String,
+    val hintImage: Bitmap,
+    val itemImage: Bitmap
+)
+
+data class ItemResp(
+    val id: String,
+    val locationId: String,
+    val hintImage: ImageBitmap,
+    val itemImage: ImageBitmap,
+)
 
 

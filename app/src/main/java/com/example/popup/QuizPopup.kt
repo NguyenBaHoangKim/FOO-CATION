@@ -26,11 +26,10 @@ class QuizPopup : DialogFragment(){
         super.onViewCreated(view, savedInstanceState)
         val btnStart = view.findViewById<Button>(R.id.btnStart)
         val btnNo = view.findViewById<Button>(R.id.btnNo)
+
         btnStart.setOnClickListener() {
             Toast.makeText(context, "", Toast.LENGTH_LONG).show()
             val intent = Intent(activity,QuizActivity::class.java)
-//             Passing the data to the
-//             EmployeeDetails Activity
             intent.putExtra("locationId", extras)
             startActivity(intent)
         }
@@ -40,13 +39,13 @@ class QuizPopup : DialogFragment(){
         }
 
     }
-
-    fun setOnClick(id : String) {
-        TODO("Not yet implemented")
-    }
-
     fun setId(id: String) {
         extras = id
     }
+//    fun setOnClick(id : String) {
+//
+//    }
+
+
 
 }

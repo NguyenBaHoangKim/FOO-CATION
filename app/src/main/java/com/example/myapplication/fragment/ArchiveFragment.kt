@@ -20,6 +20,7 @@ import com.example.model.User
 import com.example.myapplication.R
 import com.example.myapplication.adapter.ArchiveAdapter
 import com.example.myapplication.search.SearchActivity
+import com.example.popup.InstructionPopup
 import com.example.popup.QuizPopup
 
 open class ArchiveFragment : Fragment() {
@@ -67,8 +68,20 @@ open class ArchiveFragment : Fragment() {
 //            intent.putExtra("locationId", model.id)
 //            startActivity(intent)
 //        }
+        adapter = ArchiveAdapter(mList)
+        recyclerView.adapter = adapter
+        adapter.setOnClickListener { position: Int, model: ArchiveData ->
+            val showPopup = QuizPopup()
+//            val showPopup = InstructionPopup()
+            showPopup.show((activity as AppCompatActivity).supportFragmentManager, "")
+            showPopup.setId(model.id)
+        }
         return view
     }
+
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        super.onViewCreated(view, savedInstanceState)
+//    }
 
     private fun fetchData() {
         locationResp.getLocationList({data: List<LocationResp> ->
@@ -82,12 +95,9 @@ open class ArchiveFragment : Fragment() {
 //            adapter.notifyDataSetChanged()
             adapter.setOnClickListener { position: Int, model: ArchiveData ->
                 val showPopup = QuizPopup()
+//            val showPopup = InstructionPopup()
                 showPopup.show((activity as AppCompatActivity).supportFragmentManager, "")
                 showPopup.setId(model.id)
-                println("nut an ne")
-                val intent = Intent(activity,SearchActivity::class.java)
-                intent.putExtra("locationId", model.id)
-                startActivity(intent)
             }
             println("goi dc archive r cu co location nao thi se co quiz")
         }, { error ->
