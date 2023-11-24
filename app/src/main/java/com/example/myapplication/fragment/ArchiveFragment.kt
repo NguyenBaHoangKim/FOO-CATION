@@ -1,6 +1,7 @@
 package com.example.myapplication.fragment
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -18,13 +19,9 @@ import com.example.model.LocationResp
 import com.example.model.User
 import com.example.myapplication.R
 import com.example.myapplication.adapter.ArchiveAdapter
+import com.example.myapplication.search.SearchActivity
 import com.example.popup.QuizPopup
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ArchiveFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 open class ArchiveFragment : Fragment() {
     private lateinit var recyclerView : RecyclerView
     private var mList = ArrayList<ArchiveData>()
@@ -48,39 +45,32 @@ open class ArchiveFragment : Fragment() {
 //        val transaction: FragmentTransaction = fragmentManager.beginTransaction()
 //        transaction.replace(QuizFragment())
 
+//        adapter = ArchiveAdapter(mutableListOf())
+
         recyclerView = view.findViewById(R.id.recyclerView2)
         userName = view.findViewById(R.id.user_name)
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(activity)
 
-        addDataToList()
         fetchData()
-        adapter = ArchiveAdapter(mList)
-        recyclerView.adapter = adapter
-        adapter.setOnClickListener { position: Int, model: ArchiveData ->
-            val showPopup = QuizPopup()
-            showPopup.show((activity as AppCompatActivity).supportFragmentManager, "")
-            showPopup.setId(model.id)
-//            val intent = Intent("com.iphonik.chameleon.SearchActivity" )
-//            // Passing the data to the
-//            // EmployeeDetails Activity
+
+//        adapter = ArchiveAdapter(mList)
+//        recyclerView.adapter = adapter
+//        adapter.setFilteredList(mList)
+
+//        adapter.setOnClickListener { position: Int, model: ArchiveData ->
+//            val showPopup = QuizPopup()
+//            showPopup.show((activity as AppCompatActivity).supportFragmentManager, "")
+//            showPopup.setId(model.id)
+//            println("nut an ne")
+//            val intent = Intent(activity,SearchActivity::class.java)
 //            intent.putExtra("locationId", model.id)
 //            startActivity(intent)
-        }
-
-
-
-
+//        }
         return view
     }
 
     private fun fetchData() {
-        usersDataManager.getUsers({ data: User ->
-            userName.text = data.username
-            println(data.username)
-        }, { error ->
-            println(error)
-        })
         locationResp.getLocationList({data: List<LocationResp> ->
             for (location in data) {
                 mList.add(ArchiveData(location.id, location.name, location.image.data.toBitMap()))
@@ -88,7 +78,24 @@ open class ArchiveFragment : Fragment() {
             }
             adapter = ArchiveAdapter(mList)
             recyclerView.adapter = adapter
+//            adapter.setFilteredList(mList)
+//            adapter.notifyDataSetChanged()
+            adapter.setOnClickListener { position: Int, model: ArchiveData ->
+                val showPopup = QuizPopup()
+                showPopup.show((activity as AppCompatActivity).supportFragmentManager, "")
+                showPopup.setId(model.id)
+                println("nut an ne")
+                val intent = Intent(activity,SearchActivity::class.java)
+                intent.putExtra("locationId", model.id)
+                startActivity(intent)
+            }
             println("goi dc archive r cu co location nao thi se co quiz")
+        }, { error ->
+            println(error)
+        })
+        usersDataManager.getUsers({ data: User ->
+            userName.text = data.username
+            println(data.username)
         }, { error ->
             println(error)
         })

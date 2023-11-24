@@ -9,8 +9,8 @@ import retrofit2.Response
 
 class QuizManager {
     private val quizApi: QuizApi = CustomApi.client()
-    fun getQuiz(idLocation: String, onSuccess: (List<QuizResp>) -> Unit, onFailure: (error: String) -> Unit){
-        quizApi.getQuiz(idLocation).enqueue(object : Callback<List<QuizResp>?> {
+    fun getQuiz(onSuccess: (List<QuizResp>) -> Unit, onFailure: (error: String) -> Unit){
+        quizApi.getQuiz().enqueue(object : Callback<List<QuizResp>?> {
             override fun onResponse(
                 call: Call<List<QuizResp>?>,
                 response: Response<List<QuizResp>?>

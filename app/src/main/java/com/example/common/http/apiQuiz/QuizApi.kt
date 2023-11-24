@@ -7,7 +7,5 @@ import retrofit2.http.Path
 
 interface QuizApi {
     @GET("quizzes")
-    fun getQuiz(
-        @Path("locationId") locationId: String
-    ): Call<List<QuizResp>>
+    fun getQuiz(): Call<List<QuizResp>>
 }

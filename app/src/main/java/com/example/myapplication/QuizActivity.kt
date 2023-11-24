@@ -28,19 +28,17 @@ class QuizActivity : AppCompatActivity() {
         if (extras != null) {
             id = extras.get("key").toString()
             println(id)
-
         }
+        fetchData()
     }
 
     private fun fetchData() {
-        quizManager.getQuiz(id.toString(),{ data: List<QuizResp> ->
+        quizManager.getQuiz({ data: List<QuizResp> ->
         for (quiz in data) {
-            mList.add(Quiz(quiz.id,id.toString(),quiz.question,quiz.point,quiz.correctAnwer,quiz.image.data.toBitMap(),quiz.answers))
+            mList.add(Quiz(quiz.id,id,quiz.question,quiz.point,quiz.correctAnwer,quiz.image.data.toBitMap(),quiz.answers))
              }
         }, { error ->
             println(error)
         })
     }
-
-
 }
