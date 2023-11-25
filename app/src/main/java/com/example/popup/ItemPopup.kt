@@ -12,6 +12,8 @@ import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import com.example.myapplication.DiscoverActivity
 import com.example.myapplication.R
+import java.util.Timer
+import kotlin.concurrent.schedule
 
 class ItemPopup : DialogFragment(){
     @SuppressLint("MissingInflatedId")
@@ -32,6 +34,9 @@ class ItemPopup : DialogFragment(){
         val btnGetItem = view.findViewById<Button>(R.id.btnGetItem)
 
         imagePopup.setImageBitmap(imagePopupBitmap)
+        Timer("endPopup", false).schedule(2000){
+            dismiss()
+        }
         btnGetItem.setOnClickListener {
             dismiss()
         }

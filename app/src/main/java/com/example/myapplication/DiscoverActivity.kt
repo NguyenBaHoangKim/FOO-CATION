@@ -44,7 +44,6 @@ open class DiscoverActivity : AppCompatActivity() {
 //        fetchData()
         addData()
         addImage()
-
         setTimer()
     }
 
