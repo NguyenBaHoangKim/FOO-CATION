@@ -276,12 +276,12 @@
                     app:cardCornerRadius="40dp">
 
                     <Button
-                        android:id="@+id/help"
+                        android:id="@+id/logOut"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:backgroundTint="@color/background"
-                        android:text="Trợ giúp"
+                        android:text="Đăng xuất"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
 

@@ -2,28 +2,35 @@ package com.example.model
 
 import android.graphics.Bitmap
 import android.media.Image
+import com.example.common.utils.Extensions.Companion.toBitMap
 
 data class User(
     val id: String,
     val username: String,
     val displayName: String,
-    val email: String,
-//    val passWord: String,
-//    val avatar: Image,
+    val email: String
 )
 
-data class Repassword(
-    val id: String,
-    val passWord: String,
-    val rePassWord: String,
-)
+//data class Repassword(
+//    val id: String,
+//    val passWord: String,
+//    val rePassWord: String,
+//)
 
 data class Signup(
     val userName: String,
     val displayName: String,
     val email: String,
-    val passWord: String,
-    val rePassWord: String,
+    val password: String,
+    val rePassword: String,
+)
+
+data class SignupRequest(
+    val userName: String,
+    val displayName: String,
+    val email: String,
+    val password: String,
+    val rePassword: String,
 )
 
 data class Signin(
@@ -81,19 +88,29 @@ data class QuizResp(
     val locationId: String,
     val question: String,
     val point: Int,
-    val correctAnwer: String,
+    val correctAnswer: String,
     val image: ImageBitmap,
-    val answers: Answer
+    val answers: List<Answer>
 )
 data class Quiz(
     val id: String,
     val locationId: String,
     val question: String,
     val point: Int,
-    val correctAnwer: String,
+    val correctAnswer: String,
     val image: Bitmap,
-    val answers: Answer
-)
+    val answers: List<Answer>
+) {
+    constructor(quizResp: QuizResp): this(
+        id = quizResp.id,
+        locationId = quizResp.locationId,
+        question = quizResp.question,
+        point = quizResp.point,
+        correctAnswer = quizResp.correctAnswer,
+        image = quizResp.image.data.toBitMap(),
+        answers = quizResp.answers
+    )
+}
 
 
 data class Answer(
@@ -101,6 +118,7 @@ data class Answer(
     val quizId: String,
     val answer: String,
 )
+
 
 data class Fact(
     val id: String,

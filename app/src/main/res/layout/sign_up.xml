@@ -8,8 +8,8 @@
 
     <LinearLayout
         android:id="@+id/main_1"
-        android:layout_width="409dp"
-        android:layout_height="400dp"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
         android:layout_gravity="center"
         android:orientation="vertical">
 
@@ -30,13 +30,35 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="311dp"
+            android:layout_height="400dp"
             android:orientation="vertical"
             android:paddingLeft="60dp"
             android:paddingRight="60dp">
 
             <EditText
-                android:id="@+id/editTextText2"
+                android:id="@+id/ten"
+                android:layout_width="match_parent"
+                android:layout_height="61dp"
+                android:ems="10"
+                android:hint="Tên"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                app:helperText="Bắt buộc" />
+
+            <EditText
+                android:id="@+id/hovaten"
+                android:layout_width="match_parent"
+                android:layout_height="61dp"
+                android:ems="10"
+                android:hint="Họ và Tên"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:password="false" />
+
+            <EditText
+                android:id="@+id/mail"
                 android:layout_width="match_parent"
                 android:layout_height="61dp"
                 android:ems="10"
@@ -57,17 +79,7 @@
 
             <!--                />-->
             <EditText
-                android:id="@+id/editTextText3"
-                android:layout_width="match_parent"
-                android:layout_height="61dp"
-                android:ems="10"
-                android:hint="Tên"
-                android:inputType="text"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                app:helperText="Bắt buộc" />
-            <EditText
-                android:id="@+id/editTextText"
+                android:id="@+id/pass"
                 android:layout_width="match_parent"
                 android:layout_height="61dp"
                 android:ems="10"
@@ -75,7 +87,20 @@
                 android:inputType="text"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
+                android:password="true"
+                app:helperText="Bắt buộc" />
+
+            <EditText
+                android:id="@+id/repass"
+                android:layout_width="match_parent"
+                android:layout_height="61dp"
+                android:ems="10"
+                android:hint="Nhập lại mật khẩu"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
                 android:password="true" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="96dp"
@@ -94,9 +119,9 @@
                         android:layout_gravity="center"
                         android:backgroundTint="@color/green"
                         android:text="Đăng ký"
+
                         android:textAlignment="center"
-                        android:textColor="@color/white"
-                        />
+                        android:textColor="@color/white" />
                 </FrameLayout>
 
                 <TextView
@@ -107,7 +132,7 @@
                     android:textAlignment="center" />
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/dangky"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Đăng nhập tại đây"

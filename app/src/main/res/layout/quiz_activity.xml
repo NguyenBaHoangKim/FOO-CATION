@@ -23,6 +23,27 @@
             android:gravity="center|center_horizontal"
             android:text="Quizz"
             android:textSize="36dp" />
+
+        <TextView
+            android:id="@+id/score"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:gravity="right|center_vertical|end"
+            android:paddingEnd="10dp"
+            android:text="0/10 câu" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:backgroundTint="@color/background"
+            android:gravity="center_horizontal|left"
+            android:text="Button"
+            app:icon="@drawable/back_button"
+            app:iconTint="@color/black" />
+
     </FrameLayout>
 
     <FrameLayout
@@ -93,7 +114,6 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="415dp"
         android:layout_height="337dp"
-        android:layout_marginTop="32dp"
         android:orientation="vertical"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -169,10 +189,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:backgroundTint="@color/white"
-                android:textColor="@color/black"
                 android:backgroundTintMode="add"
                 android:gravity="center"
                 android:text="option3"
+                android:textColor="@color/black"
                 android:textSize="28sp" />
 
         </androidx.cardview.widget.CardView>

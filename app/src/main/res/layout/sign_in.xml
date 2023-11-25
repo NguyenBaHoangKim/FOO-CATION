@@ -97,7 +97,7 @@
                     android:textAlignment="center" />
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/dangky"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Bạn chưa có tài khoản? Đăng ký tại đây"
