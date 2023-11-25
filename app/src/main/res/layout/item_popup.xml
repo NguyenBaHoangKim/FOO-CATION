@@ -6,22 +6,20 @@
     android:layout_height="wrap_content"
     android:layout_marginLeft="20dp"
     android:layout_marginRight="20dp"
+    android:background="@drawable/radius_end"
     android:padding="10dp"
-    app:cardBackgroundColor="@color/invisible"
-    app:cardElevation="0dp">
+    app:cardBackgroundColor="@color/invisible">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-
         android:padding="10dp"
         app:cardCornerRadius="40dp">
-
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/green"
+            android:background="@drawable/radius_end"
             android:orientation="vertical">
 
             <!--        <ImageView-->
@@ -29,9 +27,23 @@
             <!--            -->
             <!--            app:srcCompat="@drawable/run" />-->
 
+            <TextView
+                android:id="@+id/itemName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/green"
+                android:paddingTop="10dp"
+                android:paddingBottom="5dp"
+                android:text="Rùa vàng"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="300dp">
+                android:layout_height="200dp">
 
                 <pl.droidsonroids.gif.GifImageView
                     android:id="@+id/imageView6"
@@ -49,83 +61,61 @@
                     android:src="@drawable/hint1" />
             </androidx.cardview.widget.CardView>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:background="@color/white">
+                android:layout_height="wrap_content"
+                android:background="@color/green"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                tools:text="Bạn có biết rằng" />
 
-                <LinearLayout
-                    android:id="@+id/linearLayout2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:gravity="center"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.55"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0">
-
-                    <TextView
-                        android:id="@+id/dialog"
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:paddingTop="10dp"
-                        android:paddingBottom="5dp"
-                        android:text="Ồhhh bạn đã tìm được "
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="20sp" />
-
-                    <TextView
-                        android:id="@+id/itemName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:paddingTop="10dp"
-                        android:paddingBottom="5dp"
-                        android:text="Rùa vàng"
-                        android:textAlignment="textStart"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@color/green"
+                android:paddingBottom="5dp">
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:id="@+id/itemFact"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="5dp"
+                    android:text="Sau khi đánh đuổi hết giặc Minh, Lê Lợi lên ngôi vua để trị vì và thống nhất đất nước.  Một năm sau, khi nhà vua cùng các bề tôi thân tín ngồi thuyền đi dạo trên hồ Tả Vọng trước kinh thành. Đức Long Quân sai rùa vàng lên để lấy lại thanh gươm thần.  Khi thuyền ra tới giữa hồ thì bất ngờ từ dưới làn nước trong xanh, có một con rùa vàng ngoi đầu lên, cất tiếng:  – Thưa nhà vua, lúc trước Đức Long Quân có cho nhà vua mượn thanh gươm thần để đánh giặc. Nay nghiệp lớn đã hoàn thành, xin nhà vua hãy trả lại gươm thần!  Lê Lợi nghe xong, liền cởi thanh gươm bên mình ra, cầm hai tay và dâng lên trước mặt rùa vàng. Thanh gươm bất ngờ bay khỏi tay nhà vua sang miệng rùa vàng. Rùa vàng ngậm lấy gươm, lặn xuống hồ biến mất."
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+            </ScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="5dp"
+                tools:layout_editor_absoluteY="361dp">
+
+                <TextView
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Hãy đi tiếp để nhận thêm nhiều vật phẩm nhaaa"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="16sp"
-                    android:textStyle="normal"
-                    app:layout_constraintBottom_toTopOf="@+id/btnGetItem"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-                    app:layout_constraintVertical_bias="0.215" />
+                    android:textStyle="normal" />
 
                 <Button
                     android:id="@+id/btnGetItem"
-                    android:layout_width="123dp"
-                    android:layout_height="54dp"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
                     android:backgroundTint="@color/green"
                     android:text="Thu thập ngay"
-                    android:textColor="@color/white"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.501"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.777" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    android:textColor="@color/white" />
+            </LinearLayout>
 
         </LinearLayout>
 

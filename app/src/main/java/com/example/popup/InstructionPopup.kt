@@ -36,6 +36,7 @@ class InstructionPopup : DialogFragment(){
 //             EmployeeDetails Activity
             intent.putExtra("locationId", extras)
             startActivity(intent)
+            dismiss()
         }
 
         btnNo.setOnClickListener {
