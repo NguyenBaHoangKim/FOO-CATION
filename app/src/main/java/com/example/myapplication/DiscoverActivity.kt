@@ -1,9 +1,13 @@
 package com.example.myapplication
 
+import android.annotation.SuppressLint
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.os.Handler
+import android.widget.Button
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.common.http.apiArtifact.ItemsManager
 import com.example.common.utils.Extensions.Companion.toBitMap
@@ -12,12 +16,17 @@ import com.example.model.Item
 import com.example.model.ItemResp
 import com.example.popup.ItemPopup
 import java.util.Timer
-import kotlin.concurrent.schedule
+
 
 open class DiscoverActivity : AppCompatActivity() {
     private var listItems = ArrayList<Item>()
     val list : MutableList<Int> = mutableListOf(1,2,3,4,5)
     val listIndex = list.shuffled()
+    val timer : Timer? = null
+    private var handler: Handler = Handler()
+    private var runnable: Runnable? = null
+    private var delay = 5000
+
     private var itemManager = ItemsManager()
     private lateinit var image1 : ImageView
     private lateinit var image2 : ImageView
@@ -26,9 +35,12 @@ open class DiscoverActivity : AppCompatActivity() {
     private lateinit var image5 : ImageView
     val showPopup = ItemPopup()
     var id : String = ""
+
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_discover)
+        val btn : Button = findViewById(R.id.back)
 
         image1 = findViewById(R.id.item1)
         image2 = findViewById(R.id.item2)
@@ -44,55 +56,47 @@ open class DiscoverActivity : AppCompatActivity() {
 //        fetchData()
         addData()
         addImage()
-
-        setTimer()
+//        setTimer()
+        startTimer()
+        btn.setOnClickListener {
+            stopTimer()
+            finish()
+        }
     }
-
-    fun setTimer(){
-        var index = listIndex[0]
+    fun startTimer(){
+        var index = 0;
         var l = 3000
         var r = 10000
         var delay : Long = (l until r).random().toLong()
-        Timer("AppearItem", false).schedule(delay){
-            runOnUiThread (Runnable {
-                getItem(index)
-                println("TImerrrrrr")
-                index = listIndex[1]
-                var delay : Long = (l until r).random().toLong()
-                Timer("AppearItem", false).schedule(delay){
-                    runOnUiThread (Runnable {
-                        getItem(index)
-                        println("TImerrrrrr")
-                        index = listIndex[2]
-                        var delay : Long = (l until r).random().toLong()
-                        Timer("AppearItem", false).schedule(delay){
-                            runOnUiThread (Runnable {
-                                getItem(index)
-                                println("TImerrrrrr")
-                                index = listIndex[3]
-                                var delay : Long = (l until r).random().toLong()
-                                Timer("AppearItem", false).schedule(delay){
-                                    runOnUiThread (Runnable {
-                                        getItem(index)
-                                        println("TImerrrrrr")
-                                        index = listIndex[4]
-                                        var delay : Long = (l until r).random().toLong()
-                                        Timer("AppearItem", false).schedule(delay){
-                                            runOnUiThread (Runnable {
-                                                getItem(index)
-                                                println("TImerrrrrr")
-                                            })
-                                        }
-                                    })
-                                }
-                            })
-                        }
-                    })
+        handler.postDelayed(Runnable {
+            delay = (l until r).random().toLong()
+            handler.postDelayed(runnable!!, delay)
+                val item = listIndex[index]
+                foundItem(item)
+                index++
+                if(index < 5) {
+                    Toast.makeText(
+                        this@DiscoverActivity, "Đi càng lâu nhận càng nhiều vật phẩm đó",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
-            })
-        }
+                else {
+                    Toast.makeText(
+                        this@DiscoverActivity, "Bạn đã nhận hết vật phẩm rùi",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+                if(index == 5) {
+                    stopTimer()
+                }
+        }.also { runnable = it }, delay)
     }
-    fun getItem(i: Int){
+
+    fun stopTimer() {
+        handler.removeCallbacks(runnable!!);
+    }
+
+    fun foundItem(i: Int){
         println("i " + i)
         showPopup.setImagePopup(listItems[i-1].itemImage)
         showPopup.show((this as AppCompatActivity).supportFragmentManager, "")
@@ -145,3 +149,4 @@ open class DiscoverActivity : AppCompatActivity() {
 
     }
 }
+

@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
@@ -31,6 +32,7 @@ class LocationDetail : AppCompatActivity() {
     private lateinit var addrest: TextView
     private lateinit var img: ImageView
     private lateinit var inf: TextView
+    private lateinit var btnStart : Button
     var id:String = ""
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,6 +43,7 @@ class LocationDetail : AppCompatActivity() {
         img = findViewById(R.id.image_location)
         inf = findViewById(R.id.infor3)
         recyclerView = findViewById(R.id.listArtifact)
+        btnStart = findViewById(R.id.start)
 
         val extras: Bundle? = intent.extras
         if (extras != null) {
@@ -62,6 +65,12 @@ class LocationDetail : AppCompatActivity() {
         val showPopup = InstructionPopup()
         showPopup.show((this).supportFragmentManager, "")
         showPopup.setId(id)
+
+        btnStart.setOnClickListener {
+            val intent = Intent("com.iphonik.chameleon.DiscoverActivity")
+            intent.putExtra("locationId", id)
+            startActivity(intent)
+        }
 
         val btn : Button = findViewById(R.id.button2)
         btn.setOnClickListener {

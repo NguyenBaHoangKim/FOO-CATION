@@ -22,11 +22,10 @@
             android:background="@color/white"
             >
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/back"
                 android:layout_width="50dp"
                 android:layout_height="30dp"
                 android:backgroundTint="@color/white"
-                android:text="Button"
                 app:icon="@drawable/back_button"
                 app:iconTint="@color/black" />
             <TextView
