@@ -1,7 +1,5 @@
 package com.example.myapplication.fragment
 
-import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -19,8 +17,6 @@ import com.example.model.LocationResp
 import com.example.model.User
 import com.example.myapplication.R
 import com.example.myapplication.adapter.ArchiveAdapter
-import com.example.myapplication.search.SearchActivity
-import com.example.popup.InstructionPopup
 import com.example.popup.QuizPopup
 
 open class ArchiveFragment : Fragment() {
@@ -32,6 +28,7 @@ open class ArchiveFragment : Fragment() {
     private var locationResp = LocationRespManager()
 
     private lateinit var userName: TextView
+    private lateinit var point: TextView
 
     //new
 
@@ -47,6 +44,8 @@ open class ArchiveFragment : Fragment() {
 //        transaction.replace(QuizFragment())
 
 //        adapter = ArchiveAdapter(mutableListOf())
+
+        point = view.findViewById(R.id.point)
 
         recyclerView = view.findViewById(R.id.recyclerView2)
         userName = view.findViewById(R.id.user_name)
@@ -105,7 +104,7 @@ open class ArchiveFragment : Fragment() {
         })
         usersDataManager.getUsers({ data: User ->
             userName.text = data.username
-            println(data.username)
+            point.text = data.rankingPoint.toString()
         }, { error ->
             println(error)
         })

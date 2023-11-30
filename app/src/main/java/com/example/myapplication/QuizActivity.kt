@@ -47,6 +47,14 @@ class QuizActivity : AppCompatActivity() {
         })
     }
 
+    private fun updatePoint(quizid: String) {
+        quizManager.quizCorrect(quizid,{ data: QuizResp ->
+            // cho gi vao day
+        }, { error ->
+            println(error)
+        })
+    }
+
     fun setupQuestionForIndex(index: Int) {
         val quiz = mList[index]
         binding.ans1.text = quiz.answers[0].answer
@@ -78,6 +86,7 @@ class QuizActivity : AppCompatActivity() {
     }
 
     private fun correctAns() {
+        updatePoint(mList[questionIndex].id)
         val popUp = TrueAnsPopup()
         popUp.show((this as AppCompatActivity).supportFragmentManager, "")
 

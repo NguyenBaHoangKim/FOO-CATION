@@ -7,21 +7,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.fragment.app.Fragment
-import com.example.common.apiUser.UserDataManager
+import com.example.common.apiUser.UsersDataManager
 import com.example.common.utils.MyApp
 import com.example.common.utils.UserSessionManager
+import com.example.model.User
 import com.example.myapplication.LogInActivity
 import com.example.myapplication.R
+import com.example.myapplication.RewardsActivity
 
-/**
- * A simple [Fragment] subclass.
- * Use the [MoreFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class MoreFragment : Fragment() {
-    private var userApi = UserDataManager()
+    private var usersDataManager = UsersDataManager()
     private var keyAcess = UserSessionManager(MyApp.context!!)
+    private lateinit var name: TextView
+    private lateinit var point: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -37,9 +37,11 @@ class MoreFragment : Fragment() {
         val btnSetting : Button = view.findViewById(R.id.setting)
         val btnReward  : Button = view.findViewById(R.id.reward)
         val btnLogOut    : Button = view.findViewById(R.id.logOut)
-
+        name = view.findViewById(R.id.name)
+        point = view.findViewById(R.id.point)
+        fetchData()
         btnReward.setOnClickListener {
-            val intent = Intent("com.iphonik.chameleon.RewardsActivity")
+            val intent = Intent(activity, RewardsActivity::class.java)
             startActivity(intent)
         }
 
@@ -54,6 +56,14 @@ class MoreFragment : Fragment() {
         keyAcess.setInfo("accessToken","")
         val intent = Intent(activity, LogInActivity::class.java)
         startActivity(intent)
+    }
 
+    private fun fetchData() {
+        usersDataManager.getUsers({ data: User ->
+            name.text = data.username
+            point.text = data.rankingPoint.toString()
+        }, { error ->
+            println(error)
+        })
     }
 }

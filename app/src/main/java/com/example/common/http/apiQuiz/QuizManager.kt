@@ -26,4 +26,22 @@ class QuizManager {
             }
         })
     }
+
+    fun quizCorrect(quizId: String,onSuccess: (QuizResp) -> Unit, onFailure: (error: String) -> Unit){
+        quizApi.quizCorrect(quizId).enqueue(object : Callback<QuizResp?> {
+            override fun onResponse(
+                call: Call<QuizResp?>,
+                response: Response<QuizResp?>
+            ) {
+                print(response.body())
+                val responseBody = response.body() ?: return
+                onSuccess(responseBody)
+            }
+
+            override fun onFailure(call: Call<QuizResp?>, t: Throwable) {
+                onFailure(t.message!!)
+                Log.d("MainActivity", "onFailure: " + t.message)
+            }
+        })
+    }
 }

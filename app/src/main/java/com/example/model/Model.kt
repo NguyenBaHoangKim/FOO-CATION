@@ -8,7 +8,9 @@ data class User(
     val id: String,
     val username: String,
     val displayName: String,
-    val email: String
+    val email: String,
+    val rankingPoint: Int,
+    val balance: Int
 )
 
 //data class Repassword(
