@@ -12,6 +12,7 @@ import com.example.common.apiUser.UserDataManager
 import com.example.common.utils.MyApp
 import com.example.common.utils.UserSessionManager
 import com.example.myapplication.LogInActivity
+import com.example.myapplication.ProfileActivity
 import com.example.myapplication.R
 
 /**
@@ -40,6 +41,11 @@ class MoreFragment : Fragment() {
 
         btnReward.setOnClickListener {
             val intent = Intent("com.iphonik.chameleon.RewardsActivity")
+            startActivity(intent)
+        }
+
+        btnProfile.setOnClickListener {
+            val intent = Intent(activity, ProfileActivity::class.java)
             startActivity(intent)
         }
 
