@@ -19,11 +19,13 @@ class UserDataManager {
                 response: Response<LoginResp?>
             ) {
                 println(response.code())
+                println(response.body())
                 if(response.code() == 404 || response.body() == null) {
                     println("Dang nhap k thanh cong")
                     onFailure("")
                 } else {
                     println(response.body())
+                    println("Dang nhap thanh cong")
                     val responseBody = response.body() ?: return
                     onSuccess(responseBody)
                 }
@@ -44,11 +46,14 @@ class UserDataManager {
                 response: Response<Signup?>
             ) {
                 println(response.code())
-                if(response.code() != 200 || response.body() == null) {
+                println(response.errorBody()?.string())
+                if(response.code() == 404 || response.body() == null) {
+                    println(response.body())
                     println("Dang ky k thanh cong")
                     onFailure("")
                 } else {
                     println(response.body())
+                    println("Dang ky thanh cong")
                     val responseBody = response.body() ?: return
                     onSuccess(responseBody)
                 }
@@ -60,5 +65,4 @@ class UserDataManager {
             }
         })
     }
-
 }

@@ -24,6 +24,7 @@ class LogInActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.sign_in)
+
         dangky = findViewById(R.id.dangky)
         dangky.setOnClickListener{
             val intent = Intent(this, SignUpActivity::class.java)

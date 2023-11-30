@@ -10,40 +10,88 @@ import com.example.common.apiUser.UserDataManager
 import com.example.model.Signup
 import com.example.model.SignupRequest
 
+
 class SignUpActivity : AppCompatActivity() {
     private lateinit var signupRequest: SignupRequest
     private var userApi = UserDataManager()
 
+    private lateinit var ten: EditText
+    private lateinit var hovaten: EditText
+    private lateinit var mail: EditText
+    private lateinit var pass: EditText
+    private lateinit var repass: EditText
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.sign_up)
+
+        ten = findViewById(R.id.ten)
+
         val btn: Button = findViewById(R.id.button)
+
+        ten = findViewById(R.id.ten) as EditText
+        hovaten = findViewById(R.id.hovaten)
+        mail = findViewById<EditText>(R.id.mail)
+        pass = findViewById<EditText>(R.id.pass)
+        repass = findViewById<EditText>(R.id.repass)
+        signupRequest = SignupRequest(
+            ten.text.toString(),
+            hovaten.text.toString(),
+            mail.text.toString(),
+            pass.text.toString(),
+            repass.text.toString()
+        )
+
         btn.setOnClickListener {
-            onMatch()
+            onMatchSignUp()
+            Toast.makeText(
+                this@SignUpActivity,
+                "in ra duọc" + ten.text.toString(),
+                Toast.LENGTH_SHORT
+            ).show()
+            println("in duoc")
         }
+
     }
 
-    fun onMatch() {
-        val ten = findViewById<EditText>(R.id.ten)
-        val hovaten = findViewById<EditText>(R.id.hovaten)
-        val mail = findViewById<EditText>(R.id.mail)
-        val pass = findViewById<EditText>(R.id.pass)
-        val repass = findViewById<EditText>(R.id.repass)
-        signupRequest = SignupRequest(ten.text.toString(),hovaten.text.toString(),mail.text.toString(),pass.text.toString(),repass.text.toString())
+    fun onMatchSignUp() {
+        signupRequest = SignupRequest(
+            ten.text.toString(),
+            hovaten.text.toString(),
+            mail.text.toString(),
+            pass.text.toString(),
+            repass.text.toString()
+        )
         signUp(signupRequest)
 //        val btn: Button = view.findViewById(R.id.button)
+        println("ten o onMatch:  " + ten)
     }
 
+//    fun onMatchSignUp(view: View) {
+//        ten = view.findViewById<EditText>(R.id.ten)
+//        hovaten = view.findViewById<EditText>(R.id.hovaten)
+//        mail = view.findViewById<EditText>(R.id.mail)
+//        pass = view.findViewById<EditText>(R.id.pass)
+//        repass = view.findViewById<EditText>(R.id.repass)
+//        signupRequest = SignupRequest(ten.text.toString(),hovaten.text.toString(),mail.text.toString(),pass.text.toString(),repass.text.toString())
+//        signUp(signupRequest)
+//        val btn: Button = view.findViewById(R.id.button)
+//        println("ten o onMatch:  " + ten)
+//        println(signupRequest)
+//    }
+
     fun signUp(signupRequest: SignupRequest) {
-        userApi.signUp(signupRequest ,{ data: Signup ->
-            val intent = Intent(this,LogInActivity::class.java)
+        userApi.signUp(signupRequest, { data: Signup ->
+            println("email o signUp" + data.email.toString())
+            val intent = Intent(this, LogInActivity::class.java)
             startActivity(intent)
 //            fun Context.toast(message: CharSequence) =
 //                Toast.makeText(this, "Đăng kí thành công", Toast.LENGTH_SHORT).show()
-          Toast.makeText(this, "Đăng kí thành công", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Đăng kí thành công", Toast.LENGTH_SHORT).show()
         }, { error ->
-            Toast.makeText(this, "Đăng kí thất bại, vui lòng đăng ký lại", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this,SignUpActivity::class.java)
+            Toast.makeText(this, "Đăng kí thất bại, vui lòng đăng ký lại", Toast.LENGTH_SHORT)
+                .show()
+            val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
             println(error)
         })

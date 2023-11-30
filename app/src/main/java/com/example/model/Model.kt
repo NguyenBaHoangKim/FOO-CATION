@@ -18,37 +18,18 @@ data class User(
 //)
 
 data class Signup(
-    val userName: String,
+    val id: String,
+    val username: String,
     val displayName: String,
     val email: String,
-    val password: String,
-    val rePassword: String,
 )
 
 data class SignupRequest(
-    val userName: String,
+    val username: String,
     val displayName: String,
     val email: String,
     val password: String,
     val rePassword: String,
-)
-
-data class Signin(
-    val email: String,
-    val passWord: String,
-)
-
-data class Slider(
-    val img: Image,
-    val name: String,
-    val intro: String,
-)
-
-data class Even(
-    val img: Image,
-    val name: String,
-    val time: String,
-    val location: String,
 )
 
 data class Location(
@@ -149,6 +130,7 @@ data class Staff(
     val locationId: Location,
     val role: String,
 )
+
 data class AnswerInformation(
     val img: Image,
     val info: String

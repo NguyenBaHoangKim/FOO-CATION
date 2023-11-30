@@ -25,6 +25,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 
+
 class LocationFragment : Fragment() ,
     GoogleMap.OnMyLocationButtonClickListener,
     GoogleMap.OnMyLocationClickListener{
@@ -39,19 +40,6 @@ class LocationFragment : Fragment() ,
 
     private lateinit var markerHanoi: Marker
     private var markerPerth: Marker? = null
-//    override fun onCreateView(
-//        inflater: LayoutInflater, container: ViewGroup?,
-//        savedInstanceState: Bundle?
-//    ): View? {
-//        // Inflate the layout for this fragment
-//        val view: View = inflater.inflate(R.layout.fragment_location, container, false)
-//        showMap = view.findViewById(R.id.showMap)
-//        showMap.setOnClickListener(View.OnClickListener {
-//            val intent = Intent(activity, MapsActivity::class.java)
-//            startActivity(intent)
-//        })
-//        return view
-//    }
     private var _binding: FragmentLocationBinding? = null
     private var mapFragment: SupportMapFragment? = null
     private val binding get() = _binding!!
@@ -65,6 +53,9 @@ class LocationFragment : Fragment() ,
         mMap.addMarker(MarkerOptions().position(hanoi).title("Ha noi neeeee"))
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(21.0292381,105.8248274),13f))
 
+
+
+
         mMap.setOnMarkerClickListener { marker ->
             for (location in mList) {
 //                println( "location latitide" + location.latitude)
@@ -75,7 +66,6 @@ class LocationFragment : Fragment() ,
                     startActivity(intent)
                 }
             }
-
             false
         }
     }
@@ -108,6 +98,9 @@ class LocationFragment : Fragment() ,
         mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(callback)
     }
+
+
+
     override fun onMyLocationClick(location: Location) {
         Toast.makeText(context, "Current location:\n$location", Toast.LENGTH_LONG)
             .show()
