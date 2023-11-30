@@ -14,6 +14,7 @@ import com.example.common.utils.MyApp
 import com.example.common.utils.UserSessionManager
 import com.example.model.User
 import com.example.myapplication.LogInActivity
+import com.example.myapplication.ProfileActivity
 import com.example.myapplication.R
 import com.example.myapplication.RewardsActivity
 
@@ -42,6 +43,11 @@ class MoreFragment : Fragment() {
         fetchData()
         btnReward.setOnClickListener {
             val intent = Intent(activity, RewardsActivity::class.java)
+            startActivity(intent)
+        }
+
+        btnProfile.setOnClickListener {
+            val intent = Intent(activity, ProfileActivity::class.java)
             startActivity(intent)
         }
 
