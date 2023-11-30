@@ -52,9 +52,11 @@
 
     <LinearLayout
         android:id="@+id/frameLayout2"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="32dp"
+        android:layout_marginRight="10dp"
         android:background="@drawable/card_radius_quiz"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -102,11 +104,11 @@
                         android:id="@+id/qs"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/green"
+                        android:background="#DFE6DA"
                         android:gravity="center"
                         android:padding="5dp"
                         android:text="Tên địa điểm này là gì?"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="20sp" />
 
                 </LinearLayout>
@@ -145,6 +147,7 @@
                     android:backgroundTint="@color/white"
                     android:backgroundTintMode="add"
                     android:gravity="center"
+                    android:paddingLeft="55dp"
                     android:text="option1"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
@@ -153,7 +156,7 @@
                     android:layout_width="50dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="5dp"
-                    android:src="@drawable/number1" />
+                    android:src="@drawable/one" />
 
             </androidx.cardview.widget.CardView>
 
@@ -178,6 +181,7 @@
                     android:backgroundTint="@color/white"
                     android:backgroundTintMode="add"
                     android:gravity="center"
+                    android:paddingLeft="55dp"
                     android:text="option2"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
@@ -186,7 +190,7 @@
                     android:layout_width="50dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="5dp"
-                    android:src="@drawable/number2" />
+                    android:src="@drawable/two" />
 
             </androidx.cardview.widget.CardView>
 
@@ -211,6 +215,7 @@
                     android:backgroundTint="@color/white"
                     android:backgroundTintMode="add"
                     android:gravity="center"
+                    android:paddingLeft="55dp"
                     android:text="option3"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
@@ -219,7 +224,7 @@
                     android:layout_width="50dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="5dp"
-                    android:src="@drawable/number3" />
+                    android:src="@drawable/three" />
 
             </androidx.cardview.widget.CardView>
 
@@ -244,6 +249,7 @@
                     android:backgroundTint="@color/white"
                     android:backgroundTintMode="add"
                     android:gravity="center"
+                    android:paddingLeft="55dp"
                     android:text="option4"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
@@ -252,7 +258,7 @@
                     android:layout_width="50dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="5dp"
-                    android:src="@drawable/number4" />
+                    android:src="@drawable/four" />
 
             </androidx.cardview.widget.CardView>
 

@@ -48,7 +48,7 @@ class DashboardFragment : Fragment() {
         val view = inflater.inflate(R.layout.dashboard, container, false)
         val btnSearch:Button = view.findViewById(R.id.searchbtn)
 //        val recyclerView:RecyclerView = view.findViewById(R.id.even)
-        textView4 = view.findViewById(R.id.textView4)
+        textView4 = view.findViewById(R.id.user_name)
 
         recyclerView = view.findViewById(R.id.even)
         recyclerView.setHasFixedSize(true)
