@@ -132,10 +132,11 @@
                 android:layout_width="320dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
-                app:cardCornerRadius="40dp"
 
+                app:cardCornerRadius="40dp"
                 app:cardElevation="5dp"
                 app:flow_horizontalAlign="center"
+                app:layout_constraintBottom_toTopOf="@+id/ansbox2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">

@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 
-class ProfileActivity : AppCompatActivity() {
+class Rewarded_activity : AppCompatActivity() {
     private lateinit var btn: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.profile)
+        setContentView(R.layout.activity_rewarded)
 
         btn = findViewById(R.id.back)
         btn.setOnClickListener {
