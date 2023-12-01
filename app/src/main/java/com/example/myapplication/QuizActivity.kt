@@ -37,7 +37,7 @@ class QuizActivity : AppCompatActivity() {
     }
 
     private fun fetchData() {
-        quizManager.getQuiz({ data: List<QuizResp> ->
+        quizManager.getQuiz(id,{ data: List<QuizResp> ->
             for (quiz in data) {
                 mList.add(Quiz(quiz))
             }

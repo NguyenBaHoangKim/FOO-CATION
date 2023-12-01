@@ -13,10 +13,9 @@ import com.example.common.http.apiArtifact.ItemsManager
 import com.example.common.http.apiLocationResp.LocationRespManager
 import com.example.common.http.apiSearchData.SearchsDataManager
 import com.example.common.utils.Extensions.Companion.toBitMap
-import com.example.model.Artifact
-import com.example.model.Location
 import com.example.model.LocationResp
 import com.example.model.SearchData
+import com.example.model.SearchsData
 import com.example.myapplication.R
 import com.example.myapplication.adapter.SearchAdapter
 
@@ -29,8 +28,7 @@ class SearchActivity : AppCompatActivity() {
     private var artifactManager = ItemsManager()
     private var locationManager = LocationRespManager()
 
-    private var m1List = ArrayList<Location>()
-    private var m2List = ArrayList<Artifact>()
+    private lateinit var btn: Button
 
     private  lateinit var adapter: SearchAdapter
     private var searchsDataManager = SearchsDataManager()
@@ -111,6 +109,14 @@ class SearchActivity : AppCompatActivity() {
 //        }, { error ->
 //            println(error)
 //        })
+    }
+
+    private fun getSearchData(searchData: String) {
+        searchsDataManager.getSearchsData(searchData,{ data: SearchsData ->
+
+        }, { error ->
+            println(error)
+        })
     }
 
 
