@@ -38,22 +38,28 @@ class LocationFragment : Fragment() ,
     private val hanoi = LatLng(21.028511,105.804817)
     private val vanmieu = LatLng(21.027256,105.832703)
 
+
+
     private lateinit var markerHanoi: Marker
     private var markerPerth: Marker? = null
     private var _binding: FragmentLocationBinding? = null
     private var mapFragment: SupportMapFragment? = null
     private val binding get() = _binding!!
 
+    @SuppressLint("MissingPermission")
     private val callback = OnMapReadyCallback { googleMap ->
         mMap = googleMap
+//        mMap.isMyLocationEnabled = true
+//        var myLocation: Location = mMap.myLocation
         for(location in mList) {
             val diadiemx = LatLng(location.latitude,location.longtitude)
             mMap.addMarker(MarkerOptions().position(diadiemx).title(location.name))
         }
         mMap.addMarker(MarkerOptions().position(hanoi).title("Ha noi neeeee"))
+//        mMap.addMarker(MarkerOptions().position(LatLng(myLocation.latitude,myLocation.longitude)).title("nha taoooooo"))
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(21.0292381,105.8248274),13f))
 
-
+//        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(myLocation.latitude,myLocation.longitude),13f))
 
 
         mMap.setOnMarkerClickListener { marker ->
@@ -69,6 +75,8 @@ class LocationFragment : Fragment() ,
             false
         }
     }
+
+
     @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater,
