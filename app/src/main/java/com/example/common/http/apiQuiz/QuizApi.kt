@@ -5,10 +5,13 @@ import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface QuizApi {
     @GET("quizzes")
-    fun getQuiz(): Call<List<QuizResp>>
+    fun getQuiz(
+        @Query("locationId") locationId: String
+    ): Call<List<QuizResp>>
 
     @POST("quizzes/{id}/answer/correct")
     fun quizCorrect(

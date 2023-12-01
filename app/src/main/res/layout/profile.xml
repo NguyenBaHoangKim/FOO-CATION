@@ -161,40 +161,6 @@
                 android:layout_weight="1"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center|left"
-                android:text="Mật khẩu: "
-                android:textSize="16sp" />
-
-            <EditText
-                android:id="@+id/password"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/radius_all"
-                android:ems="10"
-                android:fontFamily="sans-serif-light"
-                android:hint="Nguyen Ba Hoang Kim"
-                android:inputType="textPassword"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:orientation="horizontal"
-            android:paddingLeft="20dp"
-            android:paddingTop="5dp"
-            android:paddingRight="20dp"
-            android:paddingBottom="5dp">
-
-            <TextView
-                android:layout_width="250dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center|left"
                 android:text="Email: "
                 android:textSize="16sp" />
 
@@ -231,48 +197,14 @@
                 android:text="Điểm thưởng: "
                 android:textSize="16sp" />
 
-            <EditText
+            <TextView
                 android:id="@+id/point"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/radius_all"
                 android:fontFamily="sans-serif-light"
-                android:hint="3000"
-                android:inputType="text"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:orientation="horizontal"
-            android:paddingLeft="20dp"
-            android:paddingTop="5dp"
-            android:paddingRight="20dp"
-            android:paddingBottom="5dp">
-
-            <TextView
-                android:layout_width="250dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center|left"
-                android:text="Hạng: "
-                android:textSize="16sp" />
-
-            <EditText
-                android:id="@+id/rank"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/radius_all"
-                android:fontFamily="sans-serif-light"
-                android:hint="Cao thủ"
-                android:inputType="text"
+                android:text="3000"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp" />
         </LinearLayout>
