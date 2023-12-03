@@ -141,7 +141,10 @@
                 android:id="@+id/thongtin3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
                 android:paddingLeft="50dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="5dp"
                 android:text="Thông tin"
                 android:textSize="24sp" />
 
@@ -149,9 +152,13 @@
                 android:id="@+id/infor3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
                 android:text="dưới đây là thông tin dưới đây là thông tin dưới đây là thông tin dưới đây là thông tindưới đây là thông tin dưới đây là thông tin dưới đây là thông tin dưới đây là thông tin dưới đây là thông tin dưới đây là thông tin dưới đây là thông tin dưới đây là thông tin"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
                 android:textFontWeight="400"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -163,6 +170,7 @@
                 android:id="@+id/thongtin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
                 android:paddingLeft="50dp"
                 android:text="Có thể bạn sẽ thích"
                 android:textSize="24sp" />
@@ -171,13 +179,16 @@
                 android:id="@+id/infor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì Bạn chơi cái gì "
+                android:fontFamily="sans-serif-medium"
+                android:text="Nhà tù hoả lò là một di tích lịch sử nổi tiếng nằm gữa lòng thủ đô Hà Nội. Để có một trải nghiệm tốt nhất bạn nên thuê tai nghe tại cửa, chắc chắn chiếc tai nghe sẽ giúp bạn rất nhiều đó. À và khi về đừng quên ghé qua quầy lưu niệm nhaaa"
+                android:textAlignment="textStart"
                 android:textSize="16sp" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/listArtifact"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:paddingBottom="5dp">
 
             </androidx.recyclerview.widget.RecyclerView>
         </LinearLayout>

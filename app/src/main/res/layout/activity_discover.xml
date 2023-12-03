@@ -45,14 +45,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/radius_end"
-            >
+            android:background="@drawable/radius_end_white">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/radius_end"
+                android:background="@drawable/radius_end_white"
                 app:cardCornerRadius="40dp"
                 app:cardElevation="0dp">
 
