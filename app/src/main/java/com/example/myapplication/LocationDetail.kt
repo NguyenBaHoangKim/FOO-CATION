@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.common.http.apiArtifact.ArtifactManager
-import com.example.common.http.apiArtifact.ItemsManager
 import com.example.common.http.apiLocationResp.LocationRespManager
 import com.example.common.utils.Extensions.Companion.toBitMap
 import com.example.model.Artifact

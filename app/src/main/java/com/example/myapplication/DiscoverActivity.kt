@@ -2,24 +2,21 @@ package com.example.myapplication
 
 import android.annotation.SuppressLint
 import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.os.Handler
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.common.http.apiArtifact.ItemsManager
+import com.example.common.http.apiItems.ItemsManager
 import com.example.common.utils.Extensions.Companion.toBitMap
-import com.example.common.utils.MyApp.Companion.context
-import com.example.model.Item
 import com.example.model.ItemResp
 import com.example.popup.ItemPopup
 import java.util.Timer
 
 
 open class DiscoverActivity : AppCompatActivity() {
-    private var listItems = ArrayList<Item>()
+    private var listItems = ArrayList<ItemResp>()
     val list : MutableList<Int> = mutableListOf(1,2,3,4,5)
     val listIndex = list.shuffled()
     val timer : Timer? = null
@@ -50,14 +47,14 @@ open class DiscoverActivity : AppCompatActivity() {
         val extras: Bundle? = intent.extras
         if (extras != null) {
             id = extras.get("locationId").toString()
-            println(id)
+            println("idlocationDiscover   " +  id)
         }
 
-//        fetchData()
-        addData()
-        addImage()
+        fetchData()
+//        addData()
+//        addImage()
 //        setTimer()
-        startTimer()
+//        startTimer()
         btn.setOnClickListener {
             stopTimer()
             finish()
@@ -98,17 +95,17 @@ open class DiscoverActivity : AppCompatActivity() {
 
     fun foundItem(i: Int){
         println("i " + i)
-        showPopup.setImagePopup(listItems[i-1].itemImage)
+        showPopup.setImagePopup(listItems[i-1].foundImage.data.toBitMap())
         showPopup.show((this as AppCompatActivity).supportFragmentManager, "")
         chooseItem(i)
     }
     fun chooseItem(i : Int){
         when(i){
-            1 -> setItem(image1, listItems[i - 1].itemImage )
-            2 -> setItem(image2, listItems[i - 1].itemImage )
-            3 -> setItem(image3, listItems[i - 1].itemImage )
-            4 -> setItem(image4, listItems[i - 1].itemImage )
-            5 -> setItem(image5, listItems[i - 1].itemImage )
+            1 -> setItem(image1, listItems[i - 1].foundImage.data.toBitMap() )
+            2 -> setItem(image2, listItems[i - 1].foundImage.data.toBitMap() )
+            3 -> setItem(image3, listItems[i - 1].foundImage.data.toBitMap() )
+            4 -> setItem(image4, listItems[i - 1].foundImage.data.toBitMap() )
+            5 -> setItem(image5, listItems[i - 1].foundImage.data.toBitMap() )
         }
     }
     fun setItem(image : ImageView, bitmap: Bitmap) {
@@ -116,36 +113,43 @@ open class DiscoverActivity : AppCompatActivity() {
     }
     private fun fetchData() {
         itemManager.getItemsWithLocationId(id ,{ data: List<ItemResp> ->
+            println("data " + data.size)
             for(item in data) {
-                listItems.add(Item(item.id, id, item.hintImage.data.toBitMap(),item.itemImage.data.toBitMap()))
+                if(item.locationId == id) {
+                    println("id item" + item.id)
+                    listItems.add(ItemResp(item.id, item.locationId, item.unfoundedImage,item.foundImage))
+                }
             }
+            println("listitemsize   " + listItems.size)
+            addImage()
+            startTimer()
         }, { error ->
             println(error)
         })
     }
-    fun addData(){
-        listItems.add(Item("blabla","idL", BitmapFactory.decodeResource(context?.resources,
-            R.drawable.item1), BitmapFactory.decodeResource(context?.resources,
-            R.drawable.hint1)))
-        listItems.add(Item("blabla","idL", BitmapFactory.decodeResource(context?.resources,
-            R.drawable.item2), BitmapFactory.decodeResource(context?.resources,
-            R.drawable.hint2)))
-        listItems.add(Item("blabla","idL", BitmapFactory.decodeResource(context?.resources,
-            R.drawable.item3), BitmapFactory.decodeResource(context?.resources,
-            R.drawable.hint3)))
-        listItems.add(Item("blabla","idL", BitmapFactory.decodeResource(context?.resources,
-            R.drawable.item4), BitmapFactory.decodeResource(context?.resources,
-            R.drawable.hint4)))
-        listItems.add(Item("blabla","idL", BitmapFactory.decodeResource(context?.resources,
-            R.drawable.item5), BitmapFactory.decodeResource(context?.resources,
-            R.drawable.hint5)))
-    }
+//    fun addData(){
+//        listItems.add(Item("blabla","idL", BitmapFactory.decodeResource(context?.resources,
+//            R.drawable.item1), BitmapFactory.decodeResource(context?.resources,
+//            R.drawable.hint1)))
+//        listItems.add(Item("blabla","idL", BitmapFactory.decodeResource(context?.resources,
+//            R.drawable.item2), BitmapFactory.decodeResource(context?.resources,
+//            R.drawable.hint2)))
+//        listItems.add(Item("blabla","idL", BitmapFactory.decodeResource(context?.resources,
+//            R.drawable.item3), BitmapFactory.decodeResource(context?.resources,
+//            R.drawable.hint3)))
+//        listItems.add(Item("blabla","idL", BitmapFactory.decodeResource(context?.resources,
+//            R.drawable.item4), BitmapFactory.decodeResource(context?.resources,
+//            R.drawable.hint4)))
+//        listItems.add(Item("blabla","idL", BitmapFactory.decodeResource(context?.resources,
+//            R.drawable.item5), BitmapFactory.decodeResource(context?.resources,
+//            R.drawable.hint5)))
+//    }
     fun addImage(){
-        image1.setImageBitmap(listItems[0].hintImage)
-        image2.setImageBitmap(listItems[1].hintImage)
-        image3.setImageBitmap(listItems[2].hintImage)
-        image4.setImageBitmap(listItems[3].hintImage)
-        image5.setImageBitmap(listItems[4].hintImage)
+        image1.setImageBitmap(listItems[0].unfoundedImage.data.toBitMap())
+        image2.setImageBitmap(listItems[1].unfoundedImage.data.toBitMap())
+        image3.setImageBitmap(listItems[2].unfoundedImage.data.toBitMap())
+        image4.setImageBitmap(listItems[3].unfoundedImage.data.toBitMap())
+        image5.setImageBitmap(listItems[4].unfoundedImage.data.toBitMap())
 
     }
 }
