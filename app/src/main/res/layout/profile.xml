@@ -209,6 +209,48 @@
                 android:paddingRight="10dp" />
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal"
+            android:paddingLeft="20dp"
+            android:paddingTop="5dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center|left"
+                android:text="Mật khẩu: "
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/newpassword"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/radius_all"
+                android:fontFamily="sans-serif-light"
+                android:hint="password"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/repassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|end"
+            android:paddingEnd="30dp"
+            android:text="Đổi mật khẩu tại đây" />
+
         <Button
             android:id="@+id/save"
             android:layout_width="200dp"

@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 
@@ -17,6 +18,7 @@ class ProfileActivity : AppCompatActivity() {
     private lateinit var login_name: EditText
     private lateinit var point: TextView
     private lateinit var email: EditText
+    private lateinit var repassword: TextView
 
 //    private lateinit var password: EditText
     private var usersDataManager = UsersDataManager()
@@ -28,6 +30,12 @@ class ProfileActivity : AppCompatActivity() {
         login_name = findViewById(R.id.login_name)
         email = findViewById(R.id.email)
         point = findViewById(R.id.point)
+
+        repassword = findViewById(R.id.repassword)
+        repassword.setOnClickListener{
+            val intent = Intent(this,RepasswordActivity::class.java)
+            startActivity(intent)
+        }
 
         btn = findViewById(R.id.back)
         btn.setOnClickListener {

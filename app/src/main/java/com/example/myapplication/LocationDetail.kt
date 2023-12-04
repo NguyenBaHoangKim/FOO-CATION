@@ -64,7 +64,8 @@ class LocationDetail : AppCompatActivity() {
         showPopup.setId(id)
 
         btnStart.setOnClickListener {
-            val intent = Intent("com.iphonik.chameleon.DiscoverActivity")
+//            val intent = Intent("com.iphonik.chameleon.DiscoverActivity")
+            val intent = Intent(this,DiscoverActivity::class.java)
             intent.putExtra("locationId", id)
             startActivity(intent)
         }

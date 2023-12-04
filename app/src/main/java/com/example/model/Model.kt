@@ -160,7 +160,6 @@ data class Event(
     val address: String,
     val image: Bitmap,
 )
-
 data class Item(
     val id: String,
     val locationId: String,
@@ -168,12 +167,18 @@ data class Item(
     val itemImage: Bitmap,
     val description: String
 )
+//data class Item(
+//    val id: String,
+//    val locationId: String,
+//    val hintImage: Bitmap,
+//    val itemImage: Bitmap
+//)
 
 data class ItemResp(
     val id: String,
     val locationId: String,
-    val hintImage: ImageBitmap,
-    val itemImage: ImageBitmap,
+    val unfoundedImage: ImageBitmap,
+    val foundImage: ImageBitmap,
 )
 
 

@@ -8,15 +8,15 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import com.example.common.http.apiQuiz.QuizManager
-import com.example.model.Quiz
-import com.example.model.QuizResp
 import com.example.myapplication.QuizActivity
 import com.example.myapplication.R
 
 class TrueAnsPopup : DialogFragment(){
     private var quizManager = QuizManager()
+    private lateinit var correct_text: TextView
     var extras = ""
-    private var quiz = QuizActivity()
+//    var id = ""
+//    private var quiz = QuizActivity()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -41,13 +41,13 @@ class TrueAnsPopup : DialogFragment(){
     }
 
     private fun fetchData() {
-        quizManager.getQuiz(id,{ data: List<QuizResp> ->
-            for (quiz in data) {
-                correct_text.text = quiz.description
-            }
-        }, { error ->
-            println(error)
-        })
+//        quizManager.getQuiz(id,{ data: List<QuizResp> ->
+//            for (quiz in data) {
+//                correct_text.text = quiz.description
+//            }
+//        }, { error ->
+//            println(error)
+//        })
     }
 //    fun setOnClick(id : String) {
 //

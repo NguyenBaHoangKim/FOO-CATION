@@ -93,7 +93,6 @@ class QuizActivity : AppCompatActivity() {
         updatePoint(mList[questionIndex].id)
         val popUp = TrueAnsPopup()
         popUp.show((this as AppCompatActivity).supportFragmentManager, "")
-
     }
 
     private fun wrongAns() {

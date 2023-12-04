@@ -33,7 +33,7 @@ class LogInActivity : AppCompatActivity() {
     }
     fun onMatch(view: View) {
         val email = findViewById<EditText>(R.id.email)
-        val password = findViewById<EditText>(R.id.password)
+        val password = findViewById<EditText>(R.id.newpassword)
         loginRequest = LoginRequest(email.text.toString(),password.text.toString())
         login(loginRequest)
         val btn:Button = view.findViewById(R.id.button)
