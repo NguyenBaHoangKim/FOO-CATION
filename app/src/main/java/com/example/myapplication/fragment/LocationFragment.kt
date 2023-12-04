@@ -38,10 +38,7 @@ class LocationFragment : Fragment() ,
     private val hanoi = LatLng(21.028511,105.804817)
     private val vanmieu = LatLng(21.027256,105.832703)
 
-
-
     private lateinit var markerHanoi: Marker
-    private var markerPerth: Marker? = null
     private var _binding: FragmentLocationBinding? = null
     private var mapFragment: SupportMapFragment? = null
     private val binding get() = _binding!!
@@ -93,7 +90,7 @@ class LocationFragment : Fragment() ,
             println("okee data map location")
             for (location in data) {
                 mList.add(com.example.model.Location(location.id,location.name,location.nameInMap,location.latitude,location.longitude,
-                    location.image.data.toBitMap()
+                    location.image.data.toBitMap(),location.fact
                 ))
             }
             mapFragment?.getMapAsync(callback)

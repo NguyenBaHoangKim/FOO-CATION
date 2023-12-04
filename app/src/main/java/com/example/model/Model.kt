@@ -12,13 +12,6 @@ data class User(
     val rankingPoint: Int,
     val balance: Int
 )
-
-//data class Repassword(
-//    val id: String,
-//    val passWord: String,
-//    val rePassWord: String,
-//)
-
 data class Signup(
     val id: String,
     val username: String,
@@ -40,7 +33,8 @@ data class Location(
     val nameInMap: String,
     val latitude: Double,
     val longtitude: Double,
-    val image: Bitmap
+    val image: Bitmap,
+    val fact: String
 )
 
 data class LocationResp(
@@ -52,6 +46,7 @@ data class LocationResp(
     val image: ImageBitmap,
     val description: String,
     val artifacts: List<Artifact>,
+    val fact: String
 )
 data class Artifact(
     val id: String,
@@ -73,7 +68,8 @@ data class QuizResp(
     val point: Int,
     val correctAnswer: String,
     val image: ImageBitmap,
-    val answers: List<Answer>
+    val answers: List<Answer>,
+    val description: String
 )
 data class Quiz(
     val id: String,
@@ -82,7 +78,8 @@ data class Quiz(
     val point: Int,
     val correctAnswer: String,
     val image: Bitmap,
-    val answers: List<Answer>
+    val answers: List<Answer>,
+    val description: String
 ) {
     constructor(quizResp: QuizResp): this(
         id = quizResp.id,
@@ -91,7 +88,8 @@ data class Quiz(
         point = quizResp.point,
         correctAnswer = quizResp.correctAnswer,
         image = quizResp.image.data.toBitMap(),
-        answers = quizResp.answers
+        answers = quizResp.answers,
+        description = quizResp.description
     )
 }
 
@@ -102,13 +100,6 @@ data class Answer(
     val answer: String,
 )
 
-
-data class Fact(
-    val id: String,
-    val content: String,
-    val quizId: QuizResp,
-    val row: String,
-)
 
 data class Point(
     val id: String,
@@ -122,16 +113,7 @@ data class Currency(
     val unit: String,
 )
 
-data class Staff(
-    val id: String,
-    val name: String,
-    val email: String,
-    val phoneNumber: String,
-    val userName: String,
-    val passWord: String,
-    val locationId: Location,
-    val role: String,
-)
+
 
 data class AnswerInformation(
     val img: Image,
@@ -183,7 +165,8 @@ data class Item(
     val id: String,
     val locationId: String,
     val hintImage: Bitmap,
-    val itemImage: Bitmap
+    val itemImage: Bitmap,
+    val description: String
 )
 
 data class ItemResp(

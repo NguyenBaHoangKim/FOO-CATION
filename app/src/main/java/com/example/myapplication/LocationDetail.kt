@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.common.http.apiArtifact.ArtifactManager
-import com.example.common.http.apiArtifact.ItemsManager
 import com.example.common.http.apiLocationResp.LocationRespManager
 import com.example.common.utils.Extensions.Companion.toBitMap
 import com.example.model.Artifact
@@ -22,9 +21,6 @@ class LocationDetail : AppCompatActivity() {
     private var locationRespManager = LocationRespManager()
     private var artifactManager = ArtifactManager()
 
-    private var mList = ArrayList<com.example.model.Location>()
-    var list_name = arrayListOf<String>("Hồ Gươm", "Văn miếu Quốc tử giám","Hoàng thành Thăng Long", "Lăng Chủ tịch Hồ Chí Minh" )
-    var list_addresst = arrayListOf<String>("123 Hoang Hoa Tham, Ba Dinh, Ha Noi", "255 Hoang Hoa Tham, Ba Dinh, Ha Noi")
     private var listArtifact = ArrayList<Artifact>()
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter : artifactAdapter
@@ -32,6 +28,7 @@ class LocationDetail : AppCompatActivity() {
     private lateinit var addrest: TextView
     private lateinit var img: ImageView
     private lateinit var inf: TextView
+    private lateinit var fact: TextView
     private lateinit var btnStart : Button
     var id:String = ""
     @SuppressLint("MissingInflatedId")
@@ -42,6 +39,7 @@ class LocationDetail : AppCompatActivity() {
         addrest = findViewById(R.id.address)
         img = findViewById(R.id.image_location)
         inf = findViewById(R.id.infor3)
+        fact = findViewById(R.id.fact)
         recyclerView = findViewById(R.id.listArtifact)
         btnStart = findViewById(R.id.start)
 
@@ -56,7 +54,6 @@ class LocationDetail : AppCompatActivity() {
         adapter = artifactAdapter(listArtifact)
         recyclerView.adapter = adapter
 
-        addDataArtifact()
 //        fun setLocation(index: Int) {
 //            name.text = list_name[index]
 //            addrest.text = list_addresst[index]
@@ -79,14 +76,6 @@ class LocationDetail : AppCompatActivity() {
         fetchData()
     }
 
-    private fun addDataArtifact() {
-//        listArtifact.add(SearchData("","Bia Văn Miếu Quốc Tử Giám", R.drawable.artifact1, ""))
-//        listArtifact.add(SearchData("","Cầu Thê Húc", R.drawable.artifact2, ""))
-//        listArtifact.add(SearchData("","Tháp Rùa", R.drawable.artifact3, ""))
-//        listArtifact.add(SearchData("","Con Dấu Triều Nguyễn", R.drawable.artifact4,""))
-//        listArtifact.add(SearchData("","Tượng Nghê Đồng (Thế kỉ XVI)", R.drawable.artifact5, ""))
-    }
-
     private fun fetchData() {
         locationRespManager.getLocationWithId(id,{ data: com.example.model.LocationResp ->
             println(data.id + " " + data.name)
@@ -94,6 +83,8 @@ class LocationDetail : AppCompatActivity() {
             addrest.text = data.nameInMap
             img.setImageBitmap(data.image.data.toBitMap())
             inf.text = data.description
+            fact.text = data.fact
+            println(fact.text.toString())
         }, { error ->
             println(error)
         })

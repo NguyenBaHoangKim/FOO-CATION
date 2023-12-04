@@ -15,6 +15,8 @@ class QuizActivity : AppCompatActivity() {
     private var quizManager = QuizManager()
     private var mList = ArrayList<Quiz>()
 
+    public lateinit var correct_text: String
+
     private lateinit var binding: QuizActivityBinding
 
     private var questionIndex = 0;
@@ -30,6 +32,7 @@ class QuizActivity : AppCompatActivity() {
             id = extras.getString("locationId", "")
             println(id)
         }
+
         binding.button3.setOnClickListener {
             finish()
         }
@@ -40,6 +43,7 @@ class QuizActivity : AppCompatActivity() {
         quizManager.getQuiz(id,{ data: List<QuizResp> ->
             for (quiz in data) {
                 mList.add(Quiz(quiz))
+                correct_text = quiz.description
             }
             setupQuestionForIndex(questionIndex)
         }, { error ->
