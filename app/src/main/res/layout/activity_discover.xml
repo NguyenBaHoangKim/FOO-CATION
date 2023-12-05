@@ -101,6 +101,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="top"
                     android:layout_weight="1"
+                    android:padding="5dp"
                     app:srcCompat="@drawable/item1" />
 
                 <ImageView
@@ -109,6 +110,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="top"
                     android:layout_weight="1"
+                    android:padding="5dp"
                     app:srcCompat="@drawable/item2" />
 
                 <ImageView
@@ -117,6 +119,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="top"
                     android:layout_weight="1"
+                    android:padding="5dp"
                     app:srcCompat="@drawable/item3" />
 
                 <ImageView
@@ -125,6 +128,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="top"
                     android:layout_weight="1"
+                    android:padding="5dp"
                     app:srcCompat="@drawable/item4" />
 
                 <ImageView
@@ -133,6 +137,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="top"
                     android:layout_weight="1"
+                    android:padding="5dp"
                     app:srcCompat="@drawable/item5" />
             </LinearLayout>
 

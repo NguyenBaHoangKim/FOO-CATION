@@ -153,16 +153,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-medium"
+                android:justificationMode="inter_word"
                 android:text="dưới đây là thông tin dưới đây là thông tin dưới đây là thông tin dưới đây là thông tindưới đây là thông tin dưới đây là thông tin dưới đây là thông tin dưới đây là thông tin dưới đây là thông tin dưới đây là thông tin dưới đây là thông tin dưới đây là thông tin"
                 android:textAlignment="viewStart"
-                android:textColor="@color/black"
-                android:textFontWeight="400"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textStyle="normal" />
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="32dp">
+                android:layout_height="10dp">
 
             </FrameLayout>
 
@@ -180,6 +179,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-medium"
+                android:justificationMode="inter_word"
                 android:text="Nhà tù hoả lò là một di tích lịch sử nổi tiếng nằm gữa lòng thủ đô Hà Nội. Để có một trải nghiệm tốt nhất bạn nên thuê tai nghe tại cửa, chắc chắn chiếc tai nghe sẽ giúp bạn rất nhiều đó. À và khi về đừng quên ghé qua quầy lưu niệm nhaaa"
                 android:textAlignment="textStart"
                 android:textSize="16sp" />

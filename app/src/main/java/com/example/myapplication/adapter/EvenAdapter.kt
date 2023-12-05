@@ -34,8 +34,8 @@ class EvenAdapter (var mList: List<Event>) :
     override fun onBindViewHolder(holder: EvenViewHolder, position: Int) {
         holder.image.setImageBitmap(mList[position].image)
         holder.name.text = mList[position].eventName
-        holder.time.text = mList[position].time
-        holder.address.text = mList[position].address
+        holder.time.text = "Thời gian: " + mList[position].time
+        holder.address.text = "Địa điểm: " + mList[position].address
 
     }
 

@@ -176,9 +176,11 @@ data class Item(
 
 data class ItemResp(
     val id: String,
+    val name: String,
     val locationId: String,
     val unfoundedImage: ImageBitmap,
     val foundImage: ImageBitmap,
+    val description: String
 )
 
 

@@ -95,7 +95,7 @@ open class DiscoverActivity : AppCompatActivity() {
 
     fun foundItem(i: Int){
         println("i " + i)
-        showPopup.setImagePopup(listItems[i-1].foundImage.data.toBitMap())
+        showPopup.setPopup(listItems[i-1].name, listItems[i-1].description, listItems[i-1].foundImage.data.toBitMap())
         showPopup.show((this as AppCompatActivity).supportFragmentManager, "")
         chooseItem(i)
     }
@@ -117,7 +117,7 @@ open class DiscoverActivity : AppCompatActivity() {
             for(item in data) {
                 if(item.locationId == id) {
                     println("id item" + item.id)
-                    listItems.add(ItemResp(item.id, item.locationId, item.unfoundedImage,item.foundImage))
+                    listItems.add(ItemResp(item.id, item.name, item.locationId, item.unfoundedImage,item.foundImage, item.description))
                 }
             }
             println("listitemsize   " + listItems.size)
