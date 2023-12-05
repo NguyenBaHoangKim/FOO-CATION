@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.common.apiUser.UsersDataManager
+import com.example.common.apiUser.UserDataManager
 import com.example.common.http.apiLocationResp.LocationRespManager
 import com.example.common.utils.Extensions.Companion.toBitMap
 import com.example.model.ArchiveData
@@ -24,7 +24,7 @@ open class ArchiveFragment : Fragment() {
     private var mList = ArrayList<ArchiveData>()
     private  lateinit var adapter: ArchiveAdapter
 
-    private var usersDataManager = UsersDataManager()
+    private var usersDataManager = UserDataManager()
     private var locationResp = LocationRespManager()
 
     private lateinit var userName: TextView

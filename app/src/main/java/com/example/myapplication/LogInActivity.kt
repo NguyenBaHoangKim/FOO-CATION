@@ -45,7 +45,6 @@ class LogInActivity : AppCompatActivity() {
             startActivity(i)
         }, { error ->
             println(error)
-
         })
     }
 }

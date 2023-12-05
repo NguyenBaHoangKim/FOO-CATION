@@ -7,7 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.common.apiUser.UsersDataManager
+import com.example.common.apiUser.UserDataManager
 import com.example.model.User
 
 class ProfileActivity : AppCompatActivity() {
@@ -21,10 +21,12 @@ class ProfileActivity : AppCompatActivity() {
     private lateinit var repassword: TextView
 
 //    private lateinit var password: EditText
-    private var usersDataManager = UsersDataManager()
+    private var usersDataManager = UserDataManager()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.profile)
+
+
 
         name = findViewById(R.id.name)
         login_name = findViewById(R.id.login_name)
@@ -50,6 +52,7 @@ class ProfileActivity : AppCompatActivity() {
             login_name.hint = data.displayName
             email.hint = data.email
             point.text = data.rankingPoint.toString()
+            intent.putExtra("userId", data.id)
             println(data.username)
         }, { error ->
             println(error)

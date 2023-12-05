@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import com.example.common.apiUser.UsersDataManager
+import com.example.common.apiUser.UserDataManager
 import com.example.common.utils.MyApp
 import com.example.common.utils.UserSessionManager
 import com.example.model.User
@@ -19,7 +19,7 @@ import com.example.myapplication.R
 import com.example.myapplication.RewardsActivity
 
 class MoreFragment : Fragment() {
-    private var usersDataManager = UsersDataManager()
+    private var usersDataManager = UserDataManager()
     private var keyAcess = UserSessionManager(MyApp.context!!)
     private lateinit var name: TextView
     private lateinit var point: TextView
@@ -66,7 +66,7 @@ class MoreFragment : Fragment() {
 
     private fun fetchData() {
         usersDataManager.getUsers({ data: User ->
-            name.text = data.username
+            name.text = data.displayName
             point.text = data.rankingPoint.toString()
         }, { error ->
             println(error)

@@ -17,6 +17,8 @@ data class Signup(
     val username: String,
     val displayName: String,
     val email: String,
+    val rankingPoint: Int,
+    val balance: Int
 )
 
 data class SignupRequest(
@@ -179,6 +181,12 @@ data class ItemResp(
     val locationId: String,
     val unfoundedImage: ImageBitmap,
     val foundImage: ImageBitmap,
+)
+
+data class Repassword(
+    val oldPassword: String,
+    val newPassword: String,
+    val rePassword: String
 )
 
 

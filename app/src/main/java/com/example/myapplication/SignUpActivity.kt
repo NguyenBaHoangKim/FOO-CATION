@@ -55,12 +55,6 @@ class SignUpActivity : AppCompatActivity() {
 
         btn.setOnClickListener {
             onMatchSignUp()
-            Toast.makeText(
-                this@SignUpActivity,
-                "in ra duọc" + ten.text.toString(),
-                Toast.LENGTH_SHORT
-            ).show()
-            println("in duoc")
         }
 
     }

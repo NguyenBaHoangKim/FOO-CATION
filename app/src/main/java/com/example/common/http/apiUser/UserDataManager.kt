@@ -4,6 +4,7 @@ import android.util.Log
 import com.example.common.http.CustomApi
 import com.example.model.LoginRequest
 import com.example.model.LoginResp
+import com.example.model.Repassword
 import com.example.model.Signup
 import com.example.model.SignupRequest
 import com.example.model.User
@@ -67,19 +68,39 @@ class UserDataManager {
         })
     }
 
-    fun changePassword(userId: String, onSuccess: (User) -> Unit, onFailure: (error: String) -> Unit){
-        usersApi.changePassword(userId).enqueue(object : Callback<User?> {
+    fun changePassword(userId: String, onSuccess: (Repassword) -> Unit, onFailure: (error: String) -> Unit){
+        usersApi.changePassword(userId).enqueue(object : Callback<Repassword?> {
+            override fun onResponse(
+                call: Call<Repassword?>,
+                response: Response<Repassword?>
+            ){
+                println(response.code())
+                println("change pass user success")
+                val responseBody = response.body() ?: return
+                onSuccess(responseBody)
+            }
+            override fun onFailure(call: Call<Repassword?>, t: Throwable) {
+                println("huhu ")
+                onFailure(t.message!!)
+                Log.d("MainActivity", "onFailure: " + t.message)
+            }
+        })
+    }
+
+    fun getUsers(onSuccess: (User) -> Unit, onFailure: (error: String) -> Unit){
+        usersApi.getUsers().enqueue(object : Callback<User?> {
             override fun onResponse(
                 call: Call<User?>,
                 response: Response<User?>
-            ){
-                println("change pass user success")
+            ) {
+                println("get user info success")
                 val responseBody = response.body() ?: return
                 onSuccess(responseBody)
             }
 
             override fun onFailure(call: Call<User?>, t: Throwable) {
-                println("huhu ")
+                println("get user info failure")
+
                 onFailure(t.message!!)
                 Log.d("MainActivity", "onFailure: " + t.message)
             }

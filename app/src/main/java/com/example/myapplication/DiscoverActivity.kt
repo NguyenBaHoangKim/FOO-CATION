@@ -61,7 +61,7 @@ open class DiscoverActivity : AppCompatActivity() {
         }
     }
     fun startTimer(){
-        var index = 0;
+        var index = 0
         var l = 3000
         var r = 10000
         var delay : Long = (l until r).random().toLong()
@@ -114,43 +114,33 @@ open class DiscoverActivity : AppCompatActivity() {
     private fun fetchData() {
         itemManager.getItemsWithLocationId(id ,{ data: List<ItemResp> ->
             println("data " + data.size)
+            var dem = 0
             for(item in data) {
                 if(item.locationId == id) {
+                    dem++
                     println("id item" + item.id)
                     listItems.add(ItemResp(item.id, item.locationId, item.unfoundedImage,item.foundImage))
                 }
             }
             println("listitemsize   " + listItems.size)
-            addImage()
-            startTimer()
+            if (dem < 5) {
+                println("chua co du 5 item cho dia diem nay  " + dem)
+                Toast.makeText(this,"Bạn chưa đến địa điểm này",Toast.LENGTH_SHORT).show()
+                finish()
+            }
+            else {
+                addImage()
+                startTimer()
+            }
         }, { error ->
             println(error)
         })
     }
-//    fun addData(){
-//        listItems.add(Item("blabla","idL", BitmapFactory.decodeResource(context?.resources,
-//            R.drawable.item1), BitmapFactory.decodeResource(context?.resources,
-//            R.drawable.hint1)))
-//        listItems.add(Item("blabla","idL", BitmapFactory.decodeResource(context?.resources,
-//            R.drawable.item2), BitmapFactory.decodeResource(context?.resources,
-//            R.drawable.hint2)))
-//        listItems.add(Item("blabla","idL", BitmapFactory.decodeResource(context?.resources,
-//            R.drawable.item3), BitmapFactory.decodeResource(context?.resources,
-//            R.drawable.hint3)))
-//        listItems.add(Item("blabla","idL", BitmapFactory.decodeResource(context?.resources,
-//            R.drawable.item4), BitmapFactory.decodeResource(context?.resources,
-//            R.drawable.hint4)))
-//        listItems.add(Item("blabla","idL", BitmapFactory.decodeResource(context?.resources,
-//            R.drawable.item5), BitmapFactory.decodeResource(context?.resources,
-//            R.drawable.hint5)))
-//    }
     fun addImage(){
         image1.setImageBitmap(listItems[0].unfoundedImage.data.toBitMap())
         image2.setImageBitmap(listItems[1].unfoundedImage.data.toBitMap())
         image3.setImageBitmap(listItems[2].unfoundedImage.data.toBitMap())
         image4.setImageBitmap(listItems[3].unfoundedImage.data.toBitMap())
         image5.setImageBitmap(listItems[4].unfoundedImage.data.toBitMap())
-
     }
 }
-

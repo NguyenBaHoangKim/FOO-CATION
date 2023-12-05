@@ -16,11 +16,11 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
-import com.example.model.EventResp
-import com.example.common.apiUser.UsersDataManager
+import com.example.common.apiUser.UserDataManager
 import com.example.common.http.apiEven.EventsManager
 import com.example.common.utils.Extensions.Companion.toBitMap
 import com.example.model.Event
+import com.example.model.EventResp
 import com.example.model.User
 import com.example.myapplication.R
 import com.example.myapplication.adapter.EvenAdapter
@@ -33,7 +33,7 @@ class DashboardFragment : Fragment() {
     private lateinit var imageList: ArrayList<Int>
     private lateinit var adapter: ImageAdapter
     private lateinit var textView4: TextView
-    private var usersDataManager = UsersDataManager()
+    private var usersDataManager = UserDataManager()
 
     private lateinit var recyclerView: RecyclerView
     private var eventsManager = EventsManager()

@@ -15,7 +15,8 @@ class QuizActivity : AppCompatActivity() {
     private var quizManager = QuizManager()
     private var mList = ArrayList<Quiz>()
 
-    public lateinit var correct_text: String
+//    public lateinit var correctText: String
+//    public lateinit var anh: Bitmap
 
     private lateinit var binding: QuizActivityBinding
 
@@ -43,7 +44,6 @@ class QuizActivity : AppCompatActivity() {
         quizManager.getQuiz(id,{ data: List<QuizResp> ->
             for (quiz in data) {
                 mList.add(Quiz(quiz))
-                correct_text = quiz.description
             }
             setupQuestionForIndex(questionIndex)
         }, { error ->
@@ -92,11 +92,13 @@ class QuizActivity : AppCompatActivity() {
     private fun correctAns() {
         updatePoint(mList[questionIndex].id)
         val popUp = TrueAnsPopup()
+        popUp.setData(mList[questionIndex].description, mList[questionIndex].image)
         popUp.show((this as AppCompatActivity).supportFragmentManager, "")
     }
 
     private fun wrongAns() {
         val popUp = FalseAnsPopup()
+        popUp.setData(mList[questionIndex].description, mList[questionIndex].image)
         popUp.show((this as AppCompatActivity).supportFragmentManager, "")
     }
 
