@@ -8,9 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
-import com.example.model.ArchiveData
 import com.example.myapplication.DiscoverActivity
-import com.example.myapplication.QuizActivity
 import com.example.myapplication.R
 
 class InstructionPopup : DialogFragment(){

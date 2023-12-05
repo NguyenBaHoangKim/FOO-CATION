@@ -6,9 +6,11 @@ import android.os.Bundle
 import android.os.Handler
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.common.http.apiItems.ItemsManager
+import com.example.common.http.apiLocationResp.LocationRespManager
 import com.example.common.utils.Extensions.Companion.toBitMap
 import com.example.model.ItemResp
 import com.example.popup.ItemPopup
@@ -25,6 +27,10 @@ open class DiscoverActivity : AppCompatActivity() {
     private var delay = 5000
 
     private var itemManager = ItemsManager()
+    private var locationManager = LocationRespManager()
+
+    private lateinit var locationName: TextView
+
     private lateinit var image1 : ImageView
     private lateinit var image2 : ImageView
     private lateinit var image3 : ImageView
@@ -38,6 +44,8 @@ open class DiscoverActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_discover)
         val btn : Button = findViewById(R.id.back)
+
+        locationName = findViewById(R.id.location_name)
 
         image1 = findViewById(R.id.item1)
         image2 = findViewById(R.id.item2)
@@ -112,6 +120,12 @@ open class DiscoverActivity : AppCompatActivity() {
         image?.setImageBitmap(bitmap)
     }
     private fun fetchData() {
+        locationManager.getLocationWithId(id,{ data: com.example.model.LocationResp ->
+            locationName.text = data.name
+        }, { error ->
+            println(error)
+        })
+
         itemManager.getItemsWithLocationId(id ,{ data: List<ItemResp> ->
             println("data " + data.size)
             var dem = 0

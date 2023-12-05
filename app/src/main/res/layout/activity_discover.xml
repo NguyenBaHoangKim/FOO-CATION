@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -28,17 +29,18 @@
                 android:backgroundTint="@color/white"
                 app:icon="@drawable/back_button"
                 app:iconTint="@color/black" />
+
             <TextView
                 android:id="@+id/location_name"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginRight="50dp"
-                android:text="Văn Miếu Quốc Tử Giám"
-                android:textColor="@color/green"
-                android:textAlignment="center"
-                android:gravity="bottom"
-                android:textSize="24dp"
                 android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="Văn Miếu Quốc Tử Giám"
+                android:textAlignment="center"
+                android:textColor="@color/green"
+                android:textSize="24dp"
                 tools:ignore="RtlCompat" />
         </LinearLayout>
 
@@ -93,6 +95,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_margin="5dp"
+                android:layout_weight="1"
                 android:gravity="center">
 
                 <ImageView
@@ -146,9 +149,10 @@
                 android:layout_width="300dp"
                 android:layout_height="70dp"
                 android:layout_gravity="center"
+                android:layout_weight="1"
                 android:text="Kết thúc khám phá"
                 android:textSize="16sp" />
         </LinearLayout>
 
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

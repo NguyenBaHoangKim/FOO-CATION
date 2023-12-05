@@ -54,15 +54,6 @@ class LocationDetail : AppCompatActivity() {
         adapter = artifactAdapter(listArtifact)
         recyclerView.adapter = adapter
 
-//        fun setLocation(index: Int) {
-//            name.text = list_name[index]
-//            addrest.text = list_addresst[index]
-//            img.setImageResource(R.drawable.place1)
-//        }
-        val showPopup = InstructionPopup()
-        showPopup.show((this).supportFragmentManager, "")
-        showPopup.setId(id)
-
         btnStart.setOnClickListener {
 //            val intent = Intent("com.iphonik.chameleon.DiscoverActivity")
             val intent = Intent(this,DiscoverActivity::class.java)
@@ -92,11 +83,17 @@ class LocationDetail : AppCompatActivity() {
 
         artifactManager.getArtifactWithLocationId(id,{ data: List<Artifact> ->
             for (artifact in data) {
-                listArtifact.add(Artifact(artifact.id,artifact.name,artifact.time,artifact.locationId,artifact.image,artifact.description))
+                if (id == artifact.locationId)
+                    listArtifact.add(Artifact(artifact.id,artifact.name,artifact.time,artifact.locationId,artifact.image,artifact.description))
             }
             println("them duoc artifact r")
         }, { error ->
             println(error)
         })
+
+        //show popUp
+        val showPopup = InstructionPopup()
+        showPopup.show((this).supportFragmentManager, "")
+        showPopup.setId(id)
     }
 }
