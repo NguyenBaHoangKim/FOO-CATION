@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,6 +8,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_main"
     android:orientation="vertical"
     android:paddingLeft="0dp">
 
@@ -16,8 +16,8 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background_main"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="75dp">
 
         <LinearLayout
             android:id="@+id/header"
@@ -145,10 +145,12 @@
             android:paddingTop="5dp"
             android:paddingRight="30dp"
             android:paddingBottom="5dp">
+
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="40dp">
+
                 <Button
                     android:id="@+id/searchbtn"
                     android:layout_width="match_parent"

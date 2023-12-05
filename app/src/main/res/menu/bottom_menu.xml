@@ -15,9 +15,9 @@
     <item
         android:id="@+id/bottom_archive"
         android:icon="@drawable/goal"
-        android:title="Đã đến" />
+        android:title="Quiz" />
     <item
         android:id="@+id/bottom_more"
-        android:title="More"
-        android:icon="@drawable/more"/>
+        android:icon="@drawable/more"
+        android:title="Mở rộng" />
 </menu>
