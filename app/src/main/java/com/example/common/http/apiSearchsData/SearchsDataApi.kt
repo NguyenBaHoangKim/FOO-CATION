@@ -6,7 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface SearchsDataApi {
-    @GET("Search")
+    @GET("search")
     fun getSearchsData(
         @Query("searchText") searchText: String
     ): Call<SearchsData>

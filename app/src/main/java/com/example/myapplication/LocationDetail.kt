@@ -84,6 +84,9 @@ class LocationDetail : AppCompatActivity() {
         artifactManager.getArtifactWithLocationId(id,{ data: List<Artifact> ->
             for (artifact in data) {
                 if (id == artifact.locationId)
+                    println(id)
+                    println(artifact.locationId)
+                    println("id nay giong \n")
                     listArtifact.add(Artifact(artifact.id,artifact.name,artifact.time,artifact.locationId,artifact.image,artifact.description))
             }
             println("them duoc artifact r")

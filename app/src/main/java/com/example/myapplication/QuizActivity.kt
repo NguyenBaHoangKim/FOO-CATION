@@ -2,6 +2,7 @@ package com.example.myapplication
 
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.common.http.apiQuiz.QuizManager
 import com.example.model.Quiz
@@ -43,9 +44,18 @@ class QuizActivity : AppCompatActivity() {
     private fun fetchData() {
         quizManager.getQuiz(id,{ data: List<QuizResp> ->
             for (quiz in data) {
-                mList.add(Quiz(quiz))
+                if (quiz.answers.size >= 3) {
+                    mList.add(Quiz(quiz))
+                }
+                println("id quiz location: " + quiz.locationId)
             }
-            setupQuestionForIndex(questionIndex)
+            if (mList.size == 0) {
+                Toast.makeText(this,"Bạn chưa thể tham gia quizz này", Toast.LENGTH_SHORT).show()
+                finish()
+            }
+            else {
+                setupQuestionForIndex(questionIndex)
+            }
         }, { error ->
             println(error)
         })
