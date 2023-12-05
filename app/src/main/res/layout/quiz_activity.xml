@@ -129,8 +129,8 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/ansbox1"
-                android:layout_width="320dp"
-                android:layout_height="60dp"
+                android:layout_width="350dp"
+                android:layout_height="70dp"
                 android:layout_gravity="center"
 
                 app:cardCornerRadius="40dp"
@@ -151,10 +151,10 @@
                     android:paddingLeft="55dp"
                     android:text="option1"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
 
                 <ImageView
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="5dp"
                     android:src="@drawable/one" />
@@ -163,8 +163,8 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/ansbox2"
-                android:layout_width="320dp"
-                android:layout_height="60dp"
+                android:layout_width="350dp"
+                android:layout_height="70dp"
                 android:layout_gravity="center"
                 app:cardCornerRadius="40dp"
 
@@ -185,10 +185,10 @@
                     android:paddingLeft="55dp"
                     android:text="option2"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
 
                 <ImageView
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="5dp"
                     android:src="@drawable/two" />
@@ -197,8 +197,8 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/ansbox3"
-                android:layout_width="320dp"
-                android:layout_height="60dp"
+                android:layout_width="350dp"
+                android:layout_height="70dp"
                 android:layout_gravity="center"
                 app:cardCornerRadius="40dp"
 
@@ -219,10 +219,10 @@
                     android:paddingLeft="55dp"
                     android:text="option3"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
 
                 <ImageView
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="5dp"
                     android:src="@drawable/three" />
@@ -231,8 +231,8 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/ansbox4"
-                android:layout_width="320dp"
-                android:layout_height="60dp"
+                android:layout_width="350dp"
+                android:layout_height="70dp"
                 android:layout_gravity="center"
                 app:cardCornerRadius="40dp"
 
@@ -253,10 +253,10 @@
                     android:paddingLeft="55dp"
                     android:text="option4"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
 
                 <ImageView
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="5dp"
                     android:src="@drawable/four" />

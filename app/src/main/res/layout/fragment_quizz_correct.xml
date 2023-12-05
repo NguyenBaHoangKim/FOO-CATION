@@ -10,14 +10,14 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="364dp"
-        android:layout_height="496dp"
+        android:layout_height="wrap_content"
         app:cardBackgroundColor="@color/invisible"
         app:cardCornerRadius="20dp"
         app:cardElevation="0dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="364dp"
-            android:layout_height="496dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:background="@color/white"
             android:orientation="vertical"
             android:paddingBottom="10dp"
@@ -41,10 +41,10 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
                 android:id="@+id/centerview"
                 android:layout_width="match_parent"
-                android:layout_height="344dp"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingLeft="15dp"
                 android:paddingTop="15dp"
@@ -60,45 +60,30 @@
                     android:layout_width="match_parent"
                     android:layout_height="160dp"
                     android:scaleType="centerCrop"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/cong_van_mieu"
-                    tools:layout_editor_absoluteX="-16dp"
-                    tools:layout_editor_absoluteY="-16dp" />
+                    android:src="@drawable/place2" />
 
-                <ScrollView
-                    android:layout_width="304dp"
-                    android:layout_height="162dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintHorizontal_bias="0.416"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/correct_img"
-                    app:layout_constraintVertical_bias="0.0">
+                <TextView
+                    android:id="@+id/correct_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:justificationMode="inter_word"
+                    android:text="Năm 1940 - 1945, tại trại giam, các lớp huấn luyện chính trị được tổ chức tương đối rầm rộ. Anh em học tập Nghị quyết, Chương trình, Điều lệ Việt Minh... giúp nhau nâng cao hiểu biết, trình độ lý luận chính trị. Để có tài liệu phục vụ tuyên truyền cách mạng và học tập, họ thường chui xuống gầm sàn để biên soạn. Anh em còn cất giấu tài liệu bằng cách đục tường, rút gạch rồi ngụy trang như cũ, tránh bị cai ngục phát hiện trong các cuộc khám xét. Sống trong tù ngục với bao gian lao, thử thách, trước kẻ thù xảo quyệt và hung bạo, các chiến sĩ yêu nước, cách mạng Việt Nam vẫn không nản lòng, giữ vững quết tâm còn sống còn chiến đấu." />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/correct_text"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin  Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin  " />
-                    </LinearLayout>
-                </ScrollView>
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
 
 
             <androidx.cardview.widget.CardView
                 android:layout_width="300dp"
                 android:layout_height="50dp"
+                android:layout_marginBottom="24dp"
                 app:cardCornerRadius="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/centerview">
+                app:layout_constraintTop_toBottomOf="@+id/centerview"
+                app:layout_constraintVertical_bias="0.32999998">
 
                 <Button
                     android:id="@+id/correct_btn"

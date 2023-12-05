@@ -2,22 +2,22 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:backgroundTint="@color/invisible"
     app:cardBackgroundColor="@color/invisible"
     app:cardElevation="0dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="364dp"
-        android:layout_height="496dp"
+        android:layout_height="wrap_content"
         app:cardBackgroundColor="@color/invisible"
         app:cardCornerRadius="20dp"
         app:cardElevation="0dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="364dp"
-            android:layout_height="496dp"
+            android:layout_height="wrap_content"
             android:background="@color/white"
             android:orientation="vertical"
             android:paddingBottom="10dp"
@@ -44,7 +44,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/centerview"
                 android:layout_width="match_parent"
-                android:layout_height="380dp"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingLeft="15dp"
                 android:paddingTop="15dp"
@@ -67,28 +67,19 @@
                     tools:layout_editor_absoluteX="-16dp"
                     tools:layout_editor_absoluteY="-16dp" />
 
-                <ScrollView
+                <TextView
+                    android:id="@+id/wrong_text2"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:layout_marginTop="5dp"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/wrong_img">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/wrong_text2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:paddingTop="5dp"
-                            android:text="Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin  Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin Dưới đây là thông tin  " />
-                    </LinearLayout>
-                </ScrollView>
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:paddingTop="5dp"
+                    android:text="Năm 1940 - 1945, tại trại giam, các lớp huấn luyện chính trị được tổ chức tương đối rầm rộ. Anh em học tập Nghị quyết, Chương trình, Điều lệ Việt Minh... giúp nhau nâng cao hiểu biết, trình độ lý luận chính trị. Để có tài liệu phục vụ tuyên truyền cách mạng và học tập, họ thường chui xuống gầm sàn để biên soạn. Anh em còn cất giấu tài liệu bằng cách đục tường, rút gạch rồi ngụy trang như cũ, tránh bị cai ngục phát hiện trong các cuộc khám xét. Sống trong tù ngục với bao gian lao, thử thách, trước kẻ thù xảo quyệt và hung bạo, các chiến sĩ yêu nước, cách mạng Việt Nam vẫn không nản lòng, giữ vững quết tâm còn sống còn chiến đấu."
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/wrong_img" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
