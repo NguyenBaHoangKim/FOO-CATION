@@ -19,6 +19,7 @@ class ArchiveAdapter(var mList: List<ArchiveData>) :
         val logo : ImageView = itemView.findViewById(R.id.logo)
         val title: TextView = itemView.findViewById(R.id.title)
         val btnStart : Button = itemView.findViewById(R.id.start)
+        val dem: TextView = itemView.findViewById(R.id.dem)
         val id: String = ""
     }
 
@@ -36,6 +37,7 @@ class ArchiveAdapter(var mList: List<ArchiveData>) :
         val item = mList[position]
         holder.logo.setImageBitmap(mList[position].logo)
         holder.title.text = mList[position].title
+        holder.dem.text = "${mList[position].trueQuizNumber}/ ${mList[position].quizNumber} câu"
 //        val adapter = ArchiveAdapter(mList)
 //        adapter.setOnClickListener { position, model ->
 //            // Xử lý sự kiện khi item được click

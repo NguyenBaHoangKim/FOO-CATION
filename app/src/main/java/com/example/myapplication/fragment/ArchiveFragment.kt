@@ -59,7 +59,7 @@ open class ArchiveFragment : Fragment() {
     private fun fetchData() {
         locationResp.getLocationList({data: List<LocationResp> ->
             for (location in data) {
-                mList.add(ArchiveData(location.id, location.name, location.image.data.toBitMap()))
+                mList.add(ArchiveData(location.id, location.name, location.image.data.toBitMap(), location.quizNumber, location.trueQuizNumber))
                 println(mList.size)
             }
             adapter = ArchiveAdapter(mList)

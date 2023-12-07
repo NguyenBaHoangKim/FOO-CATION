@@ -49,6 +49,8 @@ data class LocationResp(
     val image: ImageBitmap,
     val description: String,
     val artifacts: List<Artifact>,
+    val quizNumber: Int,
+    val trueQuizNumber: Int,
     val fact: String
 )
 data class Artifact(
@@ -104,20 +106,6 @@ data class Answer(
 )
 
 
-data class Point(
-    val id: String,
-    val userId: String,
-    val point: Int,
-)
-
-data class Currency(
-    val uniqueId: String,
-    val name: String,
-    val unit: String,
-)
-
-
-
 data class AnswerInformation(
     val img: Image,
     val info: String
@@ -147,8 +135,10 @@ data class SearchData(
 
 data class ArchiveData(
     val id: String,
-    val  title: String,
-    val  logo: Bitmap
+    val title: String,
+    val logo: Bitmap,
+    val quizNumber: Int,
+    val trueQuizNumber: Int
 )
 
 data class EventResp(
@@ -170,13 +160,6 @@ data class Item(
     val itemImage: Bitmap,
     val description: String
 )
-//data class Item(
-//    val id: String,
-//    val locationId: String,
-//    val hintImage: Bitmap,
-//    val itemImage: Bitmap
-//)
-
 data class ItemResp(
     val id: String,
     val name: String,
