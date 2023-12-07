@@ -7,18 +7,17 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.common.utils.Extensions.Companion.toBitMap
-import com.example.model.SearchsData
+import com.example.model.Artifact
 import com.example.myapplication.R
 
-class SearchAdapter(var mList: SearchsData) :
-    RecyclerView.Adapter<SearchAdapter.LocationViewHolder>() {
+class SearchArtifactAdapter(var mList: List<Artifact>) :
+    RecyclerView.Adapter<SearchArtifactAdapter.LocationViewHolder>() {
     inner class LocationViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
         val logo : ImageView = itemView.findViewById(R.id.logo)
         val title: TextView = itemView.findViewById(R.id.title)
-
     }
 
-    fun setFilteredList(mList: SearchsData){
+    fun setFilteredList(mList: List<Artifact>){
         this.mList = mList
         notifyDataSetChanged()
     }
@@ -29,10 +28,10 @@ class SearchAdapter(var mList: SearchsData) :
         return LocationViewHolder(view)
     }
     override fun onBindViewHolder(holder: LocationViewHolder, position: Int) {
-        holder.logo.setImageBitmap(mList.artifacts[position].image.data.toBitMap())
-        holder.title.text = mList.artifacts[position].name
+        holder.logo.setImageBitmap(mList[position].image.data.toBitMap())
+        holder.title.text = mList[position].name
     }
     override fun getItemCount(): Int {
-        return mList.artifacts.size + mList.locations.size
+        return mList.size
     }
 }

@@ -116,6 +116,12 @@ data class SearchsData(
     val artifacts: List<Artifact>
 )
 
+data class TimKiem(
+    val id: String,
+    val name: String,
+    val image: Bitmap
+)
+
 //data class SearchsData(
 //    val id: String,
 //    val name: String,
