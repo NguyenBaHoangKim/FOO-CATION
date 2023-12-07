@@ -47,7 +47,9 @@
                     android:id="@+id/dialog"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
                     android:paddingTop="10dp"
+                    android:paddingRight="5dp"
                     android:paddingBottom="5dp"
                     android:text="Hãy di chuyển đến nơi này và bắt đầu khám phá nhé"
                     android:textAlignment="center"
@@ -69,10 +71,10 @@
                     android:textColor="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.200"
+                    app:layout_constraintHorizontal_bias="0.215"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.777" />
+                    app:layout_constraintVertical_bias="0.902" />
 
                 <Button
                     android:id="@+id/btnNo"
@@ -83,10 +85,10 @@
                     android:textColor="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.814"
+                    app:layout_constraintHorizontal_bias="0.791"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.777" />
+                    app:layout_constraintVertical_bias="0.902" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>

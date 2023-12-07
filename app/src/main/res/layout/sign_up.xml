@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_background">
+    android:background="@drawable/bgdk">
 
     <LinearLayout
         android:id="@+id/main_1"
@@ -118,8 +118,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:backgroundTint="@color/green"
-                        android:text="Đăng ký"
                         android:onClick="onMatchSignUp"
+                        android:text="Đăng ký"
                         android:textAlignment="center"
                         android:textColor="@color/white" />
                 </FrameLayout>

@@ -2,6 +2,7 @@ package com.example.myapplication.search
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
@@ -71,27 +72,42 @@ class Category  : AppCompatActivity() {
     }
 
     private fun addDataPark() {
-//        mList.add(SearchData("Công Viên Nước Hồ Tây", R.drawable.park1))
-//        mList.add(SearchData("Công Viên Thống Nhất", R.drawable.park2))
-//        mList.add(SearchData("Công Viên Yên Sở", R.drawable.park3))
-//        mList.add(SearchData("VinWonders Hà Nội", R.drawable.park4))
-//        mList.add(SearchData("Công Viên Chí Linh", R.drawable.park5))
+        mList.add(SearchData("1","Công Viên Nước Hồ Tây", BitmapFactory.decodeResource(this.getResources(),
+            R.drawable.park1), "bla"))
+        mList.add(SearchData("2","Công Viên Thống Nhất", BitmapFactory.decodeResource(this.getResources(),
+            R.drawable.park2),"bla"))
+        mList.add(SearchData("3","Công Viên Yên Sở", BitmapFactory.decodeResource(this.getResources(),
+            R.drawable.park3), "bla"))
+        mList.add(SearchData("4","VinWonders Hà Nội", BitmapFactory.decodeResource(this.getResources(),
+            R.drawable.park4), "bla"))
+        mList.add(SearchData("5","Công Viên Chí Linh", BitmapFactory.decodeResource(this.getResources(),
+            R.drawable.park5), "bla"))
     }
 
     private fun addDataArt() {
-//        mList.add(SearchData("Bảo Tàng Mĩ Thuật", R.drawable.art1))
-//        mList.add(SearchData("D&C Art Gallery", R.drawable.art2))
-//        mList.add(SearchData("Bảo Tàng Phụ Nữ Việt Nam", R.drawable.art3))
-//        mList.add(SearchData("Nguyen Art Gallery", R.drawable.art4))
-//        mList.add(SearchData("Phòng Tranh 3D", R.drawable.art5))
+        mList.add(SearchData("1","Bảo Tàng Mĩ Thuật", BitmapFactory.decodeResource(this.getResources(),
+            R.drawable.art1), "bla"))
+        mList.add(SearchData("2","D&C Art Gallery", BitmapFactory.decodeResource(this.getResources(),
+            R.drawable.art2), "bla"))
+        mList.add(SearchData("3","Bảo Tàng Phụ Nữ Việt Nam", BitmapFactory.decodeResource(this.getResources(),
+            R.drawable.art3), "bla"))
+        mList.add(SearchData("4","Nguyen Art Gallery", BitmapFactory.decodeResource(this.getResources(),
+            R.drawable.art4), "bla"))
+        mList.add(SearchData("5","Phòng Tranh 3D", BitmapFactory.decodeResource(this.getResources(),
+            R.drawable.art5), "bla"))
     }
 
     private fun addDataArtifact() {
-//        mList.add(SearchData("Bia Văn Miếu Quốc Tử Giám", R.drawable.artifact1))
-//        mList.add(SearchData("Cầu Thê Húc", R.drawable.artifact2))
-//        mList.add(SearchData("Tháp Rùa", R.drawable.artifact3))
-//        mList.add(SearchData("Con Dấu Triều Nguyễn", R.drawable.artifact4))
-//        mList.add(SearchData("Tượng Nghê Đồng (Thế kỉ XVI)", R.drawable.artifact5))
+        mList.add(SearchData("1","Bia Văn Miếu Quốc Tử Giám", BitmapFactory.decodeResource(this.getResources(),
+            R.drawable.artifact1), "bla"))
+        mList.add(SearchData("2","Cầu Thê Húc", BitmapFactory.decodeResource(this.getResources(),
+            R.drawable.artifact2), "bla"))
+        mList.add(SearchData("3","Tháp Rùa", BitmapFactory.decodeResource(this.getResources(),
+            R.drawable.artifact3), "bla"))
+        mList.add(SearchData("4","Con Dấu Triều Nguyễn", BitmapFactory.decodeResource(this.getResources(),
+            R.drawable.artifact4), "bla"))
+        mList.add(SearchData("3","Tượng Nghê Đồng (Thế kỉ XVI)", BitmapFactory.decodeResource(this.getResources(),
+            R.drawable.artifact5), "bla"))
     }
 
     private fun addDataLiterature() {
