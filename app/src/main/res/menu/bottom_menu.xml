@@ -6,18 +6,18 @@
         android:title="Trang chủ" />
     <item
         android:id="@+id/bottom_search"
-        android:icon="@drawable/search"
+        android:icon="@drawable/searchicon"
         android:title="Tìm kiếm" />
     <item
         android:id="@+id/bottom_location"
-        android:icon="@drawable/location"
+        android:icon="@drawable/pin"
         android:title="Định vị" />
     <item
         android:id="@+id/bottom_archive"
-        android:icon="@drawable/goal"
+        android:icon="@drawable/quiz"
         android:title="Quiz" />
     <item
         android:id="@+id/bottom_more"
-        android:icon="@drawable/more"
+        android:icon="@drawable/menu"
         android:title="Mở rộng" />
 </menu>

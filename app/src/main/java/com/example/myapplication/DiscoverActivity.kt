@@ -70,8 +70,8 @@ open class DiscoverActivity : AppCompatActivity() {
     }
     fun startTimer(){
         var index = 0
-        var l = 3000
-        var r = 10000
+        var l = 10000
+        var r = 12000
         var delay : Long = (l until r).random().toLong()
         handler.postDelayed(Runnable {
             delay = (l until r).random().toLong()
