@@ -38,8 +38,8 @@
 
     <LinearLayout
         android:id="@+id/materialCardView"
-        android:layout_width="413dp"
-        android:layout_height="150dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         app:cardCornerRadius="40dp"
         app:cardUseCompatPadding="true"
@@ -63,8 +63,8 @@
 
         <EditText
             android:id="@+id/searchText"
-            android:layout_width="405dp"
-            android:layout_height="57dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_marginEnd="8dp"
             android:ems="10"
             android:hint="Nhập từ khoá"
@@ -75,7 +75,7 @@
         <Button
             android:id="@+id/searchbtn"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:text="Button" />
 
     </LinearLayout>

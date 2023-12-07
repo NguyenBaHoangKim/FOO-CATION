@@ -1,5 +1,6 @@
 package com.example.common.http.apiQuiz
 
+import com.example.model.AnswerResp
 import com.example.model.QuizResp
 import retrofit2.Call
 import retrofit2.http.GET
@@ -13,8 +14,9 @@ interface QuizApi {
         @Query("locationId") locationId: String
     ): Call<List<QuizResp>>
 
-    @POST("quizzes/{id}/answer/correct")
+    @POST("quizzes/{id}/answer/{answerId}")
     fun quizCorrect(
-        @Path("id") id: String
-    ): Call<QuizResp>
+        @Path("id") id: String,
+        @Path("answerId") answerId: String
+    ): Call<AnswerResp>
 }

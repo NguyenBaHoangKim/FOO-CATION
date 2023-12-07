@@ -68,18 +68,26 @@ class UserDataManager {
         })
     }
 
-    fun changePassword(userId: String, onSuccess: (Repassword) -> Unit, onFailure: (error: String) -> Unit){
-        usersApi.changePassword(userId).enqueue(object : Callback<Repassword?> {
+    fun changePassword(repassword: Repassword,onSuccess: (User) -> Unit, onFailure: (error: String) -> Unit){
+        usersApi.changePassword(repassword).enqueue(object : Callback<User?> {
             override fun onResponse(
-                call: Call<Repassword?>,
-                response: Response<Repassword?>
+                call: Call<User?>,
+                response: Response<User?>
             ){
-                println(response.code())
-                println("change pass user success")
-                val responseBody = response.body() ?: return
-                onSuccess(responseBody)
+                println(response.errorBody()?.string())
+                if (response.body() != null) {
+                    println(response.body())
+                    println("change pass user success")
+                    val responseBody = response.body() ?: return
+                    onSuccess(responseBody)
+                }
+                else {
+                    println(response.code())
+                    println("change password không thành công")
+                    onFailure("")
+                }
             }
-            override fun onFailure(call: Call<Repassword?>, t: Throwable) {
+            override fun onFailure(call: Call<User?>, t: Throwable) {
                 println("huhu ")
                 onFailure(t.message!!)
                 Log.d("MainActivity", "onFailure: " + t.message)

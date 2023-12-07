@@ -1,7 +1,7 @@
 package com.example.myapplication
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.myapplication.fragment.ArchiveFragment
 import com.example.myapplication.fragment.DashboardFragment
@@ -14,11 +14,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var bottomNavigatorView: BottomNavigationView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        //Huyen
-//        val myIntent = Intent(this, DashboardActivity::class.java)
-//        startActivity(myIntent)
-
         setContentView(R.layout.bottom_navigator)
 
         bottomNavigatorView = findViewById(R.id.bottom_navigator)

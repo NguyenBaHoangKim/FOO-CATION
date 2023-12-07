@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.common.http.apiQuiz.QuizManager
+import com.example.model.AnswerResp
 import com.example.model.Quiz
 import com.example.model.QuizResp
 import com.example.myapplication.databinding.QuizActivityBinding
@@ -61,9 +62,14 @@ class QuizActivity : AppCompatActivity() {
         })
     }
 
-    private fun updatePoint(quizid: String) {
-        quizManager.quizCorrect(quizid,{ data: QuizResp ->
-            // cho gi vao day
+    private fun updatePoint(quizid: String, answerId: String) {
+        quizManager.quizCorrect(quizid, answerId ,{ data: AnswerResp ->
+            if (data.isCorrect == true) {
+                correctAns()
+            }
+            else {
+                wrongAns()
+            }
         }, { error ->
             println(error)
         })
@@ -79,28 +85,20 @@ class QuizActivity : AppCompatActivity() {
         binding.imageView5.setImageBitmap(quiz.image)
         binding.score.text = "${index+1}/${mList.size} câu"
         binding.ans1.setOnClickListener {
-            checkAnswer(binding.ans1.text.toString(), quiz)
+            updatePoint(mList[index].id,mList[index].answers[0].id)
         }
         binding.ans2.setOnClickListener {
-            checkAnswer(binding.ans2.text.toString(), quiz)
+            updatePoint(mList[index].id,mList[index].answers[1].id)
         }
         binding.ans3.setOnClickListener {
-            checkAnswer(binding.ans3.text.toString(), quiz)
+            updatePoint(mList[index].id,mList[index].answers[2].id)
         }
         binding.ans4.setOnClickListener {
-            checkAnswer(binding.ans4.text.toString(), quiz)
+            updatePoint(mList[index].id,mList[index].answers[3].id)
         }
-    }
-
-    private fun checkAnswer(text: String, quiz: Quiz) {
-        if (text == quiz.correctAnswer)
-            correctAns()
-        else
-            wrongAns()
     }
 
     private fun correctAns() {
-        updatePoint(mList[questionIndex].id)
         val popUp = TrueAnsPopup()
         popUp.setData(mList[questionIndex].description, mList[questionIndex].image)
         popUp.show((this as AppCompatActivity).supportFragmentManager, "")

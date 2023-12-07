@@ -2,6 +2,7 @@ package com.example.common.http.apiQuiz
 
 import android.util.Log
 import com.example.common.http.CustomApi
+import com.example.model.AnswerResp
 import com.example.model.QuizResp
 import retrofit2.Call
 import retrofit2.Callback
@@ -27,18 +28,18 @@ class QuizManager {
         })
     }
 
-    fun quizCorrect(quizId: String,onSuccess: (QuizResp) -> Unit, onFailure: (error: String) -> Unit){
-        quizApi.quizCorrect(quizId).enqueue(object : Callback<QuizResp?> {
+    fun quizCorrect(quizId: String, answerId: String,onSuccess: (AnswerResp) -> Unit, onFailure: (error: String) -> Unit){
+        quizApi.quizCorrect(quizId, answerId ).enqueue(object : Callback<AnswerResp?> {
             override fun onResponse(
-                call: Call<QuizResp?>,
-                response: Response<QuizResp?>
+                call: Call<AnswerResp?>,
+                response: Response<AnswerResp?>
             ) {
                 print(response.body())
                 val responseBody = response.body() ?: return
                 onSuccess(responseBody)
             }
 
-            override fun onFailure(call: Call<QuizResp?>, t: Throwable) {
+            override fun onFailure(call: Call<AnswerResp?>, t: Throwable) {
                 onFailure(t.message!!)
                 Log.d("MainActivity", "onFailure: " + t.message)
             }

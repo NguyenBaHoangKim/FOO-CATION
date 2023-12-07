@@ -10,7 +10,8 @@ data class User(
     val displayName: String,
     val email: String,
     val rankingPoint: Int,
-    val balance: Int
+    val balance: Int,
+    val avatar: ImageBitmap
 )
 data class Signup(
     val id: String,
@@ -189,6 +190,19 @@ data class Repassword(
     val oldPassword: String,
     val newPassword: String,
     val rePassword: String
+)
+
+data class AnswerResp(
+    val id: String,
+    val locationId: String,
+    val question: String,
+    val point: Int,
+    val correctAnswer: String,
+    val image: ImageBitmap,
+    val answers: List<Answer>,
+    val description: String,
+    val isCorrect: Boolean,
+
 )
 
 

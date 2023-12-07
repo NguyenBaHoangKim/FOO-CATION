@@ -3,7 +3,6 @@ package com.example.myapplication.search
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Button
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.SearchView.OnQueryTextListener
@@ -12,9 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.common.http.apiArtifact.ArtifactManager
 import com.example.common.http.apiLocationResp.LocationRespManager
 import com.example.common.http.apiSearchData.SearchsDataManager
-import com.example.common.utils.Extensions.Companion.toBitMap
 import com.example.model.LocationResp
-import com.example.model.SearchData
 import com.example.model.SearchsData
 import com.example.myapplication.R
 import com.example.myapplication.adapter.SearchAdapter
@@ -23,7 +20,7 @@ import com.example.myapplication.adapter.SearchAdapter
 class SearchActivity : AppCompatActivity() {
     private lateinit var recyclerView : RecyclerView
     private lateinit var searchView: SearchView
-    private var mList = ArrayList<SearchData>()
+    private lateinit var mList : SearchsData
 
     private var artifactManager = ArtifactManager()
     private var locationManager = LocationRespManager()
@@ -51,47 +48,41 @@ class SearchActivity : AppCompatActivity() {
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        fetchData()
+//        fetchData()
 //
 //        addDataToList()
 //        adapter = SearchAdapter(mList)
 //        recyclerView.adapter = adapter
 
         searchView.setOnQueryTextListener(object : OnQueryTextListener {
-
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return false
             }
 
-            override fun onQueryTextChange(newText: String?): Boolean {
-                filterList(newText)
+            override fun onQueryTextChange(newText: String): Boolean {
+                getSearchData(newText)
+//                filterList(newText)
                 return true
             }
         })
     }
 
-    private fun  filterList(query: String?){
-        if(query != null) {
-//            val filteredList = ArrayList<SearchData>()
-//            for(i in mList){
-//                if(i.title.lowercase(Locale.ROOT).contains(query)){
-//                    filteredList.add(i)
-//                }
+//    private fun  filterList(query: String?){
+//        if(query != null) {
+//            val filteredList = mList.filter { data -> data.title.lowercase().contains(query) }
+//            if(filteredList.isEmpty()){
+//                Toast.makeText(this, "Hong tìm được rùiiii", Toast.LENGTH_SHORT).show()
 //            }
-            val filteredList = mList.filter { data -> data.title.lowercase().contains(query) }
-            if(filteredList.isEmpty()){
-                Toast.makeText(this, "Hong tìm được rùiiii", Toast.LENGTH_SHORT).show()
-            }
-            else{
-                adapter.setFilteredList(filteredList)
-            }
-        }
-    }
+//            else{
+//                adapter.setFilteredList(filteredList)
+//            }
+//        }
+//    }
 
     private fun fetchData() {
         locationManager.getLocationList({ data: List<LocationResp> ->
             for (dataLocation in data) {
-                mList.add(SearchData(dataLocation.id,dataLocation.name,dataLocation.image.data.toBitMap(),"location"))
+//                mList.add(SearchData(dataLocation.id,dataLocation.name,dataLocation.image.data.toBitMap(),"location"))
             }
             adapter = SearchAdapter(mList)
             recyclerView.adapter = adapter
@@ -102,7 +93,7 @@ class SearchActivity : AppCompatActivity() {
 
     private fun getSearchData(searchData: String) {
         searchsDataManager.getSearchsData(searchData,{ data: SearchsData ->
-
+            
         }, { error ->
             println(error)
         })

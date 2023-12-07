@@ -11,7 +11,6 @@ import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.PUT
-import retrofit2.http.Path
 
 interface UserApi {
     @POST("user/login")
@@ -20,10 +19,10 @@ interface UserApi {
     @POST("user/register")
     fun signUp(@Body body: SignupRequest): Call<Signup>
 
-    @PUT("user/{userId}/changePassword")
+    @PUT("user/changePassword")
     fun changePassword(
-        @Path("userId") userId: String
-    ): Call<Repassword>
+        @Body body: Repassword
+    ): Call<User>
 
     @GET("user")
     fun getUsers(): Call<User>
