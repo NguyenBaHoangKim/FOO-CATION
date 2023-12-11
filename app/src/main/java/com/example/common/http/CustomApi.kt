@@ -8,7 +8,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class CustomApi(val context: Context) {
-    val apiURL = "http://35.198.240.131:8081/api/v1/"
+    val apiURL = "http://localhost:8081g/api/v1/"
     companion object {
         inline fun <reified T> client(): T {
             val client = OkHttpClient.Builder()
